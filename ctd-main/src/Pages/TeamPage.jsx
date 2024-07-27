@@ -45,24 +45,39 @@ const TeamPage = () => {
             image: team3
 
         },
-    ]
+    ];
+    console.log(teamArr.length);
     return ( 
         <>
-        <div className="team-cont min-h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-start items-center ">
+        <div className="team-cont min-h-[200vh] w-[100vw] bg-[#181818] flex flex-col justify-start items-center ">
             <div className="events-head h-[30vh] w-[100vw] bg--600 flex justify-start items-end px-[5vw]  ">
                 <h1 className="text-white text-[6vw]">OUR TEAM</h1>
             </div>
 
-            <div className="events-head h-[100vh] w-[100vw] bg--600 flex flex-wrap justify-center items-start py-[10vh]  ">
-                {
-                    teamArr.map((team) => {
-                        return(
-                            <>
-                                <TeamCards key={team.id} name={team.name} role={team.role} image={team.image} />
-                            </>
-                        );
-                    })
-                }
+            <div className="events-head min-h-[100vh] w-[100vw] bg--600 flex flex-col justify-center  items-center   ">
+                <div className="row-1 h-[70vh] w-[100vw] bg--500 flex justify-around items-center">
+                    {
+                        teamArr.slice(0,3).map((team) => {
+                            return(
+                                <>
+                                    <TeamCards key={team.id} name={team.name} role={team.role} image={team.image} />
+                                </>
+                            );
+                        })
+                    }
+                </div>
+                <div className="row-2 h-[70vh] w-[100vw] bg--500 flex justify-around items-center">
+                    {
+                        teamArr.slice(3,6).map((team) => {
+                            return(
+                                <>
+                                    <TeamCards key={team.id} name={team.name} role={team.role} image={team.image} />
+                                </>
+                            );
+                        })
+                    }
+                </div>
+                
             </div>
         </div>
         </>
