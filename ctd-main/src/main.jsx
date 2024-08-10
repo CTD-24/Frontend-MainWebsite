@@ -9,6 +9,7 @@ import LoginPage from '../src/Pages/LoginPage.jsx';
 // import EventsPage from '../src/Pages/EventsPage.jsx';
 import AboutPage from '../src/Pages/AboutPage.jsx';
 import ContactPage from '../src/Pages/ContactPage.jsx';
+import TeamPage from './Pages/TeamPage.jsx';
 
 
 
@@ -21,8 +22,11 @@ const router = createBrowserRouter(
       <Route index element={<LandingPage/>}/>
       {/* <Route path='/events' element={<EventsPage/>} /> */}
       <Route path='/about' element={<AboutPage/>} />
+      <Route path='/team' element={<TeamPage/>} />
       <Route path='/contact' element={<ContactPage/>} />
       <Route path='/login' element={<LoginPage/>} />
+
+
     </Route>
   )
 );

@@ -21,6 +21,10 @@ h1{
     /* font-family: "Big Shoulders Display", sans-serif; */
 }
 
-span{
+.homeLogo ,span{
     font-family: "Orbitron", sans-serif;
 }
+
+::-webkit-scrollbar {
+    width: 1px;
+  }
