@@ -5,40 +5,43 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import MainGradient from "../assets/MainBG.png";
+import code from "../assets/codeSticker.png";
+
 // import MainGradient from "../assets/MainGradient.png";
-import future from "./PageAssets/future.mp4"
+import future from "./PageAssets/future.mp4";
 import coder from "./PageAssets/Coder.mp4";
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Countdown from 'react-countdown';
+import React from "react";
+import ReactDOM from "react-dom";
+import Countdown from "react-countdown";
 import TeamPage from "./TeamPage";
 import SplitType from 'split-type';
 // import {locomotiveScroll} from "locomotive-scroll";
 import LocomotiveScroll from 'locomotive-scroll';
-
-
-
-
+import AboutPage from "./AboutPage";
 
 
 
 const LandingPage = () => {
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
     const locomotiveScroll = new LocomotiveScroll();
 
     const Completionist = () => <span>You are good to go!</span>;
 
-    // Renderer callback with condition
-    const renderer = ({ hours, minutes, seconds, completed }) => {
+  // Renderer callback with condition
+  const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
-        // Render a completed state
-        return <Completionist />;
+      // Render a completed state
+      return <Completionist />;
     } else {
-        // Render a countdown
-        return <span className="text-white text-[12vw]">{hours}:{minutes}:{seconds}</span>;
+      // Render a countdown
+      return (
+        <span className="text-white text-[12vw]">
+          {hours}:{minutes}:{seconds}
+        </span>
+      );
     }
-    };
+  };
 
     useEffect(() => {
 
@@ -119,10 +122,11 @@ const LandingPage = () => {
             `}
         </style>
                <img className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] " src={MainGradient} alt="" />
-               <div className="landingPage h-[100vh] w-[100vw] bg--500 flex justify-center items-center relative top-0 left-0 z-[2] ">
-                    <div className="text-box h-[50vh] w-[100vw] bg--500 flex flex-col  justify-center items-center">
+               <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex justify-center items-center relative top-0 left-0 z-[2] ">
+                    <div className="text-box h-[50vh] w-[100vw] bg--500 flex flex-col  justify-center items-center max-sm:h-[50vh]">
                         <h1 className="my-text text-[12vw] max-sm:text-[16vw] text-white z-[1000] leading-[32vh] max-sm:hidden md:block">CREDENZ TECH DAYZ</h1>
-                        <div className="resp-Text h-[50vh] w-full bg--500 flex flex-col justify-center items-center md:hidden ">
+                        <img src={code} alt="" className=" z-[100] absolute top-[20%] right-[0%] rotate-[20deg] max-sm:block md:hidden" />
+                        <div className="resp-Text h-[50vh] w-full bg--500 flex flex-col justify-center items-center md:hidden z-[1] ">
                             <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">CREDENZ</h1>
                             <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">TECH</h1>
                             <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">DAYZ</h1>
@@ -143,12 +147,19 @@ const LandingPage = () => {
                         </div>
                         <div className="timeMain h-[40vh] w-[100vw] bg--500 flex flex-col  justify-center items-center opacity-[100%] z-[2000]">
                             <div className="time">
-                            <Countdown  className="text-white" date={Date.now() + 10000000} renderer={renderer}/>
+                                <Countdown  className="text-white" date={Date.now() + 10000000} renderer={renderer}/>
                             </div>
                         </div>
                     </div>
                </div>
-               <div className="eventsPage h-[100vh] w-[100vw] bg-[#88b0ff] relative flex justify-center items-center">
+               <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
+
+               </div>
+
+               <div className="aboutPage min-h-[100vh] w-[100vw] bg-white relative flex justify-center items-center">
+                  <AboutPage/>
+               </div>
+               <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
 
                </div>
                
