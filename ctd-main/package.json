@@ -4,18 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.7",
+    "locomotive-scroll": "^5.0.0-beta.13",
     "react": "^18.3.1",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
-    "react-router-dom": "^6.24.1"
+    "react-router-dom": "^6.24.1",
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

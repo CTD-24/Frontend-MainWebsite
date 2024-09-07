@@ -24,7 +24,7 @@ h1 {
 span,
 .loginButton,
 .inputPlaceholders,
-h4 {
+h4, .homeLogo {
   font-family: "Orbitron", sans-serif;
 }
 ::-webkit-scrollbar {

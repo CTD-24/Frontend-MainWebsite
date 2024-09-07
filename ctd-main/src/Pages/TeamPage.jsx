@@ -85,7 +85,7 @@ const TeamPage = () => {
     return ( 
         <>
         <div className="team-cont min-h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-start items-center ">
-            <div className="events-head h-[30vh] w-[100vw] bg--600 flex justify-start items-end px-[5vw]  ">
+            <div className="events-head h-[35vh] w-[100vw] bg--600 flex justify-start items-end px-[5vw]  ">
                 <h1 className="text-white text-[6vw]">OUR TEAM</h1>
             </div>
 
