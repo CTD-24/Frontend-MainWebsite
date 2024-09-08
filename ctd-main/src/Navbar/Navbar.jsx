@@ -3,7 +3,8 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HiMenuAlt3 } from "react-icons/hi";
-
+import { FiShoppingCart } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     gsap.registerPlugin(ScrollTrigger);
@@ -41,6 +42,12 @@ const Navbar = () => {
 
     },[])
 
+    const navigate = useNavigate();
+
+    const toCart = () => {
+      navigate("/cart");
+    }
+
     const isAuth = false;
 
     return ( 
@@ -61,7 +68,8 @@ const Navbar = () => {
                     }
 
                 </div>
-                <div className="nav-right h-full w-[20%] bg-green-40 flex justify-center items-center">
+                <div className="nav-right h-full w-[20%] bg-green-40 flex justify-evenly items-center ">
+                    <FiShoppingCart onClick={toCart} size={22} color="white" className="max-sm:hidden md:block  bg--300 cursor-pointer" />
                     <HiMenuAlt3 size={30} className="max-sm:block md:hidden fill-white bg--300" />
                     <Link to="/login" className=" max-sm:hidden h-[5vh] w-[7vw] flex justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular">LOGIN</Link>
 
