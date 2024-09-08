@@ -18,6 +18,7 @@ import SplitType from 'split-type';
 // import {locomotiveScroll} from "locomotive-scroll";
 import LocomotiveScroll from 'locomotive-scroll';
 import AboutPage from "./AboutPage";
+import EventsPage from "./EventsPage";
 
 
 
@@ -153,7 +154,7 @@ const LandingPage = () => {
                     </div>
                </div>
                <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
-
+                  <EventsPage/>
                </div>
 
                <div className="aboutPage min-h-[100vh] w-[100vw] bg-white relative flex justify-center items-center">
