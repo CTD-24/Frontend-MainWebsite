@@ -20,6 +20,7 @@ import TeamPage from './Pages/TeamPage.jsx';
 import SignupPage from "./Pages/SignupPage.jsx";
 import DashboardPage from "./Pages/DashboardPage.jsx";
 import CartPage from "./Pages/CartPage.jsx";
+import EventsPage from "./Pages/EventsPage.jsx";
 
 
 
@@ -44,6 +45,8 @@ const router = createBrowserRouter(
       <Route path='/team' element={<TeamPage/>} />
       <Route path='/contact' element={<ContactPage/>} />
       <Route path='/cart' element={<CartPage/>} />
+      <Route path='/events' element={<EventsPage />} />
+
 
       
 

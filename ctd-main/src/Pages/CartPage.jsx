@@ -12,13 +12,13 @@ const CartPage = () => {
     ];
     return ( 
         <>
-            <div className="cartPage h-[100vh] w-[100vw] bg--500 flex flex-col justify-center items-center">
+            <div className="cartPage h-[110vh] w-[100vw] bg--500 flex flex-col justify-center items-center">
             <div className="cartName h-[25vh] w-[100vw] bg--400 flex justify-start items-end px-[5vw]">
                 <h1 className="text-[5vw] text-white">YOUR CART</h1>
             </div>
             <div className="complefrig flex h-[75vh] w-[100vw] justify-center items-center">
             <div className="divleft h-[100%] w-[35%] bg--300 flex items-center justify-center">
-                <div className="cartcard h-[95%] w-[25vw] flex justify-start items-end px-[2vw] bg-blue-400 rounded-3xl">
+                <div className="cartcard h-[95%] w-[25vw] flex justify-start items-end px-[2vw] bg-blue-800 rounded-3xl">
                     <h1 className="text-[5vw] text-white">CTD.</h1>
                 </div>
             </div>
