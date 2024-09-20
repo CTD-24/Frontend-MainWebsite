@@ -153,16 +153,16 @@ const LandingPage = () => {
                         </div>
                     </div>
                </div>
-               <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
+               <div className="eventsPage min-h-[120vh] w-[100vw] bg-[#181818] relative flex justify-center items-center" style={{ marginTop: '5vh' }}>
                   <EventsPage/>
                </div>
 
-               <div className="aboutPage min-h-[100vh] w-[100vw] bg-white relative flex justify-center items-center">
+               <div className="aboutPage min-h-[100vh] w-[100vw] bg-white relative flex justify-center items-center"  style={{ marginTop: '5vh' }}>
                   <AboutPage/>
                </div>
-               <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
+               {/* <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
 
-               </div>
+               </div> */}
                
         </>
      );
