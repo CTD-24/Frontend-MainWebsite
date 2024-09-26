@@ -21,6 +21,7 @@ import AboutPage from "./AboutPage";
 import EventsPage from "./EventsPage";
 
 import bgVideo from '../assets/wave3.mp4'
+import Footer from "../footer/Footer";
 
 
 // import HALO from 'vanta/src/vanta.halo';
@@ -187,6 +188,8 @@ const LandingPage = () => {
 
                </div> */}
             </div>
+            <Footer/>
+
                
         </>
      );
