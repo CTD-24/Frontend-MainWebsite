@@ -1,5 +1,5 @@
 import green from "../assets/greenPexel.jpg";
-import cube from "../assets/blueCube.jpg";
+// import cube from "../assets/blueCube.jpg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -164,7 +164,7 @@ const LandingPage = () => {
                     </div>
                </div>
                <div className="videoPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center ">
-                    {/* <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video> */}
+                    <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video>
                     <div className="timeBox h-[100vh] w-[100vw] absolute top-0 left-0  flex flex-col justify-center items-center z-[1000] opacity-[100%]">
                         <div className="top-time h-[20vh] w-[100vw] bg--500 flex flex-col  justify-center items-center opacity-[100%] z-[2000]">
                             <h1 className="text-white text-[10vw]">DAYZ LEFT</h1>

@@ -21,6 +21,7 @@ import SignupPage from "./Pages/SignupPage.jsx";
 import DashboardPage from "./Pages/DashboardPage.jsx";
 import CartPage from "./Pages/CartPage.jsx";
 import EventsPage from "./Pages/EventsPage.jsx";
+import RegisterForm from "./components/RegisterForm.jsx";
 
 
 
@@ -46,6 +47,7 @@ const router = createBrowserRouter(
       <Route path='/contact' element={<ContactPage/>} />
       <Route path='/cart' element={<CartPage/>} />
       <Route path='/events' element={<EventsPage />} />
+      <Route path='/registerform' element={<RegisterForm />} />
 
 
       

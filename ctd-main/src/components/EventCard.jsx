@@ -3,11 +3,12 @@ import gsap from "gsap";
 import ecard from "../assets/ecard.png"; 
 import Rules from "./Rules";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const EventCard = ({ name, description, onButtonClick }) => {
     const [slide, setSlide] = useState(false);
-    
+    const navigate = useNavigate(); 
+
     // Create refs for each important element
     const cardRef = useRef(null);
     const imgRef = useRef(null);
@@ -100,6 +101,10 @@ const EventCard = ({ name, description, onButtonClick }) => {
         }, "one");
     };
 
+    const handleRegisterClick = () => {
+        navigate("/registerform"); 
+    };
+
     return (
         <>
             <div ref={cardRef} className="innerbox w-[100%] h-[70vh] bg-[#282828] rounded-[2vw] flex flex-col justify-end items-center relative">
@@ -128,7 +133,7 @@ const EventCard = ({ name, description, onButtonClick }) => {
                         <h1 className="text-[8vw] bg--500 h-[16vh] flex justify-start items-center text-white">{name}</h1>
                         <h3 className="text-[1vw] bg--500 h-[6vh] tracking-widest font-light flex justify-start items-center text-white">{description}</h3>
 
-                        <Link ref={regEventRef} to="/cart" className="regEvent opacity-0 max-sm:hidden hidden h-[5vh] w-[9vw] justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular absolute bottom-[10%]">REGISTER</Link>
+                        <button ref={regEventRef} onClick={handleRegisterClick} className="regEvent opacity-0 max-sm:hidden hidden h-[5vh] w-[9vw] justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular absolute bottom-[10%]">REGISTER</button>
                     </div>
                     <div className="h-[100%] w-[50%] bg--500 flex justify-end items-end p-[4vw]">
                         <button ref={buttonRef} onClick={eventSlider} className="eventButton bg-white rounded-full h-[10vh] w-[10vh] flex justify-center items-center z-[1200] absolute">
