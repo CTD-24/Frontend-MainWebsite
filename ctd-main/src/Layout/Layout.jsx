@@ -8,7 +8,6 @@ const Layout = () => {
       <div className="layout bg-[#181818] min-h-[100vh] w-[100vw] flex flex-col justify-center items-center overflow-x-hidden">
         <Navbar />
           <Outlet />
-        <Footer/>
       </div>
   );
 };

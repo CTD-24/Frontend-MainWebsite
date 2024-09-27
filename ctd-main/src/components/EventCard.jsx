@@ -5,6 +5,7 @@ import Rules from "./Rules";
 import { useRef, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 
+
 const EventCard = ({ name, description, onButtonClick }) => {
     const [slide, setSlide] = useState(false);
     const navigate = useNavigate(); 
@@ -108,7 +109,9 @@ const EventCard = ({ name, description, onButtonClick }) => {
     return (
         <>
             <div ref={cardRef} className="innerbox w-[100%] h-[70vh] bg-[#282828] rounded-[2vw] flex flex-col justify-end items-center relative">
+            
                 <div ref={topRef} className="mainTop w-full h-full rounded-[2vw] flex justify-end items-center absolute z-[100]">
+                <button ref={regEventRef} onClick={handleRegisterClick} className="regEvent opacity-0 max-sm:hidden hidden h-[5vh] w-[9vw] justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] z-[5000] font-regular absolute left-[5%] bottom-[10%]">REGISTER</button>
                     <div className="eventtop w-[50%] h-full bg--400 rounded-[2vw] flex flex-col justify-center items-center z-[100]">
                         <div className="w-full h-[20%] bg--400 flex justify-between items-center px-[2vw] relative">
                             <select className="px-[2.5vw] py-[1vh] rounded-[2vw]">
@@ -127,13 +130,14 @@ const EventCard = ({ name, description, onButtonClick }) => {
                         </div>
                     </div>
                 </div>
+                
                 <img ref={imgRef} src={ecard} className="eventImg absolute object-fill h-full w-full rounded-[2vw] z-[1000]" />
                 <div className="w-full h-[100%] flex flex-row justify-center item-center relative bg--400 z-[1200]">
                     <div ref={nameRef} className="eventName relative w-[50%] h-[100%] flex flex-col justify-end item-center bg--400 py-[3vw] px-[4vw]">
                         <h1 className="text-[8vw] bg--500 h-[16vh] flex justify-start items-center text-white">{name}</h1>
                         <h3 className="text-[1vw] bg--500 h-[6vh] tracking-widest font-light flex justify-start items-center text-white">{description}</h3>
 
-                        <button ref={regEventRef} onClick={handleRegisterClick} className="regEvent opacity-0 max-sm:hidden hidden h-[5vh] w-[9vw] justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular absolute bottom-[10%]">REGISTER</button>
+                        
                     </div>
                     <div className="h-[100%] w-[50%] bg--500 flex justify-end items-end p-[4vw]">
                         <button ref={buttonRef} onClick={eventSlider} className="eventButton bg-white rounded-full h-[10vh] w-[10vh] flex justify-center items-center z-[1200] absolute">
