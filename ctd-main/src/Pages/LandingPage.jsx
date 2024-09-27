@@ -1,5 +1,5 @@
 import green from "../assets/greenPexel.jpg";
-import cube from "../assets/blueCube.jpg";
+// import cube from "../assets/blueCube.jpg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +19,14 @@ import SplitType from 'split-type';
 import LocomotiveScroll from 'locomotive-scroll';
 import AboutPage from "./AboutPage";
 import EventsPage from "./EventsPage";
+
+import bgVideo from '../assets/wave3.mp4'
+import Footer from "../footer/Footer";
+
+
+// import HALO from 'vanta/src/vanta.halo';
+
+
 
 
 
@@ -46,9 +54,9 @@ const LandingPage = () => {
 
     useEffect(() => {
 
-        (function () {
-            const locomotiveScroll = new LocomotiveScroll();
-        })();
+        // (function () {
+        //     const locomotiveScroll = new LocomotiveScroll();
+        // })();
 
         let t = gsap.timeline({
             scrollTrigger: {
@@ -113,6 +121,16 @@ const LandingPage = () => {
 
 
     }, []);
+
+    // useEffect(() => {
+    //     HALO({
+    //         el: '#vanta2',
+    //         backgroundColor: "#181818"
+    //       })
+
+    // });
+
+
     return ( 
         <>
         <style>
@@ -122,7 +140,13 @@ const LandingPage = () => {
                 }
             `}
         </style>
-               <img className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] " src={MainGradient} alt="" />
+            <div className="l-main relative min-h-[100vh] w-[100vw] bg-transparent flex flex-col justify-center items-center">
+               {/* <img className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] " src={MainGradient} alt="" /> */}
+               <video className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] object-cover opacity-[40%] " loop muted autoPlay="true" src={bgVideo}></video>
+               {/* <video src=""></video> */}
+
+
+               {/* <div className="back-g absolute top-0 h-[100vh] w-[100vw] z-[1] max-sm:object-cover object-cover opacity-[30%] max-sm:opacity-[20%]" id="vanta2"></div> */}
                <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex justify-center items-center relative top-0 left-0 z-[2] ">
                     <div className="text-box h-[50vh] w-[100vw] bg--500 flex flex-col  justify-center items-center max-sm:h-[50vh]">
                         <h1 className="my-text text-[12vw] max-sm:text-[16vw] text-white z-[1000] leading-[32vh] max-sm:hidden md:block">CREDENZ TECH DAYZ</h1>
@@ -141,7 +165,7 @@ const LandingPage = () => {
                     </div>
                </div>
                <div className="videoPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center ">
-                    {/* <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video> */}
+                    <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video>
                     <div className="timeBox h-[100vh] w-[100vw] absolute top-0 left-0  flex flex-col justify-center items-center z-[1000] opacity-[100%]">
                         <div className="top-time h-[20vh] w-[100vw] bg--500 flex flex-col  justify-center items-center opacity-[100%] z-[2000]">
                             <h1 className="text-white text-[10vw]">DAYZ LEFT</h1>
@@ -163,6 +187,9 @@ const LandingPage = () => {
                {/* <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
 
                </div> */}
+            </div>
+            <Footer/>
+
                
         </>
      );
