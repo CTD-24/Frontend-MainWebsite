@@ -6,10 +6,14 @@ import MainGradient from "../assets/MainBG.png";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 // import usePerson from "../context/user";
+import { onLogin } from "../api/auth";
 
-
-
-
+import Cookies from 'js-cookie';
+const getToken = () => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; jwt=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+};
 function LoginPage() {
 
     const navigate = useNavigate();
@@ -17,10 +21,28 @@ function LoginPage() {
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
     const [image, setImage] = useState(null);
-
+    const [error, setError] = useState(false);
 
     // const {setUser, setImg} = useContext(UserContext);
 
+    const handleSubmit = async (e)=>{
+      e.preventDefault();
+      try {
+        const response = await onLogin({
+          username: username,
+          password: password
+        });
+        console.log("API Response:", response); // Log the full response
+        console.log("Login Successfull");
+        // navigate("/signup");
+        const token = getToken();
+        console.log(token);
+        setError(false);
+      } catch (error) {
+        setError(true);
+        console.log("Error logging in ", error)
+      }
+    }
 
 
     // const handleSubmit = (e) => {
@@ -67,14 +89,14 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="PASSWORD"
             className="inputPlaceholders w-[80%] h-[6vh] max-md-[1920px]:h-[5vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
-          />
+          />  
 
-          <input
+          {/* <input
             type="file"
             // accept="image/*"  // This ensures only images can be selected
             // onChange={handleImageChange}
             className="inputPlaceholders w-[80%] h-[6vh] flex justify-center items-center px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
-          />
+          /> */}
         </div>
         <div className="w-[80%] flex justify-between items-start bg--400  h-10">
           <h4 className="cursor-pointer tracking-normal text-[0.8vw]">Forgot Password?</h4>
@@ -82,7 +104,7 @@ function LoginPage() {
         </div>
         <div className="mt-4 mb-8 w-full flex items-center justify-center">
         <button 
-          // onClick={handleSubmit}
+          onClick={handleSubmit}
           className="loginButton bg-white hover:bg-slate-400 text-black text-uppercase flex justify-center items-center  w-[80%] h-[6vh] border-none rounded-[0.6vw] cursor-pointer font-semibold tracking-normal text-[1vw]">
           LOGIN
         </button>
