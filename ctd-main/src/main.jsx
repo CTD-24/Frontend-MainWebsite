@@ -22,6 +22,9 @@ import DashboardPage from "./Pages/DashboardPage.jsx";
 import CartPage from "./Pages/CartPage.jsx";
 import EventsPage from "./Pages/EventsPage.jsx";
 import RegisterForm from "./components/RegisterForm.jsx";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "../src/redux/store.js";
 
 
 
@@ -68,5 +71,9 @@ const router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
   <RouterProvider router={router} />
+  </PersistGate>
+  </Provider>
 );
