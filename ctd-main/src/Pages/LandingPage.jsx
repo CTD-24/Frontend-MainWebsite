@@ -177,7 +177,7 @@ const LandingPage = () => {
                         </div>
                     </div>
                </div>
-               <div className="eventsPage min-h-[120vh] w-[100vw] bg-[#181818] relative flex justify-center items-center" style={{ marginTop: '5vh' }}>
+               <div className="eventsPage min-h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center" style={{ marginTop: '5vh' }}>
                   <EventsPage/>
                </div>
 

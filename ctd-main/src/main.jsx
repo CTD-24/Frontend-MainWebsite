@@ -22,6 +22,10 @@ import DashboardPage from "./Pages/DashboardPage.jsx";
 import CartPage from "./Pages/CartPage.jsx";
 import EventsPage from "./Pages/EventsPage.jsx";
 import RegisterForm from "./components/RegisterForm.jsx";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "../src/redux/store.js";
+import ForgotPassword from "./Pages/ForgotPassword.jsx";
 
 
 
@@ -48,12 +52,15 @@ const router = createBrowserRouter(
       <Route path='/cart' element={<CartPage/>} />
       <Route path='/events' element={<EventsPage />} />
       <Route path='/registerform' element={<RegisterForm />} />
+      <Route path='/forgotpassword' element={<ForgotPassword/>} />
+
 
 
       
 
       <Route element={<PrivateRoute/>}>
         <Route path='/dashboard' element={<DashboardPage/>} />
+
 
       </Route>
       <Route element={<RestrictedRoute/>}>
@@ -68,5 +75,9 @@ const router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
   <RouterProvider router={router} />
+  </PersistGate>
+  </Provider>
 );

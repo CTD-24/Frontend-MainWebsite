@@ -20,9 +20,10 @@ export async function onLogin(loginData) {
     )
 }
 export async function onLogout() {
-    return await axios.get(
-        'http://localhost:8000/auth/logout',
+    return await axios.post(
+        'http://localhost:3000/auth/logout',
     )
+    
 }
 // export async function getchProtectedInfo() {
 //     return await axios.get(
