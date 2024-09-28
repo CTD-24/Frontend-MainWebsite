@@ -3,7 +3,7 @@ import { useState } from "react";
 import loginBG from "../assets/LoginBG.png";
 import MainGradient from "../assets/MainBG.png";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 // import usePerson from "../context/user";
 import { onLogin } from "../api/auth";
@@ -27,7 +27,6 @@ function LoginPage() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
   const [alert, setAlert] = useState({
     message: "",
@@ -68,20 +67,7 @@ function LoginPage() {
   };
   
 
-  // const handleSubmit = (e) => {
-  //   navigate("/dashboard");
-  //   e.preventDefault()
-  //   setUser({username, password});
-  //   // setImg({image});
-  // }
 
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const imageUrl = URL.createObjectURL(file); // Convert file to URL
-  //     setImg(imageUrl); // Set this URL to the context
-  //   }
-  // };
 
   const toSignup = () => {
     navigate("/signup");
@@ -123,18 +109,11 @@ function LoginPage() {
               placeholder="PASSWORD"
               className="inputPlaceholders w-[80%] h-[6vh] max-md-[1920px]:h-[5vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
             />
-
-            {/* <input
-            type="file"
-            // accept="image/*"  // This ensures only images can be selected
-            // onChange={handleImageChange}
-            className="inputPlaceholders w-[80%] h-[6vh] flex justify-center items-center px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
-          /> */}
           </div>
           <div className="w-[80%] flex justify-between items-start bg--400  h-10">
-            <h4 className="cursor-pointer tracking-normal text-[0.8vw]">
+            <Link to="/forgotpassword" className="cursor-pointer tracking-normal text-[0.8vw]">
               Forgot Password?
-            </h4>
+            </Link>
             <h4
               onClick={toSignup}
               className="cursor-pointer tracking-normal text-[0.8vw]"
@@ -160,27 +139,5 @@ function LoginPage() {
   );
 }
 
-function Button({ content }) {
-  return (
-    <button
-      onClick={handleSubmit}
-      className="loginButton bg-white text-black text-uppercase flex justify-center items-center  w-[80%] h-[6vh] border-none rounded-[0.6vw] cursor-pointer font-semibold tracking-normal text-[1vw]"
-    >
-      {content}
-    </button>
-  );
-}
-
-// function Input({ type, placeholder, value }) {
-//   return (
-//     <input
-//       type={type}
-//       value={value}
-
-//       placeholder={placeholder}
-//       className="inputPlaceholders w-[80%] h-[6vh] max-md-[1920px]:h-[5vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
-//     />
-//   );
-// }
 
 export default LoginPage;
