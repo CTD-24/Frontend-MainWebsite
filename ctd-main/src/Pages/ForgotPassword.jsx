@@ -4,7 +4,7 @@ import AlertTitle from "@mui/material/AlertTitle";
 import axios from "axios";
 import MainGradient from "../assets/MainBG.png";
 import CircularProgress from "@mui/material/CircularProgress"; 
-
+import { forgotPassword, resetPassword } from "../api/auth";
 const ForgotPassword = () => {
   const [userData, setUserData] = useState({
     email: "",
@@ -33,12 +33,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     setLoading(true); 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/auth/forgot_password",
-        {
-          email: userData.email,
-        }
-      );
+      const response = await forgotPassword({ email: userData.email });
       setAlert({
         message: response.data.message,
         severity: "success",
@@ -59,14 +54,11 @@ const ForgotPassword = () => {
   const handleSubmitResetPassword = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:3000/auth/reset_password",
-        {
-          email: userData.email,
-          otp: userData.otp,
-          newPassword: userData.newPassword,
-        }
-      );
+      const response = await resetPassword({
+        email: userData.email,
+        otp: userData.otp,
+        newPassword: userData.newPassword,
+      });
       setAlert({
         message: response.data.message,
         severity: "success",
