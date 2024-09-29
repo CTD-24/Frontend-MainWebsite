@@ -169,10 +169,10 @@ const LandingPage = () => {
                {/* <div className="back-g absolute top-0 h-[100vh] w-[100vw] z-[1] max-sm:object-cover object-cover opacity-[30%] max-sm:opacity-[20%]" id="vanta2"></div> */}
                <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex flex-col justify-end py-[2vh] items-center top-[10%] relative z-[2] ">
                         <div className="top-content h-[25vh] w-full bg--500 flex max-sm:flex-col max-sm:text-[2vw] justify-evenly items-center">
-                            <h1 className="my-text text-[12vw] max-sm:text-[16vw] max-sm:h-[10vh] bg-red-600 flex justify-center items-center text-white z-[1000] leading-[32vh]">CREDENZ TECH DAYZ</h1>
+                            <h1 className="my-text text-[12vw] max-sm:text-[16vw] max-sm:h-[10vh] bg--600 flex justify-center items-center text-white z-[1000] leading-[32vh]">CREDENZ TECH DAYZ</h1>
                             <button className="get-started-btn max-sm:w-[25%] h-[8vw] w-[22%] flex justify-between items-center rounded-full px-[0.6vw] bg-[#00CDD6]">
                                 <div className="get-text w-[50%] h-full flex justify-center items-center">
-                                    <h2 className="text-[2vw] w-[60%] h- max-sm:w-[70%] bg-red-600 text-start leading-[1.2]" >GET STARTED</h2>
+                                    <h2 className="text-[2vw] w-[60%] h- max-sm:w-[70%] bg--600 text-start leading-[1.2]" >GET STARTED</h2>
 
                                 </div>
                                 <div className="arrow-circle h-[7vw] w-[7vw] rounded-full bg-[#1896B6] relative flex justify-center items-center ">
