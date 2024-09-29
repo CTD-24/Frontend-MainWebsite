@@ -41,10 +41,10 @@ const AboutPage = () => {
                     <h1 className="text-[8vw] bg--500 h-[16vh] flex justify-center items-center">ABOUT</h1>
                     <p className="w-[60%] bg--500 text-[1vw] h-[10vh] flex justify-center items-center">Credenz Tech Dayz, the annual intra-college techfest organized by the PICT IEEE Student Branch, gathers PICT's brightest minds for competitions.</p>
                 </div>
-                <div className="aboutMain h-[100vh] w-full bg--700 flex justify-center items-center relative   ">
-                    <img src={about} alt="" className=" absolute opacity-[90%] overflow-hidden aboutBack rounded-[1.5vw] object-cover z-[10] w-[93%] " />
-                    <div className="aboutScroll h-full w-[200vw] flex justify-between items-center overflow-x-auto">
-                        <div className="allAbout opacity-0 hidden h-full min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
+                <div className="aboutMain  h-[100vh] w-full bg--700 flex justify-center items-center relative   ">
+                    {/* <img src={about} alt="" className=" absolute opacity-[90%] overflow-hidden aboutBack rounded-[1.5vw] object-cover z-[10] w-[93%] " /> */}
+                    <div className="aboutScroll  h-full w-[200vw] flex justify-between items-center overflow-x-auto">
+                        <div className="allAbout bg-blue-700 opacity-0 hidden h-full min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
                             <div className="ieee h-[15vh] w-full bg--600 flex justify-start items-center px-[6vw] text-[6vw] text-white">
                                 <h1>IEEE</h1>
                             </div>
