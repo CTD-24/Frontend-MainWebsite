@@ -1,19 +1,33 @@
-const Eventbox = ({ name, description, height, width, color, bordercolor }) => {
+import { useNavigate } from "react-router-dom";
+
+const Eventbox = ({ id,name, description, height, width, color, image }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/event/${name}`);
+  };
+
   return (
-    <>
-      <div
-        className="flex flex-col justify-end items-start text-white p-2 px-8"
-        style={{
-          height: height,
-          width: width,
-          backgroundColor: color,
-          border: `2px solid ${bordercolor}`,  
-          borderRadius: "1.1vw"
-        }}
-      >
-        <h1 className="text-[5vw] font-medium tracking-wider">{name}</h1>
+    <div
+      className="eventbox flex flex-col justify-center items-center rounded-lg shadow-lg p-[2vw] cursor-pointer"
+      style={{ height, width, backgroundColor: color }}
+      onClick={handleClick}
+    >
+      {/* Image Section */}
+      {image && (
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-[60%] rounded-t-lg object-cover"
+        />
+      )}
+      
+      {/* Event Name and Description */}
+      <div className="text-white flex flex-col justify-center items-center text-center mt-4">
+        <h1 className="text-[2vw] font-bold">{name}</h1>
+        <p className="text-[1.2vw] mt-2">{description}</p>
       </div>
-    </>
+    </div>
   );
 };
 

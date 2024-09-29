@@ -26,6 +26,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../src/redux/store.js";
 import ForgotPassword from "./Pages/ForgotPassword.jsx";
+import EventDetail from "./Pages/EventDetail.jsx";
 
 
 
@@ -53,8 +54,7 @@ const router = createBrowserRouter(
       <Route path='/events' element={<EventsPage />} />
       <Route path='/registerform' element={<RegisterForm />} />
       <Route path='/forgotpassword' element={<ForgotPassword/>} />
-
-
+      <Route path='/event/:name' element={<EventDetail/>} />
 
       
 
