@@ -104,8 +104,7 @@ const Navbar = () => {
           <HiMenuAlt3 size={30} className="max-sm:block md:hidden fill-white" />
           {isLogin ? (
             <Link
-              to="/"
-              onClick={handleLogout}
+              onClick={handleLogout()}
               className="max-sm:hidden h-[5vh] w-[7vw] flex justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular"
             >
               LOGOUT

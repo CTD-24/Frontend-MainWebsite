@@ -1,35 +1,77 @@
-
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import axios from "axios";
 import MainGradient from "../assets/MainBG.png";
-
-
+import CircularProgress from "@mui/material/CircularProgress"; 
+import { forgotPassword, resetPassword } from "../api/auth";
 const ForgotPassword = () => {
+  const [userData, setUserData] = useState({
+    email: "",
+    otp: "",
+    newPassword: "",
+  });
 
-    const [userData, setUserData] = useState({
-        email:"",
-        otp:"",
-        newPassword:""
-    });
+  const [alert, setAlert] = useState({
+    message: "",
+    severity: "",
+    visible: false,
+  });
 
-    const [alert, setAlert] = useState({
-        message: "",
-        severity: "",
-        visible: false,
+  const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const addChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmitEmail = async (e) => {
+    e.preventDefault();
+    setLoading(true); 
+    try {
+      const response = await forgotPassword({ email: userData.email });
+      setAlert({
+        message: response.data.message,
+        severity: "success",
+        visible: true,
       });
-    
+      setStep(2);
+    } catch (error) {
+      setAlert({
+        message: error.response.data.message,
+        severity: "error",
+        visible: true,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const addChange = ((e) => {
-        const {name,value} = e.target;
-        setUserData(() => {
-            return{
-                ...userData,
-                [name]:value
-            }
-        })
-    })
+  const handleSubmitResetPassword = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await resetPassword({
+        email: userData.email,
+        otp: userData.otp,
+        newPassword: userData.newPassword,
+      });
+      setAlert({
+        message: response.data.message,
+        severity: "success",
+        visible: true,
+      });
+    } catch (error) {
+      setAlert({
+        message: error.response.data.message,
+        severity: "error",
+        visible: true,
+      });
+    }
+  };
 
   return (
     <>
@@ -43,52 +85,67 @@ const ForgotPassword = () => {
           </Alert>
         )}
       </div>
-      <div className="flex justify-center items-center loginContainer h-[100vh] w-[100vw] pt-[8vh] ">
+      <div className="flex justify-center items-center loginContainer h-[100vh] w-[100vw] pt-[8vh]">
         <img
           className="h-[100%] w-[100%] absolute top-0 left-0 z-[1] object-cover"
           src={MainGradient}
           alt=""
         />
 
-        <div className="absolute z-[2] flex flex-col justify-center items-center h-[70vh] w-[50vw] bg-white bg-opacity-[0.15] shadow-lg backdrop-blur-[8.5px] rounded-xl text-white uppercase tracking-[0.4vw]">
-          <h1 className=" text-[4vw]">FORGOT PASSWORD</h1>
-          <div className=" bg--700 flex flex-col justify-evenly items-center  h-[35%] w-full">
+        <div className="absolute z-[2] flex flex-col justify-center items-center h-[70vh] w-[90%] md:w-[50vw] bg-white bg-opacity-[0.15] shadow-lg backdrop-blur-[8.5px] rounded-xl text-white uppercase tracking-[0.4vw] p-4">
+          <div className="max-w-xs sm:max-w-md lg:max-w-lg">
+            <h1 style={{ fontSize: "2.5rem" }} className="mb-4">
+              FORGOT PASSWORD
+            </h1>
+          </div>
+          <form
+            onSubmit={
+              step === 1 ? handleSubmitEmail : handleSubmitResetPassword
+            }
+            className="flex flex-col gap-4 p-4 w-full"
+          >
             <input
               type="text"
+              name="email"
               value={userData.email}
               onChange={addChange}
               placeholder="EMAIL"
-              className="inputPlaceholders w-[80%] h-[6vh] max-md-[1920px]:h-[5vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
+              className="w-full h-10 px-2 rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal"
+              required
             />
-            <input
-              type="text"
-              value={userData.otp}
-              onChange={addChange}
-              placeholder="OTP"
-              className="inputPlaceholders w-[80%] h-[6vh] max-md-[1920px]:h-[5vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
-            />
-            <input
-              type="text"
-              value={userData.newPassword}
-              onChange={addChange}
-              placeholder="NEW PASSWORD"
-              className="inputPlaceholders w-[80%] h-[6vh] max-md-[1920px]:h-[5vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
-            />
-          </div>
-          <div className="w-[80%] flex justify-between items-start bg--400  h-10">
-            
-          </div>
-          <div className="mt-0 mb-8 w-full flex items-center justify-center">
-            <button
-              onClick={async (e) => {
-                await handleSubmit(e); // Pass the event object (e)
-                dispatch(authenticateUser()); // Dispatch authentication action after successful login
-              }}
-              className="loginButton bg-white hover:bg-slate-400 text-black text-uppercase flex justify-center items-center w-[80%] h-[6vh] border-none rounded-[0.6vw] cursor-pointer font-semibold tracking-normal text-[1vw]"
-            >
-              SUBMIT
-            </button>
-          </div>
+            {step === 2 && (
+              <>
+                <input
+                  type="text"
+                  name="otp"
+                  value={userData.otp}
+                  onChange={addChange}
+                  placeholder="OTP"
+                  className="w-full h-10 px-2 rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal"
+                  required
+                />
+                <input
+                  type="password"
+                  name="newPassword"
+                  value={userData.newPassword}
+                  onChange={addChange}
+                  placeholder="NEW PASSWORD"
+                  className="w-full h-10 px-2 rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal"
+                  required
+                />
+              </>
+            )}
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="loginButton bg-white hover:bg-slate-400 text-black text-uppercase flex justify-center items-center w-full h-10 border-none rounded-[0.6vw] cursor-pointer font-semibold tracking-normal text-base sm:text-lg md:text-xl"
+                disabled={loading}
+              >
+                {loading && <CircularProgress size={20} className="mr-2" />}{" "}
+                {step === 1 ? "SEND OTP" : "RESET PASSWORD"}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </>

@@ -25,6 +25,20 @@ export async function onLogout() {
     )
     
 }
+
+export async function forgotPassword(data) {
+    return await axios.post(
+      'http://localhost:3000/auth/forgot_password',
+      data
+    )
+}
+
+export async function resetPassword(data) {
+  return await axios.post(
+    'http://localhost:3000/auth/reset_password',
+    data
+  )
+}
 // export async function getchProtectedInfo() {
 //     return await axios.get(
 //         'http://localhost:8000/api/protected',

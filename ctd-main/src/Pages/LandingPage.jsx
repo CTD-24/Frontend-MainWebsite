@@ -21,6 +21,8 @@ import AboutPage from "./AboutPage";
 import EventsPage from "./EventsPage";
 
 import bgVideo from '../assets/wave3.mp4'
+import { FaArrowRight } from "react-icons/fa6";
+
 import Footer from "../footer/Footer";
 
 
@@ -52,7 +54,22 @@ const LandingPage = () => {
     }
   };
 
+  
+
     useEffect(() => {
+        const arrowdiv = document.querySelector(".get-started-btn");
+    arrowdiv.addEventListener("mouseenter", () => {
+        gsap.to(".arrow", {
+            rotate:"-45deg",
+            ease:"power1.inOut"
+        })
+    } )
+    arrowdiv.addEventListener("mouseleave", () => {
+        gsap.to(".arrow", {
+            rotate:"45deg",
+            ease:"power1.inOut"
+        })
+    } )
 
         // (function () {
         //     const locomotiveScroll = new LocomotiveScroll();
@@ -68,15 +85,15 @@ const LandingPage = () => {
             }
         });
 
-        t.to(".futureVideo", {
-            top:"0vh",
-            height:"100vh",
-            width:"100vw",
-            duration:2,
-            borderRadius:"0vh",
-            ease:"power1.inOut",
-            opacity: "50%"
-        },"anim")
+        // t.to(".", {
+        //     top:"0vh",
+        //     height:"100vh",
+        //     width:"100vw",
+        //     duration:2,
+        //     borderRadius:"0vh",
+        //     ease:"power1.inOut",
+        //     opacity: "50%"
+        // },"anim")
         t.to(".text-box h1", {
             y:150,
             opacity:0,
@@ -118,6 +135,9 @@ const LandingPage = () => {
             delay:0.2,
             duration:1
         })
+        
+
+
 
 
     }, []);
@@ -142,30 +162,44 @@ const LandingPage = () => {
         </style>
             <div className="l-main relative min-h-[100vh] w-[100vw] bg-transparent flex flex-col justify-center items-center">
                {/* <img className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] " src={MainGradient} alt="" /> */}
-               <video className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] object-cover opacity-[40%] " loop muted autoPlay="true" src={bgVideo}></video>
+               {/* <video className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] object-cover opacity-[40%] " loop muted autoPlay="true" src={bgVideo}></video> */}
                {/* <video src=""></video> */}
 
 
                {/* <div className="back-g absolute top-0 h-[100vh] w-[100vw] z-[1] max-sm:object-cover object-cover opacity-[30%] max-sm:opacity-[20%]" id="vanta2"></div> */}
-               <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex justify-center items-center relative top-0 left-0 z-[2] ">
-                    <div className="text-box h-[50vh] w-[100vw] bg--500 flex flex-col  justify-center items-center max-sm:h-[50vh]">
-                        <h1 className="my-text text-[12vw] max-sm:text-[16vw] text-white z-[1000] leading-[32vh] max-sm:hidden md:block">CREDENZ TECH DAYZ</h1>
-                        <img src={code} alt="" className=" z-[100] absolute top-[20%] right-[0%] rotate-[20deg] max-sm:block md:hidden" />
-                        <div className="resp-Text h-[50vh] w-full bg--500 flex flex-col justify-center items-center md:hidden z-[1] ">
+               <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex flex-col justify-end py-[2vh] items-center top-[10%] relative z-[2] ">
+                        <div className="top-content h-[25vh] w-full bg--500 flex max-sm:flex-col max-sm:text-[2vw] justify-evenly items-center">
+                            <h1 className="my-text text-[12vw] max-sm:text-[16vw] max-sm:h-[10vh] bg-red-600 flex justify-center items-center text-white z-[1000] leading-[32vh]">CREDENZ TECH DAYZ</h1>
+                            <button className="get-started-btn max-sm:w-[25%] h-[8vw] w-[22%] flex justify-between items-center rounded-full px-[0.6vw] bg-[#00CDD6]">
+                                <div className="get-text w-[50%] h-full flex justify-center items-center">
+                                    <h2 className="text-[2vw] w-[60%] h- max-sm:w-[70%] bg-red-600 text-start leading-[1.2]" >GET STARTED</h2>
+
+                                </div>
+                                <div className="arrow-circle h-[7vw] w-[7vw] rounded-full bg-[#1896B6] relative flex justify-center items-center ">
+                                    <FaArrowRight size="2vw" className={`arrow rotate-[45deg]  z-[7000]`}/>
+                                </div>
+                            </button>
+                        </div>
+                        {/* <img src={code} alt="" className=" z-[100] opacity-[100%] h-[30vh] w-[80%]  rotate-[20deg] max-sm:block md:hidden" /> */}
+                        
+                        <div className="videoDiv h-[55vh] w-[90%] bg-[#181818] flex justify-center items-center relative ">
+                            <video className="futureVideo h-[100%] w-[100%] object-cover absolute  z-[1000] rounded-[2vh] opacity-[50%] " src={coder} autoPlay muted loop></video>
+                            <div className="video-bototm bg-[#18181800] h-full w-full flex justify-between py-[2vh] px-[2vw] items-end absolute  z-[2000] rounded-[2vh]  text-white max-sm:text-[2.2vw]  ">
+                                <h2>The annual intra-college Tech-Fest</h2>
+                                <h2>PUNE, MH, 18.4575° N, 73.8508° E</h2>
+                                <h2>2024</h2>
+
+                            </div>
+                        </div>
+                        {/* <div className="resp-Text h-[50vh] w-full bg--500 flex flex-col justify-center items-center md:hidden z-[1] ">
                             <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">CREDENZ</h1>
                             <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">TECH</h1>
                             <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">DAYZ</h1>
-                        </div>
-                        {/* <h1 className="text-[12vw] text-white z-[1000] leading-[32vh]">
-                        {Array.from("CREDENZ TECH DAYZ").map((letter, index) => (
-                            <span key={index} className="text-letter">{letter}</span>
-                        ))}
-                    </h1> */}
-                        <p className= " mainPara text-white max-sm:text-[4vw]">The Annual Intra-College TechEvent</p>
-                    </div>
+                        </div> */}
+                        {/* <p className= " mainPara text-white max-sm:text-[4vw]">The Annual Intra-College TechEvent</p> */}
                </div>
                <div className="videoPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center ">
-                    <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video>
+                    {/* <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video> */}
                     <div className="timeBox h-[100vh] w-[100vw] absolute top-0 left-0  flex flex-col justify-center items-center z-[1000] opacity-[100%]">
                         <div className="top-time h-[20vh] w-[100vw] bg--500 flex flex-col  justify-center items-center opacity-[100%] z-[2000]">
                             <h1 className="text-white text-[10vw]">DAYZ LEFT</h1>

@@ -16,9 +16,18 @@ body {
   /* overflow: hidden; */
 }
 
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/Manrope-Bold.ttf);
+}
+
 h1 {
   font-family: "Karantina", system-ui;
   /* font-family: "Big Shoulders Display", sans-serif; */
+}
+
+h2{
+  font-family: "Manrope", sans-serif;
 }
 
 span,
