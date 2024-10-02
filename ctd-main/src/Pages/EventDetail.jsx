@@ -1,13 +1,27 @@
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux"; // Import useDispatch hook
+import { addItemToCart } from "../redux/slices/cartSlice"; // Import addItemToCart action
 
 const EventDetail = () => {
   const { name } = useParams();
+  const dispatch = useDispatch();
+
+  const addToCartHandler = () => {
+    const eventItem = {
+      id: name,
+      name: name,
+      price: 3000,
+    };
+
+    console.log('eve',eventItem)
+    dispatch(addItemToCart(eventItem)); // Dispatch the action to add the event to the cart
+  };
 
   return (
     <>
       <div className="Container bg-black min-h-[110vh] flex flex-col justify-center items-center w-full">
-        <div className="head w-[90%] h-[25%] bg-pink-600  flex justify-center items-center rounded-[2vw] px-[0.8vw] text-white">
-          <h1 className="text-[6vw] w-[95%] ml-[1vw]  h-[20vh] flex justify-between items-center rounded-[2vw] ">
+        <div className="head w-[90%] h-[25%] bg-pink-600 flex justify-center items-center rounded-[2vw] px-[0.8vw] text-white">
+          <h1 className="text-[6vw] w-[95%] ml-[1vw] h-[20vh] flex justify-between items-center rounded-[2vw] ">
             {name}
           </h1>
           <div className="bg-white text-pink-600 rounded-[1.5vw] leading-10 h-[17vh] w-[9vw] flex flex-col justify-center items-center">
@@ -35,11 +49,10 @@ const EventDetail = () => {
                   {name} is an event where you can test your skills and compete with others.
                 </p>
               </div>
-              {/* Add more event details as needed */}
             </div>
           </div>
           <div className="prizepool bg-[#333333] text-white w-[30%] h-[55vh] rounded-2xl p-[2vw] flex flex-col justify-between items-center">
-            <h1 className="text-[3vw] ">PRIZE POOL</h1>
+            <h1 className="text-[3vw]">PRIZE POOL</h1>
             <div className="flex flex-col gap-[1.5vh] text-[1.5vw] w-full">
               <div className="flex justify-between w-full">
                 <h2>WINNER</h2>
@@ -50,7 +63,7 @@ const EventDetail = () => {
                 <h2>1500 $</h2>
               </div>
             </div>
-            <button className="bg-white text-black px-[4vw] py-[1.5vh] rounded-full text-[1.5vw]">
+            <button onClick={addToCartHandler} className="bg-white text-black px-[4vw] py-[1.5vh] rounded-full text-[1.5vw]">
               ADD TO CART
             </button>
           </div>
