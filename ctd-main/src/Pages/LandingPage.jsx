@@ -167,10 +167,10 @@ const LandingPage = () => {
 
 
                {/* <div className="back-g absolute top-0 h-[100vh] w-[100vw] z-[1] max-sm:object-cover object-cover opacity-[30%] max-sm:opacity-[20%]" id="vanta2"></div> */}
-               <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex flex-col justify-end py-[2vh] items-center top-[10%] relative z-[2] ">
-                        <div className="top-content h-[25vh] w-full bg--500 flex max-sm:flex-col max-sm:text-[2vw] justify-evenly items-center">
+               <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex flex-col justify-end py-[2vh] items-center top-[0%] relative z-[2] ">
+                        <div className="top-content absolute z-[500] bg--600 h-[100vh] w-full bg--500 flex  max-sm:flex-col max-sm:text-[2vw] justify-evenly items-center">
                             <h1 className="my-text text-[12vw] max-sm:text-[16vw] max-sm:h-[10vh] bg--600 flex justify-center items-center text-white z-[1000] leading-[32vh]">CREDENZ TECH DAYZ</h1>
-                            <button className="get-started-btn max-sm:w-[25%] h-[8vw] w-[22%] flex justify-between items-center rounded-full px-[0.6vw] bg-[#00CDD6]">
+                            <button className="get-started-btn max-sm:w-[25%] h-[8vw] w-[22%] hidden justify-between items-center rounded-full px-[0.6vw] bg-[#00CDD6]">
                                 <div className="get-text w-[50%] h-full flex justify-center items-center">
                                     <h2 className="text-[2vw] w-[60%] h- max-sm:w-[70%] bg--600 text-start leading-[1.2]" >GET STARTED</h2>
 
@@ -182,8 +182,8 @@ const LandingPage = () => {
                         </div>
                         {/* <img src={code} alt="" className=" z-[100] opacity-[100%] h-[30vh] w-[80%]  rotate-[20deg] max-sm:block md:hidden" /> */}
                         
-                        <div className="videoDiv h-[55vh] w-[90%] bg-[#181818] flex justify-center items-center relative ">
-                            <video className="futureVideo h-[100%] w-[100%] object-cover absolute  z-[1000] rounded-[2vh] opacity-[50%] " src={coder} autoPlay muted loop></video>
+                        <div className="videoDiv h-[100vh] w-[100%] bg-[#181818] z-[400] flex justify-center items-center relative ">
+                            <video className="futureVideo h-[100%] w-[100%] object-cover absolute  z-[1000] rounded-[2vh] opacity-[40%] " src={coder} autoPlay muted loop></video>
                             <div className="video-bototm bg-[#18181800] h-full w-full flex justify-between py-[2vh] px-[2vw] items-end absolute  z-[2000] rounded-[2vh]  text-white max-sm:text-[2.2vw]  ">
                                 <h2>The annual intra-college Tech-Fest</h2>
                                 <h2>PUNE, MH, 18.4575° N, 73.8508° E</h2>
@@ -191,12 +191,7 @@ const LandingPage = () => {
 
                             </div>
                         </div>
-                        {/* <div className="resp-Text h-[50vh] w-full bg--500 flex flex-col justify-center items-center md:hidden z-[1] ">
-                            <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">CREDENZ</h1>
-                            <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">TECH</h1>
-                            <h1 className="resp-h1 text-[15vh] leading-[13vh] text-white">DAYZ</h1>
-                        </div> */}
-                        {/* <p className= " mainPara text-white max-sm:text-[4vw]">The Annual Intra-College TechEvent</p> */}
+                        
                </div>
                <div className="videoPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center ">
                     {/* <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video> */}
