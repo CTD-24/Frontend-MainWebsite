@@ -17,8 +17,19 @@ const CartPage = () => {
 
   const totalPrice = cart.items.reduce((acc, event) => acc + event.price, 0);
 
-  const handleDelete = (eventId) => {
-    dispatch(removeItemFromCart(eventId)); // Pass eventId directly
+  const handleDelete = async (eventId) => {
+    dispatch(removeItemFromCart(eventId));
+
+    const eventName = eventId;
+    
+    try {
+      const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/delete/${eventName}`);
+      console.log("res",res)
+    } catch (error) {
+      console.error("error adding to cart", error)
+
+    }
+
   };
 
   return (

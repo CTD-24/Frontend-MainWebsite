@@ -54,7 +54,7 @@ const router = createBrowserRouter(
       <Route path='/events' element={<EventsPage />} />
       <Route path='/registerform' element={<RegisterForm />} />
       <Route path='/forgotpassword' element={<ForgotPassword/>} />
-      <Route path='/eventDesc' element={<EventDetail/>} />
+      <Route path='/eventDesc/:eventName' element={<EventDetail/>} />
 
       <Route element={<PrivateRoute/>}>
         <Route path='/dashboard' element={<DashboardPage/>} />

@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/slices/cartSlice";
 
 
-const RegisterForm = ({closeModal}) => {
+const RegisterForm = ({closeModal, name}) => {
   const [activeButton, setActiveButton] = useState(false);
 
   const [showTeammateFields, setShowTeammateFields] = useState(false);
@@ -50,7 +50,7 @@ const RegisterForm = ({closeModal}) => {
   };
 
 
-  const addToCartHandler = () => {
+  const addToCartHandler = async () => {
     const eventItem = {
       id: name,
       name: name,
@@ -59,8 +59,22 @@ const RegisterForm = ({closeModal}) => {
 
     dispatch(addItemToCart(eventItem));
 
-    // Open the RegisterForm modal
+    const formData = {teamName:uData.team_name, username2:uData.username2, eventName:name}
+
+    try {
+      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/add_cart`,formData);
+
+      console.log("res",res)
+    } catch (error) {
+      console.error("error adding to cart", error)
+
+    }
+
+  
+
   };
+
+
 
 
 

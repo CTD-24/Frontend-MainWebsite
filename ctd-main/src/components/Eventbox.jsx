@@ -9,10 +9,11 @@ const Eventbox = ({ id,name, description, rules,height, width, color, image, dat
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const toPage = () => {
-    navigate('/eventDesc');
-  };
+  const eventName = name;
 
+  const toPage = () => {
+    navigate(`/eventDesc/${eventName}`);
+  };
 
   return (
     <div

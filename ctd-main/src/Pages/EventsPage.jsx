@@ -40,14 +40,35 @@ const EventsPage = () => {
       height: "35vh",
         width: "28vw",
         color: "#E75480", 
-        date: "11/09/2023",   // Only store the date here
+        date: "11/09/2023",
         image: rc,
     },
     {
       id:2,
       name: "RC",
-      description: "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills. Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
-      rules: [],
+      description: ["Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills. Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python."],
+      rules: [
+        {
+          ruleNo: 1,
+          ruleDesc: "Contest will contain 5-6 problems that need to be coded in Python, C++, or C."
+        },
+        {
+          ruleNo: 2,
+          ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+        },
+        {
+          ruleNo: 3,
+          ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+        },
+        {
+          ruleNo: 4,
+          ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
+        },
+        {
+          ruleNo: 5,
+          ruleDesc: "Plagiarism checks would be done after the contest."
+        }
+      ],
       height: "35vh",
       width: "28vw",
       color: "#4B178B", 
@@ -56,8 +77,29 @@ const EventsPage = () => {
     {
       id:3,
       name: "NTH",
-      description: "Tech quiz for knowledge enthusiasts",
-      rules: [],
+      description: ["Tech quiz for knowledge enthusiasts"],
+      rules: [
+        {
+          ruleNo: 1,
+          ruleDesc: "Contest will contain 5-6 problems that need to be coded in Python, C++, or C."
+        },
+        {
+          ruleNo: 2,
+          ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+        },
+        {
+          ruleNo: 3,
+          ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+        },
+        {
+          ruleNo: 4,
+          ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
+        },
+        {
+          ruleNo: 5,
+          ruleDesc: "Plagiarism checks would be done after the contest."
+        }
+      ],
       height: "35vh",
       width: "28vw",
       color: "#741F8B",
@@ -66,8 +108,29 @@ const EventsPage = () => {
     {
       id:4,
       name: "ENIGMA",
-      description: "Quiz for knowledge enthusiasts",
-      rules: [],
+      description: ["Quiz for knowledge enthusiasts"],
+      rules: [
+        {
+          ruleNo: 1,
+          ruleDesc: "Contest will contain 5-6 problems that need to be coded in Python, C++, or C."
+        },
+        {
+          ruleNo: 2,
+          ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+        },
+        {
+          ruleNo: 3,
+          ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+        },
+        {
+          ruleNo: 4,
+          ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
+        },
+        {
+          ruleNo: 5,
+          ruleDesc: "Plagiarism checks would be done after the contest."
+        }
+      ],
       height: "35vh",
       width: "43vw",
       color: "#2B1075", 
@@ -76,8 +139,29 @@ const EventsPage = () => {
     {
       id:5,
       name: "DECODE RUSH",
-      description: "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure. Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
-      rules: [],
+      description: ["Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure. Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer"],
+      rules: [
+        {
+          ruleNo: 1,
+          ruleDesc: "Contest will contain 5-6 problems that need to be coded in Python, C++, or C."
+        },
+        {
+          ruleNo: 2,
+          ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+        },
+        {
+          ruleNo: 3,
+          ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+        },
+        {
+          ruleNo: 4,
+          ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
+        },
+        {
+          ruleNo: 5,
+          ruleDesc: "Plagiarism checks would be done after the contest."
+        }
+      ],
       height: "35vh",
       width: "43vw",
       color: "#529DA0", 
