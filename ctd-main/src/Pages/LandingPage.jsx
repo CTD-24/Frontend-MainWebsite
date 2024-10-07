@@ -21,6 +21,8 @@ import AboutPage from "./AboutPage";
 import EventsPage from "./EventsPage";
 
 import bgVideo from "../assets/wave3.mp4";
+import wavebg from "../assets/wavebg.mp4";
+
 import { FaArrowRight } from "react-icons/fa6";
 
 import Footer from "../footer/Footer";
@@ -166,20 +168,29 @@ const LandingPage = () => {
         {/* <img className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] " src={MainGradient} alt="" /> */}
         {/* <video className="h-[100vh] w-[100vw] absolute top-0 left-0 z-[1] object-cover opacity-[40%] " loop muted autoPlay="true" src={bgVideo}></video> */}
         {/* <video src=""></video> */}
-        {/* <video className="futureVideo h-[100vh] top-0 w-[100%] object-cover fixed  z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video> */}
         
 
         {/* <div className="back-g absolute top-0 h-[100vh] w-[100vw] z-[1] max-sm:object-cover object-cover opacity-[30%] max-sm:opacity-[20%]" id="vanta2"></div> */}
+        <video className="futureVideo h-[100vh] fixed top-0 w-[100%] object-cover  z-[100] opacity-[100%] " src={wavebg} autoPlay muted loop></video>
+
         <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex flex-col justify-end py-[2vh] items-center top-[0%] relative z-[2000] ">
         {/* <img
           className=" h-[100vh] top-0 w-[100%] object-cover fixed  z-[1000] rounded-[2vh] opacity-[100%]"
           src={MainGradient}
           alt=""
         /> */}
-          <div className="top-content absolute z-[500] bg--600 h-[100vh] w-full bg--500 flex  max-sm:flex-col max-sm:text-[2vw] justify-evenly items-center">
-            <h1 className="my-text text-[12vw]  max-sm:text-[16vw] max-sm:h-[10vh] bg--600 flex justify-center items-center text-white z-[1000] leading-[32vh]">
+
+          <div className="top-content absolute z-[500] bg--600 h-[100vh] w-full bg--500 flex  max-sm:flex-col max-sm:text-[2vw] leading-[11vh] justify-center items-center">
+            <h1 className="my-text text-[12vw]  max-md:hidden max-sm:h-[10vh] bg--600 flex justify-center items-center text-white z-[1000] leading-[32vh]">
               CREDENZ TECH DAYZ
             </h1>
+
+            {/* <div className="res-title h-auto w-[80%] max-md:block md:hidden flex justify-center items-center bg-red-600 text-[8vh] text-white"> */}
+              <h1 className="max-md:block md:hidden flex justify-center items-center bg--600 text-[12vh] text-white" >CREDENZ</h1>
+              <h1 className="max-md:block md:hidden flex justify-center items-center bg--600 text-[12vh] text-white" >TECH</h1>
+              <h1 className="max-md:block md:hidden flex justify-center items-center bg--600 text-[12vh] text-white" >DAYZ</h1>
+            {/* </div> */}
+
             <button className="get-started-btn max-sm:w-[25%] h-[8vw] w-[22%] hidden justify-between items-center rounded-full px-[0.6vw] bg-[#00CDD6]">
               <div className="get-text w-[50%] h-full flex justify-center items-center">
                 <h2 className="text-[2vw] w-[60%] h- max-sm:w-[70%] bg--600 text-start leading-[1.2]">
@@ -204,8 +215,15 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="videoPage h-[100vh] max-md:h-[40vh] w-[100vw] bg--500 relative flex justify-center items-center ">
-          {/* <video className="futureVideo h-[70vh] w-[60vw] object-cover absolute top-[-10vh] z-[1000] rounded-[2vh] opacity-[100%] " src={coder} autoPlay muted loop></video> */}
+        <div
+          className="aboutPage bg--600 h-[100vh] w-[100vw] max-md:h-[80vh] text-white text-[1.5vw] relative flex justify-center items-center"
+        //   style={{ marginTop: "5vh" }}
+        >
+          {/* <AboutPage/> */}
+          {/* <CarouselComp /> */}
+          <h2 className="text-center w-[80%] max-md:text-[2vh] max-md:w-[90%] " >Credenz Tech Dayz, the annual intra-college techfest organized by the PICT IEEE Student Branch, gathers PICT's brightest minds for competitions such as the National Computing Contest and Reverse Coding. Among its highlights, Decode Rush stands out—a captivating outdoor quest that tests participants' problem-solving skills through a series of clues and riddles, promising an immersive adventure experience.</h2>
+        </div>
+        {/* <div className="videoPage h-[100vh] max-md:h-[40vh] w-[100vw] bg--500 relative flex justify-center items-center ">
           <div className="timeBox h-[100vh] bg--300 max-md:h-[40vh] w-[100vw] absolute top-0 left-0  flex flex-col justify-center items-center z-[1000] opacity-[100%]">
             <div className="top-time h-[20vh] max-md:h-[10vh] bg--700 w-[100vw] bg--500 flex flex-col  justify-center items-center opacity-[100%] z-[2000]">
               <h1 className="text-white text-[10vw]">TIME LEFT</h1>
@@ -220,7 +238,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div
           className="eventsPage min-h-[100vh] w-[100vw] z-[2000] bg-zinc-700 relative flex justify-center items-center"
         //   style={{ marginTop: "5vh" }}
@@ -228,14 +246,7 @@ const LandingPage = () => {
           <EventsPage />
         </div>
 
-        <div
-          className="aboutPage h-[100vh] w-[100vw] text-white text-[1.5vw] relative flex justify-center items-center"
-        //   style={{ marginTop: "5vh" }}
-        >
-          {/* <AboutPage/> */}
-          {/* <CarouselComp /> */}
-          <h2 className="text-center w-[80%]" >Credenz Tech Dayz, the annual intra-college techfest organized by the PICT IEEE Student Branch, gathers PICT's brightest minds for competitions such as the National Computing Contest and Reverse Coding. Among its highlights, Decode Rush stands out—a captivating outdoor quest that tests participants' problem-solving skills through a series of clues and riddles, promising an immersive adventure experience.</h2>
-        </div>
+        
         {/* <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
 
                </div> */}
