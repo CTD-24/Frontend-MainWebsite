@@ -22,6 +22,12 @@ const Navbar = () => {
   const cart = useSelector((state) => state.cart);
   console.log("CART: ", cart.items.length);
 
+  const navigate = useNavigate();
+
+  const toPage = (link) => {
+    navigate(link)
+  }
+
   const resLinks = [
     {
       id: 1,
@@ -36,13 +42,13 @@ const Navbar = () => {
 
     {
       id: 3,
-      name: "ABOUT US",
-      link: "/",
+      name: "OUR TEAM",
+      link: "/team",
     },
     {
       id: 4,
       name: "CONTACT US",
-      link: "/",
+      link: "/contact",
     },
 
     {
@@ -147,7 +153,6 @@ const Navbar = () => {
     });
   }, []);
 
-  const navigate = useNavigate();
 
   const toCart = () => {
     navigate("/cart");
@@ -166,7 +171,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar md:h-[15vh] w-[100%] bg-transparent flex md:justify-center items-center fixed top-0 left-0 z-[7000] max-sm:justify-between max-sm:h-[13vh] ">
+      <div className="navbar md:h-[15vh] w-[100%] bg-transparent flex md:justify-center items-center fixed top-0 left-0 z-[7000] max-md:justify-between max-md:h-[13vh] ">
         <div className="nav-left h-full w-[20%] flex justify-center items-center max-sm:w-[30%]">
           <Link
             to="/"
@@ -214,15 +219,15 @@ const Navbar = () => {
 
           {isLogin ? (
             <Link
-              onClick={handleLogout()}
-              className="max-sm:hidden h-[5vh] w-[7vw] flex justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular"
+              onClick={handleLogout}
+              className="max-lg:hidden h-[5vh] w-[7vw] flex justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular"
             >
               LOGOUT
             </Link>
           ) : (
             <Link
               to="/login"
-              className="max-sm:hidden h-[5vh] w-[7vw] flex justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular"
+              className="max-lg:hidden h-[5vh] w-[7vw] flex justify-center items-center bg-white rounded-full text-[#191919] text-[1.1vw] font-regular"
             >
               LOGIN
             </Link>

@@ -27,20 +27,21 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../src/redux/store.js";
 import ForgotPassword from "./Pages/ForgotPassword.jsx";
 import EventDetail from "./Pages/EventDetail.jsx";
+import { useSelector } from "react-redux";
 
 
 
 const PrivateRoute = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth); // get isAuthenticated from Redux store
+  return isAuth ? <Outlet /> : <Navigate to="/login" />;
+};
 
-  const isAuth = false;
-  return (isAuth ? <Outlet/> : <Navigate to="/login"/>)
-}
-
+// RestrictedRoute Component
 const RestrictedRoute = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth); // get isAuthenticated from Redux store
+  return !isAuth ? <Outlet /> : <Navigate to="/dashboard" />;
+};
 
-  const isAuth = false;
-  return (!isAuth ? <Outlet/> : <Navigate to="/dashboard"/>)
-}
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
@@ -54,10 +55,10 @@ const router = createBrowserRouter(
       <Route path='/events' element={<EventsPage />} />
       <Route path='/registerform' element={<RegisterForm />} />
       <Route path='/forgotpassword' element={<ForgotPassword/>} />
-      <Route path='/eventDesc' element={<EventDetail/>} />
+      <Route path='/eventDesc/:eventName' element={<EventDetail/>} />
 
-        <Route path='/dashboard' element={<DashboardPage/>} />
       <Route element={<PrivateRoute/>}>
+        <Route path='/dashboard' element={<DashboardPage/>} />
 
       </Route>
       <Route element={<RestrictedRoute/>}>

@@ -108,15 +108,6 @@ const LandingPage = () => {
       },
       "anim"
     );
-    t.to(
-      ".futureVideo",
-      {
-        opacity: 0.9,
-        duration: 1,
-        ease: "power1.inOut",
-      },
-      "anim"
-    );
     t.from(
       ".top-time h1",
       {
@@ -171,7 +162,6 @@ const LandingPage = () => {
         
 
         {/* <div className="back-g absolute top-0 h-[100vh] w-[100vw] z-[1] max-sm:object-cover object-cover opacity-[30%] max-sm:opacity-[20%]" id="vanta2"></div> */}
-        <video className="futureVideo h-[100vh] fixed top-0 w-[100%] object-cover  z-[100] opacity-[100%] " src={wavebg} autoPlay muted loop></video>
 
         <div className="landingPage  h-[100vh] w-[100vw] bg--500 flex flex-col justify-end py-[2vh] items-center top-[0%] relative z-[2000] ">
         {/* <img
@@ -208,21 +198,17 @@ const LandingPage = () => {
           {/* <img src={code} alt="" className=" z-[100] opacity-[100%] h-[30vh] w-[80%]  rotate-[20deg] max-sm:block md:hidden" /> */}
 
           <div className="videoDiv h-[100vh] w-[100%] bg-[] z-[400] flex justify-center items-center relative ">
-            <div className="video-bototm bg-[#18181800] h-full w-full flex justify-between py-[2vh] px-[2vw] items-end absolute  z-[2000] rounded-[2vh]  text-white max-sm:text-[2.2vw]  ">
+            <div className="video-bottom h-full w-full flex justify-between py-[2vh] px-[2vw] items-end absolute  z-[2000] rounded-[2vh]  text-white max-sm:text-[2.2vw]  ">
               <h2>The annual intra-college Tech-Fest</h2>
               <h2>PUNE, MH, 18.4575° N, 73.8508° E</h2>
               <h2>2024</h2>
             </div>
           </div>
         </div>
-        <div
-          className="aboutPage bg--600 h-[100vh] w-[100vw] max-md:h-[80vh] text-white text-[1.5vw] relative flex justify-center items-center"
-        //   style={{ marginTop: "5vh" }}
-        >
-          {/* <AboutPage/> */}
-          {/* <CarouselComp /> */}
+        {/* <div className="aboutPage bg--600 h-[100vh] w-[100vw] max-md:h-[80vh] text-white text-[1.5vw] relative flex justify-center items-center">
+          
           <h2 className="text-center w-[80%] max-md:text-[2vh] max-md:w-[90%] " >Credenz Tech Dayz, the annual intra-college techfest organized by the PICT IEEE Student Branch, gathers PICT's brightest minds for competitions such as the National Computing Contest and Reverse Coding. Among its highlights, Decode Rush stands out—a captivating outdoor quest that tests participants' problem-solving skills through a series of clues and riddles, promising an immersive adventure experience.</h2>
-        </div>
+        </div> */}
         {/* <div className="videoPage h-[100vh] max-md:h-[40vh] w-[100vw] bg--500 relative flex justify-center items-center ">
           <div className="timeBox h-[100vh] bg--300 max-md:h-[40vh] w-[100vw] absolute top-0 left-0  flex flex-col justify-center items-center z-[1000] opacity-[100%]">
             <div className="top-time h-[20vh] max-md:h-[10vh] bg--700 w-[100vw] bg--500 flex flex-col  justify-center items-center opacity-[100%] z-[2000]">
@@ -239,19 +225,16 @@ const LandingPage = () => {
             </div>
           </div>
         </div> */}
-        <div
-          className="eventsPage min-h-[100vh] w-[100vw] z-[2000] bg-zinc-700 relative flex justify-center items-center"
-        //   style={{ marginTop: "5vh" }}
-        >
+        {/* <div className="eventsPage min-h-[100vh] w-[100vw] z-[2000] bg-zinc-700 relative flex justify-center items-center">
           <EventsPage />
-        </div>
+        </div> */}
 
         
         {/* <div className="eventsPage h-[100vh] w-[100vw] bg-[#181818] relative flex justify-center items-center">
 
                </div> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

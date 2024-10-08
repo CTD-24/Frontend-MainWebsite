@@ -58,22 +58,22 @@ function SignupPage() {
   };
 
   return (
-    <div className="flex justify-center items-center loginContainer h-[100vh] w-[100vw] pt-[8vh]">
-      <img
+    <div className="flex bg-[#0000008f] max-md:min-h-[100vh] justify-center items-center loginContainer h-[100vh] w-[100vw] pt-[8vh]">
+      {/* <img
         className="h-[100%] w-[100%] absolute top-0 left-0 z-[1] object-cover"
         src={MainGradient}
         alt="Background"
-      />
+      /> */}
 
       <form
         onSubmit={onSubmit}
-        className="absolute z-[2] max-sm:top-[15%] flex flex-col justify-center items-center max-sm:h-[75vh] h-[70vh] max-sm:w-[90vw] w-[75vw] bg-white bg-opacity-[0.15] shadow-lg backdrop-blur-[8.5px] rounded-xl text-white uppercase tracking-[0.4vw]"
+        className="absolute  backdrop-blur-[20px] border-[#0ddbffdd] border-[1px] z-[2] max-md:top-[15%] flex flex-col justify-center items-center max-md:h-[100vh] h-[70vh] max-md:w-[95vw] w-[75vw] bg-transparent shadow-lg  rounded-xl text-white uppercase "
       >
-        <h1 className="text-[5vw] max-sm:text-[10vh] h-[20%] w-full flex justify-center items-start">
+        <h1 className="text-[5vw] max-md:text-[8vh] h-[20%] w-full flex justify-center items-start max-md:h-[10%] bg--700">
           SIGNUP
         </h1>
-        <div className="signupForm h-[80%] w-full max-sm:flex-col flex justify-center items-center">
-          <div className="w-[100%] h-[100%] max-sm:h-[40%] flex flex-col justify-center items-center">
+        <div className="signupForm h-[80%] max-md:h-[90%] w-full max-sm:flex-col flex justify-center items-center">
+          <div className="w-[100%] h-[100%] bg--600 max-sm:h-[50%] flex flex-col justify-center items-center max-md:justify-around">
             <div className="flex flex-col justify-center items-center max-sm:gap-0 max-sm:py-0 gap-6 h-[100%] w-full py-6">
               <input
                 type="text"
@@ -81,7 +81,7 @@ function SignupPage() {
                 value={values.username}
                 onChange={onChange}
                 placeholder="USERNAME"
-                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw]"
+                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
               <input
                 type="text"
@@ -89,7 +89,7 @@ function SignupPage() {
                 value={values.first_name}
                 onChange={onChange}
                 placeholder="FIRST NAME"
-                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw]"
+                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
               <input
                 type="text"
@@ -97,7 +97,7 @@ function SignupPage() {
                 value={values.last_name}
                 onChange={onChange}
                 placeholder="LAST NAME"
-                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw]"
+                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
               <input
                 type="text"
@@ -105,7 +105,7 @@ function SignupPage() {
                 value={values.enrollment_number}
                 onChange={onChange}
                 placeholder="ENROLLMENT NUMBER"
-                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded -lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw]"
+                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded -lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
               <input
                 type="email"
@@ -114,11 +114,11 @@ function SignupPage() {
                 onChange={onChange}
                 placeholder="EMAIL"
                 required
-                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw]"
+                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
             </div>
           </div>
-          <div className="w-[100%] h-[100%] max-sm:h-[60%] flex flex-col justify-center items-center">
+          <div className="w-[100%] h-[100%] max-sm:h-auto flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center max-sm:gap-0 gap-6 h-[100%] w-full py-6">
               <input
                 type="tel"
@@ -126,7 +126,7 @@ function SignupPage() {
                 value={values.phone_number}
                 onChange={onChange}
                 placeholder="PHONE NO."
-                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw]"
+                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
               <input
                 type="password"
@@ -134,9 +134,9 @@ function SignupPage() {
                 value={values.password}
                 onChange={onChange}
                 placeholder="PASSWORD"
-                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw]"
+                className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
-              <div className="radioButtons h-[5vh] w-full flex justify-evenly items-center">
+              <div className="radioButtons max-md:h-[15vh] h-[5vh] w-full flex justify-evenly items-center">
                 <div className="junior flex justify-center items-center gap-[0.8vw]">
                   <input
                     className="h-5 w-5"
