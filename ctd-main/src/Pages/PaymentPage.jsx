@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 // import qr from "../../assets/qrCode.png"
-import qr from "../assets/qr.jpg";
+import qr from "../assets/pictqr.jpg";
 
 
 

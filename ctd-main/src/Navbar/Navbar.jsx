@@ -171,7 +171,7 @@ const Navbar = () => {
       console.log("Logged out Successfully...");
       navigate("/login");
 
-      await axios.post('http://localhost:3000/auth/logout', {}, { withCredentials: true });
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/logout`, {}, { withCredentials: true });
 
 
 

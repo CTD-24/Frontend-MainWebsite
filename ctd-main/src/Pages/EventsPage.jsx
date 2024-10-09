@@ -39,7 +39,7 @@ const EventsPage = () => {
       height: "32vh",
         width: "25vw",
         color: "#E75480", 
-        date: "11/09/2023",
+        date: "17",
         image: rc,
     },
 
@@ -52,6 +52,8 @@ const EventsPage = () => {
       height: "32vh",
       width: "25vw",
       color: "#4B178B",
+      date: "17",
+
       image: rc,
     },
     {
@@ -83,6 +85,8 @@ const EventsPage = () => {
       height: "32vh",
       width: "25vw",
       color: "#741F8B",
+      date: "17",
+
       image: nth,
     },
     {
@@ -114,6 +118,7 @@ const EventsPage = () => {
       height: "32vh",
       width: "39vw",
       color: "#2B1075",
+      date: "17",
       image: Enigma,
     },
     {
@@ -145,6 +150,8 @@ const EventsPage = () => {
       height: "32vh",
       width: "39vw",
       color: "#529DA0",
+      date: "17",
+
       image: rc,
     },
   ];

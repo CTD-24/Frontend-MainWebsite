@@ -13,8 +13,8 @@ const CartPage = () => {
 
   const navigate = useNavigate();
 
-  const toPage = () => {
-    navigate('/events');
+  const toPage = (link) => {
+    navigate(link);
   }
 
   const dispatch = useDispatch();
@@ -62,7 +62,7 @@ const CartPage = () => {
 
   return (
     <>
-    <QrModal/>
+    {/* <QrModal/> */}
 
     <div className="cartPage min-h-[100vh] w-[100vw] bg-[#0000008e] flex flex-col justify-end items-center">
       
@@ -103,7 +103,9 @@ const CartPage = () => {
                 <TbShoppingCartQuestion size={50} color='#A9A9A9' />
                 <h2  className='text-[2vw]'>Cart is Empty</h2>
                 <button
-                onClick={toPage}
+                onClick={() => {
+                  toPage('/events')
+                }}
                  className="bg-white text-black py-[0.8vh] px-[4vw] rounded-full border-white border-[1px] border-solid font-semibold hover:bg-transparent hover:text-white">
                   EVENTS
                 </button>
@@ -154,7 +156,7 @@ const CartPage = () => {
               {cart.items.length > 0 && (
                 <button
                 onClick={() => {
-                  setActiveButton((prev) => !prev); // Toggle the active button state
+                  toPage('/pay')
                 }}
                 
                  className="bg-white text-black py-[1vh] px-[8vw] rounded-full border-white border-[1px] border-solid font-semibold hover:bg-transparent hover:text-white max-lg:text-[2vh] max-lg:px-[12vw] ">

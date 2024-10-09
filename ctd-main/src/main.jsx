@@ -52,7 +52,7 @@ const router = createBrowserRouter(
       <Route path='/about' element={<AboutPage/>} />
       <Route path='/team' element={<TeamPage/>} />
       <Route path='/contact' element={<ContactPage/>} />
-      <Route path='/cart' element={<CartPage/>} />
+      {/* <Route path='/cart' element={<CartPage/>} /> */}
       <Route path='/events' element={<EventsPage />} />
       <Route path='/registerform' element={<RegisterForm />} />
       <Route path='/forgotpassword' element={<ForgotPassword/>} />
@@ -61,6 +61,8 @@ const router = createBrowserRouter(
       <Route element={<PrivateRoute/>}>
         <Route path='/dashboard' element={<DashboardPage/>} />
         <Route path='/pay' element={<PaymentPage/>} />
+      <Route path='/cart' element={<CartPage/>} />
+
 
       </Route>
       <Route element={<RestrictedRoute/>}>

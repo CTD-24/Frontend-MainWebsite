@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   return {
+    base: '/',
     define: {
       'import.meta.env': {
         VITE_TEAM_EXIST_URL: JSON.stringify(env.VITE_TEAM_EXIST_URL),

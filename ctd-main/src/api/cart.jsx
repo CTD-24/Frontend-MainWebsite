@@ -4,7 +4,7 @@ axios.defaults.withCredentials = true; // This ensures cookies are sent with the
 
 // Fetch the cart items
 export async function getCart() {
-    return await axios.get('http://localhost:3000/api/cart', {
+    return await axios.get(`${import.meta.env.VITE_BASE_URL}/api/cart`, {
         headers: {
             'Content-Type': 'application/json'
         }
@@ -13,7 +13,7 @@ export async function getCart() {
 
 // Delete an item from the cart
 export async function deleteCartItem(eventName) {
-    return await axios.delete(`http://localhost:3000/api/cart/${eventName}`, {
+    return await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/cart/${eventName}`, {
         headers: {
             'Content-Type': 'application/json'
         }

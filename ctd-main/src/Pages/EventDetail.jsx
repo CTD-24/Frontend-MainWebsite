@@ -182,9 +182,10 @@ const EventDetail = () => {
 
   let name;
   let description;
+  let prizes
   let date;
   let rules;
-  let color;
+  let contact;
 
   if(eventName === "NCC"){
     name = "NCC"
@@ -217,14 +218,22 @@ const EventDetail = () => {
       }
     ]
 
+    prizes = [
+
+    ]
+     
+    date = "17"
+
+    
+
   }
 
   else if(eventName==="RC"){
     name = "RC"
     description = [
-      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-      "The National Computing Competition lets you test your coding skills with other coders.",
-      "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
+      "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
+      
     ]
 
     rules = [
@@ -249,38 +258,67 @@ const EventDetail = () => {
         ruleDesc: "Plagiarism checks would be done after the contest."
       }
     ]
+
+    date = "17"
+
   }
 
   else if(eventName==="Decode Rush"){
     name = "Decode Rush"
     description = [
-      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-      "The National Computing Competition lets you test your coding skills with other coders.",
-      "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
+      "Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
     ]
 
     rules = [
       {
         ruleNo: 1,
-        ruleDesc: "Contest will contain 5-6 problems that need to be coded in Python, C++, or C."
+        ruleDesc: "Team must contain a maximum of 4 participants."
       },
       {
         ruleNo: 2,
-        ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+        ruleDesc: "The area for gameplay is restricted to PICT campus only(Excluding Buildings). No chits/hints/clues are placed out."
       },
       {
         ruleNo: 3,
-        ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+        ruleDesc: "Lawn areas, GCR (art circle room), classrooms are NOT included in the gameplay."
       },
       {
         ruleNo: 4,
-        ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
+        ruleDesc: "Hints to a question will lead you to a codeward and a location."
       },
       {
         ruleNo: 5,
-        ruleDesc: "Plagiarism checks would be done after the contest."
-      }
+        ruleDesc: "You are required to come to the location and tell the codeword to the volunteers present there."
+      },
+      {
+        ruleNo: 6,
+        ruleDesc: "You'll be given some fun sidetasks for some of the questions before moving on to the next."
+      },
+      {
+        ruleNo: 7,
+        ruleDesc: "Any mishandling of hints to members of a different team or any person other than your team is strictly condemned. Strict actions would be taken in case such a thing is noticed."
+      },
+      {
+        ruleNo: 8,
+        ruleDesc: "Bring your registration receipts / Screenshots of Gform and in order to start the game."
+      },
+      {
+        ruleNo: 9,
+        ruleDesc: "All those who won the 'Advantage Chits' are required to bring those at the time of game. Failure to produce which, no benefits will be entertained."
+      },
+      {
+        ruleNo: 10,
+        ruleDesc: "The results announced will be final and won’t be changed."
+      },
+      {
+        ruleNo: 11,
+        ruleDesc: "If you have any doubts ask the coordinators or volunteers for instruction."
+      },
     ]
+
+    date = "17"
+
   }
 
   else if(eventName==="NTH"){
@@ -313,6 +351,9 @@ const EventDetail = () => {
         ruleDesc: "Plagiarism checks would be done after the contest."
       }
     ]
+
+    date = "17"
+
   }
 
   else if(eventName==="Enigma"){
@@ -345,6 +386,9 @@ const EventDetail = () => {
         ruleDesc: "Plagiarism checks would be done after the contest."
       }
     ]
+
+    date = "17"
+
   }
 
   const tabs = [
@@ -412,7 +456,7 @@ const EventDetail = () => {
             // style={{ color: color }}
             className="bg-[#18d5f7dd] rounded-[1vw] leading-10 max-md:leading-7  h-[17vh] max-md:h-[90%]  max-md:w-[10vh] w-[9vw] flex flex-col justify-center items-center"
           >
-            <h1 className="text-[4vw] max-md:text-[4vh]">16</h1>
+            <h1 className="text-[4vw] max-md:text-[4vh]">{date}</h1>
             <h1 className="text-[2vw] max-md:text-[3vh]">OCTOBER</h1>
           </div>
         </div>
@@ -458,7 +502,7 @@ const EventDetail = () => {
                       key={r.ruleNo}
                       className="ruleDiv h-[auto] flex justify-start items-center bg--500  text-white backdrop-blur-[20px] border-[#c6f6ffdd] border-[1px] px-[2vw] py-[2vh] w-full rounded-[1vh] gap-[3vh]"
                     >
-                      <h2 className="text-[1.5vw]">{r.ruleNo}.</h2>
+                      <h2 className="text-[1.5vw] max-lg:text-[1.5vh]">{r.ruleNo}.</h2>
                       {r.ruleDesc}
                     </div>
                   ))

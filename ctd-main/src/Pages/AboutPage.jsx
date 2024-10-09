@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 
+import ctdLogo from "../assets/ctdlogo.png"
+
 const AboutPage = () => {
 
     useEffect(() => {
@@ -36,7 +38,7 @@ const AboutPage = () => {
     }, [])
     return ( 
         <>
-            <div className="aboutContainer h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-end items-center ">
+            <div className="aboutContainer h-[100vh] w-[100vw] bg-[#1818188d] flex flex-col justify-end items-center ">
                 {/* <div className="aboutTitle h-[20%] w-full bg--600 flex flex-col justify-center items-start px-[4vw]  text-white  ">
                     <h1 className="text-[5vw] bg--500 h-[16vh] flex justify-center items-center max-sm:text-[7vh]">ABOUT</h1>
                     
@@ -45,9 +47,9 @@ const AboutPage = () => {
                     {/* <img src={about} alt="" className=" absolute opacity-[90%] overflow-hidden aboutBack rounded-[1.5vw] object-cover z-[10] w-[93%] " /> */}
                     <div className="aboutScroll  min-h-[100vh] w-[100vw] flex flex-col justify-between items-center ">
 
-                        <div className="top-content-about h-[100vh] w-[80%] bg--700 flex flex-col justify-center items-center text-white text-center text-[1.8vw] gap-[2vh] ">
-                            <img className="h-[12vw] w-[12vw] " src="" alt="" />
-                            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellat laudantium debitis beatae, at, rem nisi culpa amet doloribus quod odio consequuntur, numquam aliquid ab est enim delectus rerum sint.</h2>
+                        <div className="top-content-about h-[100vh] w-[80%] bg--700 flex flex-col justify-center items-center text-white text-center gap-[2vh] ">
+                            <img className="h-[20vw] w-[35vw] " src={ctdLogo} alt="" />
+                            <p className="text-[1.1vw]">Credenz Tech Dayz is an intra-college annual techfest organized by the PICT IEEE Student Branch where the brightest minds of PICT compete in technical as well as non-technical events. Participants get a chance to test their logical aptitute and problem solving skills in events like like National Computing Contest and Reverse Coding. Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure. Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer</p>
                         </div>
 
                         <div className="other-content-about h-[100vh] w-full bg-purple-700 flex flex-col justify-center items-center  ">

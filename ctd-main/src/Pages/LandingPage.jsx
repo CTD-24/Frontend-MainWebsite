@@ -31,24 +31,7 @@ import CarouselComp from "../components/CarouselComp";
 const LandingPage = () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const locomotiveScroll = new LocomotiveScroll();
 
-  const Completionist = () => <span>You are good to go!</span>;
-
-  // Renderer callback with condition
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      // Render a completed state
-      return <Completionist />;
-    } else {
-      // Render a countdown
-      return (
-        <span className="text-white text-[12vw]">
-          {hours}:{minutes}:{seconds}
-        </span>
-      );
-    }
-  };
 
   useEffect(() => {
     const arrowdiv = document.querySelector(".get-started-btn");
