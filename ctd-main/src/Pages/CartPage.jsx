@@ -25,7 +25,7 @@ const CartPage = () => {
     const eventName = eventId;
   
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/delete/${eventName}`, {}, { withCredentials: true });
+      const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/delete/${eventName}`, {}, { withCredentials: true });
       console.log("res", res);
       dispatch(removeItemFromCart(eventId)); // Dispatch after success
     } 
