@@ -173,7 +173,7 @@ const Navbar = () => {
 
       await axios.post('http://localhost:3000/auth/logout', {}, { withCredentials: true });
 
-ca
+
 
       
     } catch (error) {
