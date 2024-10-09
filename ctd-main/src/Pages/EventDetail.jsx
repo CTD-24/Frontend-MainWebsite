@@ -446,14 +446,12 @@ const EventDetail = () => {
         )}
 
         <div
-          style={{ backgroundColor: color }}
           className="head w-[90%] h-[25%] max-md:w-[95%] max-md:justify-between max-md:h-[10vh] bg--500 flex justify-center items-center rounded-[1.5vw] backdrop-blur-[20px] border-[#0ddbffdd] border-[1px] px-[0.8vw] text-white"
         >
           <h1 className="text-[6vw] w-[95%] max-md:w-[30%] bg--500 ml-[1vw] max-md:ml-[5vw] max-md:text-[10vw] max-md:rounded-none max-md:h-full bg--600  h-[20vh] flex justify-between items-center rounded-[2vw] ">
             {name}
           </h1>
           <div
-            // style={{ color: color }}
             className="bg-[#18d5f7dd] rounded-[1vw] leading-10 max-md:leading-7  h-[17vh] max-md:h-[90%]  max-md:w-[10vh] w-[9vw] flex flex-col justify-center items-center"
           >
             <h1 className="text-[4vw] max-md:text-[4vh]">{date}</h1>
@@ -475,9 +473,7 @@ const EventDetail = () => {
                         ? " text-white bg-[#1a99b0]"
                         : "bg-zinc-700 text-white"
                     }`}
-                    style={
-                      activeTab === item.id ? { backgroundColor: color } : {}
-                    }
+                    
                   >
                     {item.tabName}
                   </button>
@@ -519,7 +515,7 @@ const EventDetail = () => {
             <div className="flex flex-col gap-[1.5vh] text-[1.5vw] max-md:text-[1.5vh] w-full">
               <div className="flex justify-between w-full">
                 <h2>WINNER</h2>
-                <h2>3000 $</h2>
+                <h2>3000</h2>
               </div>
               <div className="flex justify-between w-full">
                 <h2>RUNNER UP</h2>
