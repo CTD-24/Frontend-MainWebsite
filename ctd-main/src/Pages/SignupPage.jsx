@@ -53,7 +53,7 @@ function SignupPage() {
       console.log('reg',registrationData)
 
       const response = await axios.post(
-        'http://localhost:3000/auth/register',registrationData,{
+        `${import.meta.env.VITE_BASE_URL}/auth/register`,registrationData,{
           headers: {
             'Content-Type': 'application/json'
           }

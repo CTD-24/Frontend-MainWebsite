@@ -3,7 +3,8 @@ axios.defaults.withCredentials = true; // Ensure this is correctly spelled
 
 export async function onRegistration(registrationData) {
     return await axios.post(
-        'http://localhost:3000/auth/register',
+      
+        `${import.meta.env.VITE_BASE_URL}/auth/register`,
         registrationData,
         {
           headers: {
@@ -15,32 +16,27 @@ export async function onRegistration(registrationData) {
 }
 export async function onLogin(loginData) {
     return await axios.post(
-        'http://localhost:3000/auth/login',
+        `${import.meta.env.VITE_BASE_URL}/auth/login`,
         loginData
     )
 }
 export async function onLogout() {
     return await axios.post(
-        'http://localhost:3000/auth/logout',
+        `${import.meta.env.VITE_BASE_URL}/auth/logout`,
     )
     
 }
 
 export async function forgotPassword(data) {
     return await axios.post(
-      'http://localhost:3000/auth/forgot_password',
+      `${import.meta.env.VITE_BASE_URL}/auth/forgot_password`,
       data
     )
 }
 
 export async function resetPassword(data) {
   return await axios.post(
-    'http://localhost:3000/auth/reset_password',
+    `${import.meta.env.VITE_BASE_URL}/auth/reset_password`,
     data
   )
 }
-// export async function getchProtectedInfo() {
-//     return await axios.get(
-//         'http://localhost:8000/api/protected',
-//     )
-// }
