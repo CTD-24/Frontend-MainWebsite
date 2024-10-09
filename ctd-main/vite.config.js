@@ -1,7 +1,18 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default defineConfig(({ mode }) => {
+  // Load environment variables based on the current mode
+  const env = loadEnv(mode, process.cwd());
+
+  return {
+    define: {
+      'import.meta.env': {
+        VITE_TEAM_EXIST_URL: JSON.stringify(env.VITE_TEAM_EXIST_URL),
+        VITE_REG_URL: JSON.stringify(env.VITE_REG_URL),
+        VITE_UTR_EXIST_URL: JSON.stringify(env.VITE_UTR_EXIST_URL)
+      }
+    },
+    plugins: [react()],
+  }
+});

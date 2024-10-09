@@ -37,14 +37,23 @@ const AboutPage = () => {
     return ( 
         <>
             <div className="aboutContainer h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-end items-center ">
-                <div className="aboutTitle h-[20vh] w-full bg--600 flex flex-col justify-center items-start px-[4vw]  text-white  ">
-                    <h1 className="text-[8vw] bg--500 h-[16vh] flex justify-center items-center">ABOUT</h1>
-                    {/* <p className="w-[60%] bg--500 text-[1vw] h-[10vh] flex justify-center items-center">Credenz Tech Dayz, the annual intra-college techfest organized by the PICT IEEE Student Branch, gathers PICT's brightest minds for competitions.</p> */}
-                </div>
-                <div className="aboutMain  h-[65vh] w-full bg--700 flex justify-center items-start relative overflow-y-auto   ">
+                {/* <div className="aboutTitle h-[20%] w-full bg--600 flex flex-col justify-center items-start px-[4vw]  text-white  ">
+                    <h1 className="text-[5vw] bg--500 h-[16vh] flex justify-center items-center max-sm:text-[7vh]">ABOUT</h1>
+                    
+                </div> */}
+                <div className="aboutMain  h-[100%] w-full bg--700 flex justify-center items-start relative overflow-y-auto   ">
                     {/* <img src={about} alt="" className=" absolute opacity-[90%] overflow-hidden aboutBack rounded-[1.5vw] object-cover z-[10] w-[93%] " /> */}
                     <div className="aboutScroll  min-h-[100vh] w-[100vw] flex flex-col justify-between items-center ">
-                        <div className="allAbout bg-zinc-800 opacity-0 py-[5vh] h-auto min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
+
+                        <div className="top-content-about h-[100vh] w-[80%] bg--700 flex flex-col justify-center items-center text-white text-center text-[1.8vw] gap-[2vh] ">
+                            <img className="h-[12vw] w-[12vw] " src="" alt="" />
+                            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellat laudantium debitis beatae, at, rem nisi culpa amet doloribus quod odio consequuntur, numquam aliquid ab est enim delectus rerum sint.</h2>
+                        </div>
+
+                        <div className="other-content-about h-[100vh] w-full bg-purple-700 flex flex-col justify-center items-center  ">
+
+                        </div>
+                        {/* <div className="allAbout bg-zinc-800 opacity-0 py-[5vh] h-auto min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
                             <div className="ieee h-[15vh] w-full bg--600 flex justify-start items-center px-[6vw] text-[6vw] text-white">
                                 <h1>IEEE</h1>
                             </div>
@@ -79,7 +88,7 @@ const AboutPage = () => {
                                     
                                 </div>
                             </div> 
-                        </div>
+                        </div> */}
                         
                     </div>
                 </div>

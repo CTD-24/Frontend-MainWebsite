@@ -36,8 +36,8 @@ const EventsPage = () => {
           ruleDesc: "Plagiarism checks would be done after the contest.",
         },
       ],
-      height: "35vh",
-        width: "28vw",
+      height: "32vh",
+        width: "25vw",
         color: "#E75480", 
         date: "11/09/2023",
         image: rc,
@@ -49,8 +49,8 @@ const EventsPage = () => {
       description:
         ["Reverse Coding is a coding competition to analyze your problem-solving ability with programming knowledge along with mathematical skills. Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java, and Python."],
       rules: [],
-      height: "35vh",
-      width: "28vw",
+      height: "32vh",
+      width: "25vw",
       color: "#4B178B",
       image: rc,
     },
@@ -80,8 +80,8 @@ const EventsPage = () => {
           ruleDesc: "Plagiarism checks would be done after the contest."
         }
       ],
-      height: "35vh",
-      width: "28vw",
+      height: "32vh",
+      width: "25vw",
       color: "#741F8B",
       image: nth,
     },
@@ -111,8 +111,8 @@ const EventsPage = () => {
           ruleDesc: "Plagiarism checks would be done after the contest."
         }
       ],
-      height: "35vh",
-      width: "43vw",
+      height: "32vh",
+      width: "39vw",
       color: "#2B1075",
       image: Enigma,
     },
@@ -142,8 +142,8 @@ const EventsPage = () => {
           ruleDesc: "Plagiarism checks would be done after the contest."
         }
       ],
-      height: "35vh",
-      width: "43vw",
+      height: "32vh",
+      width: "39vw",
       color: "#529DA0",
       image: rc,
     },
@@ -152,11 +152,11 @@ const EventsPage = () => {
   return (
     <>
       <div>
-        <div className="event-cont z-[1000] bg-[#1a1a1a96] h-[100vh] flex flex-col justify-center items-center w-[100vw]">
+        <div className="event-cont z-[1000] bg-[#1a1a1a96] h-[100vh] flex flex-col justify-end items-center w-[100vw]">
           <div className="head w-full h-[20%] bg--400 flex flex-col justify-end items-start px-[4vw] text-white">
             <h1 className="text-[5vw] bg--500 h-[16vh] flex justify-center items-center max-sm:text-[7vh]">EVENTS</h1>
           </div>
-          <div className="maincontent md:block max-md:hidden w-[100%] h-[70%] bg--500 flex flex-col justify-start items-center  gap-[1vw] px-[4vw]">
+          <div className="maincontent lg:flex max-md:hidden w-[100%] h-[70%] bg--800 flex flex-col justify-center items-center  gap-[1vw]">
             <div className="flex flex-row gap-5  max-md:gap-4 max-md:flex-col">
               {eventsData.slice(0, 3).map((event, index) => (
                 <Eventbox
@@ -195,7 +195,7 @@ const EventsPage = () => {
             </div>
           </div>
 
-          <div className="res-events bg--900 max-md:flex md:hidden w-[100%] h-[70%] bg--500 flex flex-wrap justify-center items-center  gap-[3vh]">
+          <div className="res-events bg--900 max-lg:flex lg:hidden w-[100%] h-[70%] bg--500 flex flex-wrap justify-center items-center  gap-[3vh]">
           {eventsData.map((event, index) => (
                 <Eventbox
                   key={event.id}

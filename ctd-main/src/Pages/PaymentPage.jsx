@@ -40,7 +40,7 @@ const PaymentPage = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/submitTransaction`,
-        { transactionId },
+        { transaction_code: transactionId },
         { withCredentials: true }
       );
 

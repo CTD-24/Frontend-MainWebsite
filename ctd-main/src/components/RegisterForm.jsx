@@ -51,7 +51,7 @@ const RegisterForm = ({ closeModal, name }) => {
       teamName: uData.team_name,
       username2: uData.username2,
       eventName: name,
-      userId2: uData.userId2,
+      user_id: uData.userId2,
     };
 
     try {

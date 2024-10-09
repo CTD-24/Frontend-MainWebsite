@@ -166,10 +166,16 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await onLogout();
+
       dispatch(unauthenticateUser()); // Dispatch the unauthentication action after successful logout
       console.log("Logged out Successfully...");
       navigate("/login");
+
+      await axios.post('http://localhost:3000/auth/logout', {}, { withCredentials: true });
+
+ca
+
+      
     } catch (error) {
       console.log(error.message);
     }
