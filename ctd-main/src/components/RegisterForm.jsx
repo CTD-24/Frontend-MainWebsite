@@ -1,202 +1,151 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import gsap from "gsap";
-import QrModal from "./QrModal";
-import axios from "axios";
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
-import validator from "validator";
 import { IoClose } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/slices/cartSlice";
+import axios from "axios";
 
-
-const RegisterForm = ({closeModal, name}) => {
+const RegisterForm = ({ closeModal, name }) => {
   const [activeButton, setActiveButton] = useState(false);
-
   const [showTeammateFields, setShowTeammateFields] = useState(false);
+  const [errors, setErrors] = useState({}); // State for error messages
+
   const dispatch = useDispatch();
-
-
-  const payClick = () => {
-    if (activeButton) {
-      gsap.to(".qr", {
-        display: "flex",
-        ease: "power1.inOut",
-        duration: 0.5,
-        opacity: 1,
-      });
-    } else {
-      gsap.to(".qr", {
-        display: "none",
-      });
-    }
-  };
 
   const [uData, setUdata] = useState({
     team_name: "",
-    username2:""
+    username2: "",
+    userId2: "",
   });
 
-  const addChange = (e) => {
-    
+  const handleChange = (e) => {
     const { name, value } = e.target;
-
-    setUdata(() => {
-      return {
-        ...uData,
-        [name]: value,
-      };
-    });
+    setUdata((prev) => ({ ...prev, [name]: value }));
   };
 
+  const validateFields = () => {
+    const newErrors = {};
+
+    if (showTeammateFields) {
+      if (!uData.team_name) newErrors.team_name = "Team name is required";
+      if (!uData.username2) newErrors.username2 = "Username 2 is required";
+      if (!uData.userId2) newErrors.userId2 = "User ID of Teammate is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // If no errors, return true
+  };
 
   const addToCartHandler = async () => {
+    if (!validateFields()) {
+      return;
+    }
+
     const eventItem = {
       id: name,
       name: name,
       price: 3000,
     };
 
-    dispatch(addItemToCart(eventItem));
-
-    const formData = {teamName:uData.team_name, username2:uData.username2, eventName:name}
+    const formData = {
+      teamName: uData.team_name,
+      username2: uData.username2,
+      eventName: name,
+      userId2: uData.userId2,
+    };
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/add_cart`,formData,{withCredentials:true});
-
-      console.log("res",res)
+      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/add_cart`, formData, {
+        withCredentials: true,
+      });
+      console.log("res", res);
     } catch (error) {
-      console.error("error adding to cart", error)
-
+      console.error("error adding to cart", error);
     }
 
-  
-
+    dispatch(addItemToCart(eventItem));
   };
 
-
-
-
-
-    
-
   return (
-    <>
-      {/* <div className="alert-main h-auto w-auto absolute top-[3%] z-[20000]">
-        {alert.visible && (
-          <Alert severity={alert.severity}>
-            <AlertTitle>
-              {alert.severity.charAt(0).toUpperCase() + alert.severity.slice(1)}
-            </AlertTitle>
-            {alert.message}
-          </Alert>
-        )}
-      </div> */}
-      <div className="reg-form-main absolute max-sm:h-auto h-[70vh] mt-[10vh] max-md:w-[80vw] w-[40vw] backdrop-blur-[30px] bg-[#18181822] max-sm:flex-col flex justify-center items-center ">
-        {/* <QrModal/> */}
-        <IoClose color="white" onClick={closeModal} size={25} className="absolute right-[5%] top-[5%] cursor-pointer" />
-        <div className="form-left h-full max-sm:h-[55vh] w-[100%] max-sm:w-[100%] rounded-[1vw] bg-zinc-800 bg--900 flex flex-col justify-center items-center ">
-          <div className="top-reg max-sm:h-[20%] h-[20%] w-full flex justify-center items-end bg--500 px-[4vw]">
-            <p className="text-[2vw] font-semibold text-white max-sm:text-[3vh]">
-              REGISTER
-            </p>
-          </div>
+    <div className="reg-form-main absolute h-[70vh] mt-[10vh] w-[40vw] max-lg:w-[100vw] backdrop-blur-[30px] bg-[#18181822] flex justify-center items-center">
 
-          <div className="fomr-content text-white h-[80%] w-full flex flex-col justify-evenly items-center">
-            <h2>Do you have a teammate ?</h2>
-            <div className="flex justify-center items-center gap-4">
-              <label htmlFor="teammate-yes">Yes</label>
-              <input
-                type="radio"
-                id="teammate-yes"
-                name="teammate"
-                checked={showTeammateFields}
-                onChange={() => setShowTeammateFields(true)}
-              />
+      <IoClose color="white" onClick={closeModal} size={25} className="absolute right-[5%] top-[5%] max-lg:right-[10%] cursor-pointer" />
 
-              <label htmlFor="teammate-no">No</label>
-              <input
-                type="radio"
-                id="teammate-no"
-                name="teammate"
-                checked={!showTeammateFields}
-                onChange={() => setShowTeammateFields(false)}
-              />
-            </div>
-
-            {showTeammateFields && (
-              <>
-                <input
-                  onChange={addChange}
-                  value={uData.team_name}
-                  className="text-white outline-none w-[80%] max-sm:px-[5vw] max-sm:w-[90%] rounded-full px-[2vw] py-[1.5vh] bg-zinc-700"
-                  id="team_name"
-                  name="team_name"
-                  type="text"
-                  placeholder="Team name"
-                />
-                <input
-                  onChange={addChange}
-                  value={uData.username2}
-                  className="text-white outline-none w-[80%] max-sm:px-[5vw] max-sm:w-[90%] rounded-full px-[2vw] py-[1.5vh] bg-zinc-700"
-                  id="username2"
-                  name="username2"
-                  type="text"
-                  placeholder="Username 2"
-                />
-              </>
-            )}
-
-            <button
-
-            onClick={addToCartHandler}
-
-              className=" w-[40%] px-[2vw] py-[1vh] text-[#181818] max-sm:mt-[3vh] bg-white border-[1px] border-solid border-white hover:bg-transparent rounded-full max-sm:w-[70%] max-sm:py-[1.5vh]  hover:text-white font-bold"
-            >
-              ADD TO CART
-            </button>
-          </div>
+      
+      <div className="form-left h-full w-[100%] max-lg:w-[90%] rounded-[1vw] bg-zinc-800 flex flex-col justify-center items-center">
+        <div className="top-reg h-[20%] w-full flex justify-center items-end px-[4vw]">
+          <p className="text-[2vw] max-lg:text-[4vh] font-semibold text-white">REGISTER</p>
         </div>
-        {/* <div className="form-right h-full max-sm:h-[50vh] w-[50%] max-sm:w-[100%] bg--900 flex flex-col justify-start items-center bg--700 ">
-                    <div className="top-reg max-sm:hidden h-[15%] w-full flex justify-start items-center bg--500 px-[2vw]">
-                    </div>
 
-                    <div className="fomr-content h-[70%] w-full flex flex-col justify-evenly items-center">
-                    <input
-                    onChange={addChange}
-                    value={uData.email}
-                    className=" text-white max-sm:w-[90%] max-sm:px-[5vw] outline-none w-[80%] rounded-full px-[2vw] py-[1.5vh] bg-zinc-700 " id="email" name="email" type="email" placeholder="Email" />
-                    <input
-                    onChange={addChange}
-                    value={uData.mobile}
-                    className=" text-white max-sm:w-[90%] max-sm:px-[5vw] outline-none w-[80%] rounded-full px-[2vw] py-[1.5vh] bg-zinc-700 " id="mobile" name="mobile" type="tel" placeholder="Mobile no." />
-                    
-                    <div className="qr-mode h-[8vh] bg--600 w-[100%] flex justify-center items-center gap-[3vw] ">
-                    {paymentArray.map((item) => (
-                        <button
-                            key={item.id}
-                            className={`payBtn hover:bg-[#dda500] bg-[#FFBF00] h-[6vh] w-[30%] text-[#181818]  rounded-[0.8vh] max-sm:w-[90%]`}
-                            onClick={() => {
-                                setActiveButton(true); // Set active button by id
-                                payClick(); // Invoke payClick
-                            }}
-                        >
-                            {item.pay}
-                        </button>
-                    ))}
+        <div className="form-content  text-white h-[80%] w-full flex flex-col justify-evenly items-center">
+          <h2>Do you have a teammate?</h2>
+          <div className="flex justify-center items-center gap-4">
+            <label htmlFor="teammate-yes">Yes</label>
+            <input
+              type="radio"
+              id="teammate-yes"
+              name="teammate"
+              checked={showTeammateFields}
+              onChange={() => setShowTeammateFields(true)}
+            />
 
-                    </div>
-                    <input
-                    onChange={addChange}
-                    values={uData.conPassword}
-                    className=" text-white max-sm:w-[90%] max-sm:px-[5vw] outline-none w-[80%] rounded-full px-[2vw] py-[1.5vh] bg-zinc-700 " id="utr" name="utr" type="text" placeholder="Transaction ID" />
-                </div>
-                <button
-                    onClick={handleRegister}
-                  className=" w-[40%] px-[2vw] py-[1vh] max-sm:mt-[3vh] bg-white border-[1px] border-solid border-white hover:bg-transparent rounded-full max-sm:w-[70%] max-sm:py-[1.5vh]  hover:text-white font-bold" >REGISTER</button>
-                </div> */}
+            <label htmlFor="teammate-no">No</label>
+            <input
+              type="radio"
+              id="teammate-no"
+              name="teammate"
+              checked={!showTeammateFields}
+              onChange={() => setShowTeammateFields(false)}
+            />
+          </div>
+
+          {showTeammateFields && (
+            <>
+              <input
+                onChange={handleChange}
+                value={uData.team_name}
+                className="text-white outline-none w-[80%]  px-[2vw] py-[1.5vh] max-md: bg-zinc-700"
+                id="team_name"
+                name="team_name"
+                type="text"
+                placeholder="Team name"
+              />
+              {errors.team_name && <p className="text-red-500">{errors.team_name}</p>}
+
+              <input
+                onChange={handleChange}
+                value={uData.username2}
+                className="text-white outline-none w-[80%]  px-[2vw] py-[1.5vh] bg-zinc-700"
+                id="username2"
+                name="username2"
+                type="text"
+                placeholder="Username 2"
+              />
+              {errors.username2 && <p className="text-red-500">{errors.username2}</p>}
+
+              <input
+                onChange={handleChange}
+                value={uData.userId2}
+                className="text-white outline-none w-[80%]  px-[2vw] py-[1.5vh] bg-zinc-700"
+                id="userId2"
+                name="userId2"
+                type="text"
+                placeholder="User ID of Teammate"
+              />
+              {errors.userId2 && <p className="text-red-500">{errors.userId2}</p>}
+            </>
+          )}
+
+          <button
+            onClick={addToCartHandler}
+            className="w-[40%] px-[2vw] py-[1vh] text-black bg-white border-[1px] border-solid border-white hover:bg-transparent rounded-full font-bold max-lg:text-[3vw] "
+          >
+            ADD TO CART
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
+
 export default RegisterForm;

@@ -52,6 +52,12 @@ const Navbar = () => {
     },
 
     {
+      id: 4,
+      name: "YOUR CART",
+      link: "/cart",
+    },
+
+    {
       id: 5,
       name: "LOGIN",
       link: "/login",

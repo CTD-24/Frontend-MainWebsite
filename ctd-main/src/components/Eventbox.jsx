@@ -65,7 +65,7 @@ const Eventbox = ({ id, name, description, rules, height, width, color, image, d
       {/* Event Name and Description */}
       <div className="text-white flex flex-col justify-center items-center text-center ">
         <h1 className="text-[3vw] max-md:text-[3vh] font-bold">{name}</h1>
-        <p className="text-[1vw] hidden">{description}</p>
+        {/* <p className="text-[1vw] hidden">{description}</p> */}
       </div>
     </div>
   );

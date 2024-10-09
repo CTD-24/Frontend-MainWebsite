@@ -22,6 +22,7 @@ import DashboardPage from "./Pages/DashboardPage.jsx";
 import CartPage from "./Pages/CartPage.jsx";
 import EventsPage from "./Pages/EventsPage.jsx";
 import RegisterForm from "./components/RegisterForm.jsx";
+import PaymentPage from "./Pages/PaymentPage.jsx";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../src/redux/store.js";
@@ -59,6 +60,7 @@ const router = createBrowserRouter(
 
       <Route element={<PrivateRoute/>}>
         <Route path='/dashboard' element={<DashboardPage/>} />
+        <Route path='/pay' element={<PaymentPage/>} />
 
       </Route>
       <Route element={<RestrictedRoute/>}>

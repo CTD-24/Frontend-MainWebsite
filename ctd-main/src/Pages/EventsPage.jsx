@@ -47,7 +47,7 @@ const EventsPage = () => {
       id: 2,
       name: "RC",
       description:
-        "Reverse Coding is a coding competition to analyze your problem-solving ability with programming knowledge along with mathematical skills. Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java, and Python.",
+        ["Reverse Coding is a coding competition to analyze your problem-solving ability with programming knowledge along with mathematical skills. Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java, and Python."],
       rules: [],
       height: "35vh",
       width: "28vw",
@@ -87,7 +87,7 @@ const EventsPage = () => {
     },
     {
       id: 4,
-      name: "ENIGMA",
+      name: "Enigma",
       description: ["Quiz for knowledge enthusiasts"],
       rules: [
         {
@@ -118,7 +118,7 @@ const EventsPage = () => {
     },
     {
       id: 5,
-      name: "DECODE RUSH",
+      name: "Decode Rush",
       description: ["Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure. Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer"],
       rules: [
         {

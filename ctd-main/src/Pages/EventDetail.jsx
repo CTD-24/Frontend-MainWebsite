@@ -442,6 +442,7 @@ const EventDetail = () => {
             </div>
             <div className="eachcontent h-auto flex flex-col justify-center items-start bg--500 text-white bg--800 overflow-y-scroll">
               <div className="scroll-div h-[50vh] max-md:h-[40vh] flex flex-col justify-start gap-[2vh] items-center bg--500  text-white  bg--800 px-[vw] ">
+                
                 {activeTab === 1 ? (
                 <div className="border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] h-auto max-md:px-[4vw] rounded-[2vh] max-md:py-[2vh] px-[1vw] py-[5vh]">
                   {description.map((descItem, index) => (

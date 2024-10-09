@@ -6,6 +6,9 @@ import { unauthenticateUser } from "../redux/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import astro from "../assets/astronaut.png";
 import { useSelector, useDispatch } from "react-redux";
+import { IoIosMusicalNote } from "react-icons/io";
+
+import { faker } from '@faker-js/faker';
 
 const DashboardPage = () => {
   const { isLogin } = useSelector((state) => state.auth);
@@ -57,6 +60,9 @@ const DashboardPage = () => {
     fetchUser();
   }, []);
 
+    const music =  faker.music.songName();
+    console.log("MUSIC: ",music);
+
   return (
     <div className="bg-[#000000aa] min-h-screen w-full text-white flex flex-col">
       <div className="flex-grow bg--500  flex flex-col justify-center items-center py-8 px-8">
@@ -81,13 +87,13 @@ const DashboardPage = () => {
             </div>
 
             <div className="space-y-2 max-lg:w-full h-auto bg--600">
-              <div className="flex max-md:w-[100%] justify-between backdrop-blur-[10px] bg-[#108296dd] px-4 py-2 rounded-md">
+              {/* <div className="flex max-md:w-[100%] justify-between backdrop-blur-[10px] bg-[#108296dd] px-4 py-2 rounded-md">
                 <p className="text-lg font-semibold">NCC</p>
                 <span>Registered</span>
-              </div>
-              <div className="flex justify-between backdrop-blur-[10px] bg-[#108296dd]  px-4 py-2 rounded-md">
-                <p className="text-lg font-semibold">Decode Rush</p>
-                <span>Registered</span>
+              </div> */}
+              <div className="flex justify-center items-center backdrop-blur-[10px] bg-[#108296dd] px-4 py-[3vh] rounded-md">
+                <IoIosMusicalNote size={25  } />
+                <h2>{music}</h2>
               </div>
 
               <div className=" h-auto max-lg:py-[2vh] max-lg:flex lg:hidden bg--600 w-full flex items-center justify-center">

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import MainGradient from "../assets/MainBG.png";
 import { useNavigate } from "react-router-dom";
 import { onRegistration } from "../api/auth";
+import axios from 'axios'
+
 
 function SignupPage() {
   const navigate = useNavigate();
@@ -48,7 +50,16 @@ function SignupPage() {
         password: values.password,
       };
 
-      const response = await onRegistration(registrationData);
+      console.log('reg',registrationData)
+
+      const response = await axios.post(
+        'http://localhost:3000/auth/register',registrationData,{
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
       console.log("Registration successful:", response.data);
       navigate("/login");
     } catch (err) {
