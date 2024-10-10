@@ -12,6 +12,7 @@ import { unauthenticateUser } from "../redux/slices/authSlice";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import { IoCloseOutline } from "react-icons/io5";
+import { clearCart } from "../redux/slices/cartSlice";
 
 const Navbar = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -168,6 +169,7 @@ const Navbar = () => {
     try {
 
       dispatch(unauthenticateUser()); // Dispatch the unauthentication action after successful logout
+      dispatch(clearCart());
       console.log("Logged out Successfully...");
       navigate("/login");
 
