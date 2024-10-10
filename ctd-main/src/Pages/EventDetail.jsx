@@ -692,8 +692,8 @@
                           return(
                             <>
                               <div className="details h-auto w-auto">
-                              <h2 className="bg--700 text-center">{item.name}</h2>
-                              <h3 className="flex bg--700 justify-center items-center gap-[1vw]" ><FaPhone size={20} />{item.num}</h3>
+                              <h2 className="bg--700 text-center text-xl md:text-4xl">{item.name}</h2>
+                              <h3 className="flex bg--700 justify-center items-center gap-[1vw] text-xl md:text-4xl" ><FaPhone size={20} />{item.num}</h3>
                               </div>
 
                             </>
