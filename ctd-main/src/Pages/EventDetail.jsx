@@ -432,7 +432,7 @@ const EventDetail = () => {
       },
       {
         ruleNo: 4,
-        ruleDesc: "The second round will be conducted in two stages. First the selected participants will be provided 3 questions to be solved in 45 minutes. Then after the completion, an interview  to analyse the approach used solve these questions will be conducted."
+        ruleDesc: "The second round will be conducted in two stages. First the selected participants will be provided 3 questions to be solved in 45 minutes. Then after the completion, an interview  to analyse the approach used to solve these questions will be conducted."
       },
       {
         ruleNo: 5,
