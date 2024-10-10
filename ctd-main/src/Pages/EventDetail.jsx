@@ -497,7 +497,7 @@ const EventDetail = () => {
   return (
     <>
       <div className="Container bg-[#23232397]  min-h-[100vh] flex flex-col max-md:justify-end max-md:py-[3vh] justify-end items-center w-full">
-        {isModalOpen && (
+        {isModalOpen && ((eventName !=="Decode Rush") || (eventName !=="NTH"))  (
           <div className="modal fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black backdrop-blur-[5px] bg-opacity-50 z-50">
               {/* <button
                 className="close-button absolute top-2 right-2 text-black font-bold"
@@ -597,7 +597,7 @@ const EventDetail = () => {
                 <h2>₹{prizes[0].winners}</h2>
               </div>
               <div className="flex justify-between w-full">
-                <h2>RUNNER UP</h2>a
+                <h2>RUNNER UP</h2>
                 <h2>₹1500</h2>
               </div>
             </div>
