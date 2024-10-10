@@ -303,47 +303,47 @@ const EventDetail = () => {
     rules = [
       {
         ruleNo: 1,
-        ruleDesc: "Team must contain a maximum of 4 participants."
+        ruleDesc: "Each team can have a maximum of 4 participants."
       },
       {
         ruleNo: 2,
-        ruleDesc: "The area for gameplay is restricted to PICT campus only(Excluding Buildings). No chits/hints/clues are placed out."
+        ruleDesc: "The gameplay area is limited to the PICT campus (excluding buildings). No chits, hints, or clues are placed out."
       },
       {
         ruleNo: 3,
-        ruleDesc: "Lawn areas, GCR (art circle room), classrooms are NOT included in the gameplay."
+        ruleDesc: "Lawn areas, the GCR (Art Circle Room), and classrooms are NOT part of the gameplay area."
       },
       {
         ruleNo: 4,
-        ruleDesc: "Hints to a question will lead you to a codeward and a location."
+        ruleDesc: "Hints for a question will lead you to a codeword and a specific location."
       },
       {
         ruleNo: 5,
-        ruleDesc: "You are required to come to the location and tell the codeword to the volunteers present there."
+        ruleDesc: "You must go to the location and provide the codeword to the volunteers present there."
       },
       {
         ruleNo: 6,
-        ruleDesc: "You'll be given some fun sidetasks for some of the questions before moving on to the next."
+        ruleDesc: "Some questions will include fun side tasks that you must complete before moving on."
       },
       {
         ruleNo: 7,
-        ruleDesc: "Any mishandling of hints to members of a different team or any person other than your team is strictly condemned. Strict actions would be taken in case such a thing is noticed."
+        ruleDesc: "Sharing hints with members of other teams or anyone outside your team is strictly prohibited. Strict action will be taken if such behavior is observed."
       },
       {
         ruleNo: 8,
-        ruleDesc: "Bring your registration receipts / Screenshots of Gform and in order to start the game."
+        ruleDesc: "Bring your registration receipts or screenshots of the Google Form to start the game."
       },
       {
         ruleNo: 9,
-        ruleDesc: "All those who won the 'Advantage Chits' are required to bring those at the time of game. Failure to produce which, no benefits will be entertained."
+        ruleDesc: "You'll be able to cash in the bonus keys for hints on the day of the event"
       },
       {
         ruleNo: 10,
-        ruleDesc: "The results announced will be final and won’t be changed."
+        ruleDesc: "The results announced are final and will not be changed."
       },
       {
         ruleNo: 11,
-        ruleDesc: "If you have any doubts ask the coordinators or volunteers for instruction."
+        ruleDesc: "If you have any doubts, ask the coordinators or volunteers for clarification."
       },
     ]
 
