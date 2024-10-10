@@ -198,8 +198,8 @@
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
       <>
       <div className=" w-full flex justify-between text-xl pt-4">
-        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>
-        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 8:00am - 10:00am</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: ₹20</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:00am - 10:00am</h2>
         </div>
        </>,
       
@@ -253,8 +253,8 @@
       "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
       "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 8:30am - 10:30am</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">FEES: ₹20</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:30am - 10:30am</h2>
       </div>,
       
     ]
@@ -304,8 +304,8 @@
       "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
       "Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹50</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 4:15pm Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: ₹50</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:15pm Onwards</h2>
       </div>,
     ]
 
@@ -360,10 +360,9 @@
       ]
 
     prizes = [
-      { winners: "1500" },
-      { runnerUp: "1000" }
+      { winners: "2000" }
     ]
-    date = "17"
+    date = "16"
 
       contact = [
         { name: "B Shrinidhi", num: 7506211747 }
@@ -378,8 +377,8 @@
       "The National Computing Competition lets you test your coding skills with other coders.",
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 9:00pm Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE OF COST</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 9:00pm Onwards</h2>
       </div>,
     ]
 
@@ -427,8 +426,8 @@
       "The National Computing Competition lets you test your coding skills with other coders.",
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 4:30pm Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE OF COST</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:30pm Onwards</h2>
       </div>,
     ]
 
@@ -679,9 +678,13 @@
                 <h2>₹{prizes[0].winners}</h2>
               </div>
               <div className="flex justify-between w-full">
+                {prizes[1] && 
+                <>
                 <h2>RUNNER UP</h2>
-                {console.log("prz" , prizes[0])}
                 <h2>₹{prizes[1].runnerUp}</h2>
+                </>}
+                {/* {console.log("prz" , prizes[0])} */}
+                
               </div>
             </div>
             <button
