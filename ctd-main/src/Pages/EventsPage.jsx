@@ -1,8 +1,9 @@
 import Eventbox from "../components/Eventbox";
-import rc from "../assets/rc.png";
-import Enigma from "../assets/Enigma.png";
-import nth from "../assets/nth.png";
-import ncc from "../assets/ncclogo.png";
+import rc from "../assets/rc4.png";
+import Enigma from "../assets/engm.png";
+import nth from "../assets/nth1.png";
+import ncc from "../assets/ncc3.png";
+import dr from "../assets/dr2.png";
 
 
 const EventsPage = () => {
@@ -42,7 +43,7 @@ const EventsPage = () => {
         width: "25vw",
         color: "#E75480", 
         date: "17",
-        image: rc,
+        image: ncc,
     },
 
     {
@@ -154,7 +155,7 @@ const EventsPage = () => {
       color: "#529DA0",
       date: "17",
 
-      image: rc,
+      image: dr,
     },
   ];
 

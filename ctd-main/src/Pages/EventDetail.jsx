@@ -192,7 +192,7 @@
     let mode;
 
   if(eventName === "NCC"){
-    name = "NCC"
+    name = "N.C.C."
     mode = "ONLINE"
     description = [
       "Think you're the best coder?",
@@ -250,8 +250,8 @@
 
     }
 
-  else if(eventName==="RC"){
-    name = "RC"
+  else if(eventName==="R.C."){
+    name = "R.C."
     mode = "ONLINE"
     description = [
       "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
@@ -308,7 +308,7 @@
     mode = "OFFLINE"
     description = [
       "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
-      "Embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
+      "Embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer.",
       <div className=" w-full flex justify-between text-xl pt-4">
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: ₹50</h2>
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:15 PM Onwards</h2>
@@ -381,11 +381,11 @@
     name = "NTH"
     mode = "ONLINE"
     description = [
-      "NTH is an online treasure hunt that encourages you to scour the nooks and crannies of the World Wide Web in search of answers for various mind twisters",
+      "NTH is an online treasure hunt that encourages you to scour the nooks and crannies of the World Wide Web in search of answers for various mind twisters.",
       "Read between the lines, find the hidden clues and connect the dots.",
       "You can use every tool at your disposal. Even with Google and Wikipedia by your side, it's going to be fun and challenging.",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE OF COST</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE</h2>
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 9:00 PM Onwards</h2>
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
@@ -433,14 +433,14 @@
         },
         {
             ruleNo: 10,
-            ruleDesc: "The winner will be declared once, and there will be no change in our decision. Furthermore, users should play with one account only."
+            ruleDesc: "Once the winner is declared there will no be change."
         }
     ];
     
 
       prizes = [
-        { winners: "1500" },
-        { runnerUp: "1000" }
+        { winners: "3000" },
+        { runnerUp: "2000" }
       ]
       date = "19"
       contact = [
@@ -456,7 +456,7 @@
       "Whether you're a puzzle enthusiast or a curious novice",
       "Get ready to ignite your cognitive powers with the ultimate head-scratching aptitude test!",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE OF COST</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE</h2>
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:30 PM Onwards</h2>
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
@@ -485,12 +485,16 @@
         {
           ruleNo: 5,
           ruleDesc: "The evaluation for the second round will be on the basis of the detailed interview conducted after the round."
+        },
+        {
+          ruleNo: 6,
+          ruleDesc: "One Team can consist of Maximum of 2 Players"
         }
       ]
 
       prizes = [
-        { winners: "1500" },
-        { runnerUp: "1000" }
+        { winners: "3000" },
+        { runnerUp: "2000" }
       ]
       date = "17"
 

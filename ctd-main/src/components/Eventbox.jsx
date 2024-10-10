@@ -58,7 +58,7 @@ const Eventbox = ({ id, name, description, rules, height, width, color, image, d
         <img
           src={image}
           alt={name}
-          className="w-full h-[70%] rounded-t-lg object-cover max-md:h-[80%] bg--400"
+          className="h-24 w-24 rounded-t-lg object-cover bg--400"
         />
       )}
 
