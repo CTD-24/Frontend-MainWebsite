@@ -190,13 +190,19 @@
     let contact;
     let fees;
 
-    if(eventName === "NCC"){
-      name = "NCC"
-      description = [
-        "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-        "The National Computing Competition lets you test your coding skills with other coders.",
-        "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
-        <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>,
+  if(eventName === "NCC"){
+    name = "NCC"
+    description = [
+      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
+      "The National Computing Competition lets you test your coding skills with other coders.",
+      "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      <>
+      <div className=" w-full flex justify-between text-xl pt-4">
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 8:00am - 10:00am</h2>
+        </div>
+       </>,
+      
 
       ]
 
@@ -225,14 +231,10 @@
         }
       ]
 
-      prizes = [
-        {
-          winners: "3000",
-        },
-        {
-          runnerUp: "3000",
-        }
-      ]
+    prizes = [
+      { winners: "1500" },
+      { runnerUp: "1000" }
+    ]
 
       date = "18"
 
@@ -245,14 +247,17 @@
 
     }
 
-    else if(eventName==="RC"){
-      name = "RC"
-      description = [
-        "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
-        "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
-        <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>,
-        
-      ]
+  else if(eventName==="RC"){
+    name = "RC"
+    description = [
+      "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
+      "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
+      <div className=" w-full flex justify-between text-xl pt-4">
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 8:30am - 10:30am</h2>
+      </div>,
+      
+    ]
 
       fees = 20;
 
@@ -281,11 +286,11 @@
       ]
 
 
-      prizes = [
-        { winners: "3000" },
-        { runnerUp: "1500" }
-      ]
-      date = "17"
+    prizes = [
+      { winners: "1500" },
+      { runnerUp: "1000" }
+    ]
+    date = "17"
 
       contact = [
         { name: "Atharv Fakatkar", num: 9921277385 }
@@ -293,13 +298,16 @@
 
     }
 
-    else if(eventName==="Decode Rush"){
-      name = "Decode Rush"
-      description = [
-        "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
-        "Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
-        <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹50</h2>,
-      ]
+  else if(eventName==="Decode Rush"){
+    name = "Decode Rush"
+    description = [
+      "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
+      "Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
+      <div className=" w-full flex justify-between text-xl pt-4">
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹50</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 4:15pm Onwards</h2>
+      </div>,
+    ]
 
       fees = 50;
 
@@ -351,11 +359,11 @@
         },
       ]
 
-      prizes = [
-        { winners: "3000" },
-        { runnerUp: "1500" }
-      ]
-      date = "17"
+    prizes = [
+      { winners: "1500" },
+      { runnerUp: "1000" }
+    ]
+    date = "17"
 
       contact = [
         { name: "B Shrinidhi", num: 7506211747 }
@@ -363,14 +371,17 @@
 
     }
 
-    else if(eventName==="NTH"){
-      name = "NTH"
-      description = [
-        "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-        "The National Computing Competition lets you test your coding skills with other coders.",
-        "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
-        <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>,
-      ]
+  else if(eventName==="NTH"){
+    name = "NTH"
+    description = [
+      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
+      "The National Computing Competition lets you test your coding skills with other coders.",
+      "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      <div className=" w-full flex justify-between text-xl pt-4">
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 9:00pm Onwards</h2>
+      </div>,
+    ]
 
       fees = 0;
 
@@ -409,14 +420,17 @@
 
     }
 
-    else if(eventName==="Enigma"){
-      name = "Enigma"
-      description = [
-        "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-        "The National Computing Competition lets you test your coding skills with other coders.",
-        "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
-        <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>,
-      ]
+  else if(eventName==="Enigma"){
+    name = "Enigma"
+    description = [
+      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
+      "The National Computing Competition lets you test your coding skills with other coders.",
+      "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      <div className=" w-full flex justify-between text-xl pt-4">
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">TIMMING: 4:30pm Onwards</h2>
+      </div>,
+    ]
 
       fees = 0;
 
@@ -656,37 +670,31 @@
               </div>
             </div>
 
-            
-            <div className="prizepool border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] bg--600  max-md:w-[100%] text-white w-[25%] h-full rounded-2xl p-[2vw] max-lg:h-[20vh] flex flex-col justify-between items-center">
-              <h1 className="text-[3.5vw] max-md:text-[4vh]">PRIZE POOL</h1>
-              <div className="flex flex-col gap-[1.5vh] text-[1.5vw] max-md:text-[1.5vh] w-full">
-                <div className="flex justify-between w-full">
-                  <h2>WINNER</h2>
-                  <h2>₹{prizes[0].winners}</h2>
-                </div>
-                <div className="flex justify-between w-full">
-                  <h2>RUNNER UP</h2>
-                  <h2>₹1500</h2>
-                </div>
+          
+          <div className="prizepool border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] bg--600  max-md:w-[100%] text-white w-[25%] h-full rounded-2xl p-[2vw] max-lg:h-[20vh] flex flex-col justify-between items-center">
+            <h1 className="text-[3.5vw] max-md:text-[4vh]">PRIZE POOL</h1>
+            <div className="flex flex-col gap-[1.5vh] text-[1.5vw] max-md:text-[1.5vh] w-full">
+              <div className="flex justify-between w-full">
+                <h2>WINNER</h2>
+                <h2>₹{prizes[0].winners}</h2>
               </div>
-              <button
-                onClick={ () =>  {
-                  if(eventName !== "NTH" && eventName !=="Decode Rush"){
-                    setIsModalOpen(true)
-                  }
-                  else{
-                    addToCartHandler()
-                  }
-                }}
-                className="bg-white text-black max-md:w-[50%] max-md:text-[1.5vh] font-bold px-[4vw] py-[1.5vh] rounded-full text-[1vw]"
-              >
-                REGISTER
-              </button>
+              <div className="flex justify-between w-full">
+                <h2>RUNNER UP</h2>
+                {console.log("prz" , prizes[0])}
+                <h2>₹{prizes[1].runnerUp}</h2>
+              </div>
             </div>
+            <button
+              onClick={ () =>  setIsModalOpen(true)}
+              className="bg-white text-black max-md:w-[50%] max-md:text-[1.5vh] font-bold px-[4vw] py-[1.5vh] rounded-full text-[1vw]"
+            >
+              REGISTER
+            </button>
           </div>
         </div>
-      </>
-    );
-  };
+      </div>
+    </>
+  );
+};
 
   export default EventDetail;
