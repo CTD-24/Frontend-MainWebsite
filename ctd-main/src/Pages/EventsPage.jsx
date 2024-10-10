@@ -2,6 +2,8 @@ import Eventbox from "../components/Eventbox";
 import rc from "../assets/rc.png";
 import Enigma from "../assets/Enigma.png";
 import nth from "../assets/nth.png";
+import ncc from "../assets/ncclogo.png";
+
 
 const EventsPage = () => {
   const eventsData = [

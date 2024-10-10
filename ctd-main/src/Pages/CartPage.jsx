@@ -136,7 +136,7 @@ const CartPage = () => {
                     <h2>
                       {event.name}
                     </h2>
-                    <h2>{event.price}$</h2>
+                    <h2>₹{event.price}</h2>
                   </div>
                 ))
               ) : (
@@ -148,7 +148,7 @@ const CartPage = () => {
               {cart.items.length > 0 && (
                 <div className="w-full flex justify-between font-bold text-[1.5vw] border-t-2 pt-[2vh] max-lg:text-[2vh]">
                   <h2>TOTAL</h2>
-                  <h2>{totalPrice}$</h2>
+                  <h2>₹{totalPrice}</h2>
                 </div>
               )}
             </div>

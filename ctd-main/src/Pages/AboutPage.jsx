@@ -52,9 +52,9 @@ const AboutPage = () => {
                             <p className="text-[1.1vw]">Credenz Tech Dayz is an intra-college annual techfest organized by the PICT IEEE Student Branch where the brightest minds of PICT compete in technical as well as non-technical events. Participants get a chance to test their logical aptitute and problem solving skills in events like like National Computing Contest and Reverse Coding. Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure. Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer</p>
                         </div>
 
-                        <div className="other-content-about h-[100vh] w-full bg-purple-700 flex flex-col justify-center items-center  ">
+                        {/* <div className="other-content-about h-[100vh] w-full bg-purple-700 flex flex-col justify-center items-center  ">
 
-                        </div>
+                        </div> */}
                         {/* <div className="allAbout bg-zinc-800 opacity-0 py-[5vh] h-auto min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
                             <div className="ieee h-[15vh] w-full bg--600 flex justify-start items-center px-[6vw] text-[6vw] text-white">
                                 <h1>IEEE</h1>

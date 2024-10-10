@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/slices/cartSlice";
 import axios from "axios";
 
-const RegisterForm = ({ closeModal, name }) => {
+const RegisterForm = ({ closeModal, name, price }) => {
   const [activeButton, setActiveButton] = useState(false);
   const [showTeammateFields, setShowTeammateFields] = useState(false);
   const [errors, setErrors] = useState({}); // State for error messages
@@ -44,7 +44,7 @@ const RegisterForm = ({ closeModal, name }) => {
     const eventItem = {
       id: name,
       name: name,
-      price: 3000,
+      price: price,
     };
 
     const formData = {

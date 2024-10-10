@@ -104,7 +104,7 @@ const PaymentPage = () => {
                       <p className="text-lg">{item.name}</p>
                       {/* <p>Quantity: {item.quantity}</p> */}
                     </div>
-                    <p >Price: ${item.price}</p>
+                    <p >Price: ₹{item.price}</p>
 
                   </li>
                 ))}
@@ -113,7 +113,7 @@ const PaymentPage = () => {
             </div>
           </div>
           <div className="mt-4">
-            <h3 className="text-[3vh] font-semibold flex w-full justify-between items-center">Total Amount: <h3>${totalAmount}</h3></h3>
+            <h3 className="text-[3vh] font-semibold flex w-full justify-between items-center">Total Amount: <h3>₹{totalAmount}</h3></h3>
           </div>
         </div>
       ) : (

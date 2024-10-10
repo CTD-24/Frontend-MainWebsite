@@ -5,6 +5,7 @@ import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import RegisterForm from "../components/RegisterForm";
+import { FaPhone } from "react-icons/fa6";
 
 const EventDetail = () => {
   const dispatch = useDispatch();
@@ -186,6 +187,7 @@ const EventDetail = () => {
   let date;
   let rules;
   let contact;
+  let fees;
 
   if(eventName === "NCC"){
     name = "NCC"
@@ -193,7 +195,11 @@ const EventDetail = () => {
       "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
       "The National Computing Competition lets you test your coding skills with other coders.",
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>,
+
     ]
+
+    fees = 20;
 
     rules = [
       {
@@ -219,12 +225,19 @@ const EventDetail = () => {
     ]
 
     prizes = [
-
+      {
+        winners: "3000"
+      }
     ]
-     
-    date = "17"
 
-    
+    date = "18"
+
+    contact = [
+      {
+        name:"Avadhut Giri",
+        num:7057420931
+      }
+    ]
 
   }
 
@@ -233,8 +246,12 @@ const EventDetail = () => {
     description = [
       "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
       "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
+      <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹20</h2>,
       
     ]
+
+    fees = 20;
+
 
     rules = [
       {
@@ -259,7 +276,16 @@ const EventDetail = () => {
       }
     ]
 
+
+    prizes = [
+      { winners: "3000" },
+      { runnerUp: "1500" }
+    ]
     date = "17"
+
+    contact = [
+      { name: "Atharv Fakatkar", num: 9921277385 }
+    ]
 
   }
 
@@ -268,7 +294,11 @@ const EventDetail = () => {
     description = [
       "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
       "Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
+      <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: ₹50</h2>,
     ]
+
+    fees = 50;
+
 
     rules = [
       {
@@ -317,7 +347,15 @@ const EventDetail = () => {
       },
     ]
 
+    prizes = [
+      { winners: "3000" },
+      { runnerUp: "1500" }
+    ]
     date = "17"
+
+    contact = [
+      { name: "B Shrinidhi", num: 7506211747 }
+    ]
 
   }
 
@@ -327,7 +365,11 @@ const EventDetail = () => {
       "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
       "The National Computing Competition lets you test your coding skills with other coders.",
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>,
     ]
+
+    fees = 0;
+
 
     rules = [
       {
@@ -352,7 +394,14 @@ const EventDetail = () => {
       }
     ]
 
+    prizes = [
+      { winners: "3000" },
+      { runnerUp: "1500" }
+    ]
     date = "17"
+    contact = [
+      { name: "Samir Wankhede", num: 7770011526 }
+    ]
 
   }
 
@@ -362,7 +411,11 @@ const EventDetail = () => {
       "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
       "The National Computing Competition lets you test your coding skills with other coders.",
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      <h2 className="text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] w-full flex justify-start items-center">FEES: FREE OF COST</h2>,
     ]
+
+    fees = 0;
+
 
     rules = [
       {
@@ -387,7 +440,18 @@ const EventDetail = () => {
       }
     ]
 
+    prizes = [
+      { winners: "3000" },
+      { runnerUp: "1500" }
+    ]
     date = "17"
+
+    contact = [
+      { name: "Jobin Ottaveedu", num: 9511227936 },
+      { name: "Samruddhi Shinde", num: 9114555333 }
+    ]
+
+  
 
   }
 
@@ -441,7 +505,7 @@ const EventDetail = () => {
               >
                 X
               </button> */}
-              <RegisterForm closeModal={closeModal} name={name}  />
+              <RegisterForm closeModal={closeModal} name={name} price={fees}  />
           </div>
         )}
 
@@ -460,7 +524,7 @@ const EventDetail = () => {
         </div>
 
 
-        <div className="gap-[4vw] bg--600 h-[65vh] bg--600 max-md:flex-col max-md:h-auto flex justify-center items-start w-full px-[4vw] py-[2vh] max-md:gap-[0vh] max-md:px-[2vw] max-md:items-center ">
+        <div className="gap-[4vw] bg--600 h-[65vh] bg--900 max-md:flex-col max-md:h-[70vh] flex justify-center items-start w-full px-[4vw] py-[2vh] max-lg:py-[0vh] max-md:gap-[2vh] max-lg:px-[2vw] max-md:items-center ">
           <div className="content bg--800 max-md:w-[100%] h-full flex bg--600 flex-col w-[70%]">
             <div className="mininav bg--500 h-[10vh] flex gap-[2vw] justify-start max-md:justify-center items-center">
               {tabs.map((item) => {
@@ -480,11 +544,12 @@ const EventDetail = () => {
                 );
               })}
             </div>
-            <div className="eachcontent h-auto flex flex-col justify-center items-start bg--500 text-white bg--800 overflow-y-scroll">
-              <div className="scroll-div h-[50vh] max-md:h-[40vh] flex flex-col justify-start gap-[2vh] items-center bg--500  text-white  bg--800 px-[vw] ">
+            <div className="eachcontent h-auto flex flex-col justify-center items-start bg--500 text-white bg--800  overflow-y-scroll">
+
+              <div className="scroll-div h-[50vh] max-md:h-[40vh] flex flex-col justify-start gap-[2vh] items-center bg--500  text-white w-full  bg--800 px-[0vw]  ">
                 
                 {activeTab === 1 ? (
-                <div className="border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] h-auto max-md:px-[4vw] rounded-[2vh] max-md:py-[2vh] px-[1vw] py-[5vh]">
+                <div className="border-[#c4c4c44e] w-full border-[1px] backdrop-blur-[5px] h-auto max-md:px-[4vw] rounded-[2vh] max-md:py-[2vh] px-[1.5vw] py-[5vh]">
                   {description.map((descItem, index) => (
                     <p key={index} className="mb-[1vh]">
                       {descItem}
@@ -496,30 +561,44 @@ const EventDetail = () => {
                   rules.map((r) => (
                     <div
                       key={r.ruleNo}
-                      className="ruleDiv h-[auto] flex justify-start items-center bg--500  text-white backdrop-blur-[20px] border-[#c6f6ffdd] border-[1px] px-[2vw] py-[2vh] w-full rounded-[1vh] gap-[3vh]"
+                      className="ruleDiv h-[auto] flex justify-start items-center bg--500  text-white backdrop-blur-[20px] border-[#c4c4c44e] border-[1px] px-[2vw] py-[2vh] w-full rounded-[1vh] gap-[3vh]"
                     >
                       <h2 className="text-[1.5vw] max-lg:text-[1.5vh]">{r.ruleNo}.</h2>
                       {r.ruleDesc}
                     </div>
                   ))
                 ) : (
-                  <p>CONTACT</p>
+                  <div className="contact-div  w-full border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] h-full max-lg:px-[4vw] rounded-[2vh] max-lg:py-[2vh] px-[2vw] py-[4vh] text-[1.5vw] flex justify-center items-center gap-[5vw] " >
+                    {
+                      contact.map((item) => {
+                        return(
+                          <>
+                            <div className="details h-auto w-auto">
+                            <h2 className="bg--700 text-center">{item.name}</h2>
+                            <h3 className="flex bg--700 justify-center items-center gap-[1vw]" ><FaPhone size={20} />{item.num}</h3>
+                            </div>
+
+                          </>
+                        );
+                      })
+                    }
+                  </div>
                 )}
               </div>
             </div>
           </div>
 
           
-          <div className="prizepool border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] bg--600  max-md:w-[100%] text-white w-[25%] h-full rounded-2xl p-[2vw] max-md:h-[20vh] flex flex-col justify-between items-center">
+          <div className="prizepool border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] bg--600  max-md:w-[100%] text-white w-[25%] h-full rounded-2xl p-[2vw] max-lg:h-[20vh] flex flex-col justify-between items-center">
             <h1 className="text-[3.5vw] max-md:text-[4vh]">PRIZE POOL</h1>
             <div className="flex flex-col gap-[1.5vh] text-[1.5vw] max-md:text-[1.5vh] w-full">
               <div className="flex justify-between w-full">
                 <h2>WINNER</h2>
-                <h2>3000</h2>
+                <h2>₹{prizes[0].winners}</h2>
               </div>
               <div className="flex justify-between w-full">
-                <h2>RUNNER UP</h2>
-                <h2>1500 $</h2>
+                <h2>RUNNER UP</h2>a
+                <h2>₹1500</h2>
               </div>
             </div>
             <button
