@@ -420,23 +420,23 @@ const EventDetail = () => {
     rules = [
       {
         ruleNo: 1,
-        ruleDesc: "Contest will contain 5-6 problems that need to be coded in Python, C++, or C."
+        ruleDesc: "Electronic Gadgets(phones, calculators, smart watches) are prohibited."
       },
       {
         ruleNo: 2,
-        ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+        ruleDesc: "The first round will be a 30 minute aptitude test consisting of 30 questions."
       },
       {
         ruleNo: 3,
-        ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+        ruleDesc: "Only those who clear the first round will move on to the second round."
       },
       {
         ruleNo: 4,
-        ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
+        ruleDesc: "The second round will be conducted in two stages. First the selected participants will be provided 3 questions to be solved in 45 minutes. Then after the completion, an interview  to analyse the approach used solve these questions will be conducted."
       },
       {
         ruleNo: 5,
-        ruleDesc: "Plagiarism checks would be done after the contest."
+        ruleDesc: "The evaluation for the second round will be on the basis of the detailed interview conducted after the round."
       }
     ]
 
