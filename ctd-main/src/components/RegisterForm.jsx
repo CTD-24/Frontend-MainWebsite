@@ -58,12 +58,14 @@ const RegisterForm = ({ closeModal, name, price }) => {
       const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/add_cart`, formData, {
         withCredentials: true,
       });
+      dispatch(addItemToCart(eventItem));
       console.log("res", res);
+      
     } catch (error) {
       console.error("error adding to cart", error);
     }
 
-    dispatch(addItemToCart(eventItem));
+    
   };
 
   return (
