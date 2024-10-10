@@ -1,15 +1,16 @@
 import Eventbox from "../components/Eventbox";
-import rc from "../assets/rc.png";
-import Enigma from "../assets/Enigma.png";
-import nth from "../assets/nth.png";
-import ncc from "../assets/ncclogo.png";
+import rc from "../assets/rc4.png";
+import Enigma from "../assets/engm.png";
+import nth from "../assets/nth1.png";
+import ncc from "../assets/ncc3.png";
+import dr from "../assets/dr2.png";
 
 
 const EventsPage = () => {
   const eventsData = [
     {
       id: 1,
-      name: "NCC",
+      name: "N.C.C.",
       description: [
         "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
         "The National Computing Competition lets you test your coding skills with other coders.",
@@ -42,12 +43,12 @@ const EventsPage = () => {
         width: "25vw",
         color: "#E75480", 
         date: "17",
-        image: rc,
+        image: ncc,
     },
 
     {
       id: 2,
-      name: "RC",
+      name: "R.C.",
       description:
         ["Reverse Coding is a coding competition to analyze your problem-solving ability with programming knowledge along with mathematical skills. Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java, and Python."],
       rules: [],
@@ -154,7 +155,7 @@ const EventsPage = () => {
       color: "#529DA0",
       date: "17",
 
-      image: rc,
+      image: dr,
     },
   ];
 
