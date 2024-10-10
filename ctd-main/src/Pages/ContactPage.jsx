@@ -1,61 +1,110 @@
-import React from 'react';
-import styled from 'styled-components';
-import ContactCard from '../components/ContactCard'; // Import the ContactCard component
-
-const CardsContainer = styled.div`
-  display: flex;
-  justify-content: space-between; /* Adjusts spacing between cards */
-  flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
-  margin: 20px; /* Adjust margin as needed */
-  padding: 0 10px; /* Optional: Add some padding to the sides */
-`;
+import { useEffect, useState } from "react";
+import TeamCards from "../components/TeamCards";
+import team1 from "./TeamAssets/team1.png";
+import team2 from "./TeamAssets/team2.png";
+import team3 from "./TeamAssets/team3.png";
+import gsap from "gsap";
 
 const ContactPage = () => {
-  // return (
-  //   // <div>
-  //   //   <h1>Contact Page</h1>
-  //   //   <CardsContainer>
-  //   //     <ContactCard
-  //   //       name="Ursula Gurnmeister"
-  //   //       designation="Engineer"
-  //   //       profileImg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg"
-  //   //       backgroundImg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg"
-  //   //       contactNumber="+1234567890" // Add contact number here
-  //   //       socialLinks={[
-  //   //         { href: '#', iconClass: 'ion-social-reddit-outline' },
-  //   //         { href: '#', iconClass: 'ion-social-twitter-outline' },
-  //   //         { href: '#', iconClass: 'ion-social-vimeo-outline' },
-  //   //       ]}
-  //   //     />
 
-  //   //     <ContactCard
-  //   //       name="Jason Response"
-  //   //       designation="Photographer"
-  //   //       profileImg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample7.jpg"
-  //   //       backgroundImg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample7.jpg"
-  //   //       contactNumber="+1234567890" // Add contact number here
-  //   //       socialLinks={[
-  //   //         { href: '#', iconClass: 'ion-social-reddit-outline' },
-  //   //         { href: '#', iconClass: 'ion-social-twitter-outline' },
-  //   //         { href: '#', iconClass: 'ion-social-vimeo-outline' },
-  //   //       ]}
-  //   //     />
+    const teamArr = [
+        {
+            id:1,
+            name: "Shreyas",
+            role:".",
+            image: team1,
+            github:"username.github.com",
+            gmail:"username.github.com",
+            linkedin:"username.github.com",
+        },
+        {
+            id:2,
+            name: "Shrinidhi",
+            role:".",
+            image: team3,
+            github:"username.github.com",
+            gmail:"username.github.com",
+            linkedin:"username.github.com",
 
-  //   //     <ContactCard
-  //   //       name="Druid Wensleydale"
-  //   //       designation="Accountant"
-  //   //       profileImg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg"
-  //   //       backgroundImg="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg"
-  //   //       contactNumber="+1234567890" // Add contact number here
-  //   //       socialLinks={[
-  //   //         { href: '#', iconClass: 'ion-social-reddit-outline' },
-  //   //         { href: '#', iconClass: 'ion-social-twitter-outline' },
-  //   //         { href: '#', iconClass: 'ion-social-vimeo-outline' },
-  //   //       ]}
-  //   //     />
-  //   //   </CardsContainer>
-  //   // </div>
-  // );
-};
 
+        },
+        {
+            id:3,
+            name: "Gitesh",
+            role:".",
+            image: team2,
+            github:"username.github.com",
+            gmail:"username.github.com",
+            linkedin:"username.github.com",
+
+        },
+    ];
+    console.log(teamArr.length);
+
+    const [spreadStates, setSpreadStates] = useState(Array(teamArr.length).fill(false));
+
+    const handleButtonClick = (index) => {
+        setSpreadStates(prevStates => {
+            const newStates = [...prevStates];
+            newStates[index] = !newStates[index];
+            return newStates;
+        });
+    };
+
+
+    return ( 
+        <>
+        <div className="team-cont min-h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-start items-center ">
+
+
+            <div className="events-head min-h-[100vh] w-[100vw] bg--600 flex flex-col justify-center max-lg:gap-[2vh]  items-center gap-[3vh]   ">
+                <div className="row-1 h-auto w-[100vw] bg--500 flex justify-around items-center max-lg:gap-[2vh] max-lg:flex-col">
+                    {
+                        teamArr.slice(0,3).map((team, index) => {
+                            return(
+                                <>
+                                    <TeamCards
+                                        key={team.id}
+                                        name={team.name}
+                                        role={team.role}
+                                        image={team.image}
+                                        github={team.github}
+                                        gmail={team.gmail}
+                                        linkedin={team.linkedin}
+                                        isSpread={spreadStates[index]}
+                                        onButtonClick={() => handleButtonClick(index)}
+                        />
+                                </>
+                            );
+                        })
+                    }
+                </div>
+                <div className="row-2 h-auto w-[100vw] max-lg:flex-col max-lg:gap-[2vh] bg--500 flex justify-around items-center">
+                    {
+                        teamArr.slice(3,6).map((team, index) => {
+                            return(
+                                <>
+                                     <TeamCards
+                                    key={team.id}
+                                    name={team.name}
+                                    role={team.role}
+                                    image={team.image}
+                                    github={team.github}
+                                    gmail={team.gmail}
+                                    linkedin={team.linkedin}
+                                    isSpread={spreadStates[index + 3]}
+                                    onButtonClick={() => handleButtonClick(index + 3)}
+                        />
+                                </>
+                            );
+                        })
+                    }
+                </div>
+                
+            </div>
+        </div>
+        </>
+     );
+}
+ 
 export default ContactPage;

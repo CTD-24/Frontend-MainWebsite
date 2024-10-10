@@ -10,8 +10,8 @@ const TeamPage = () => {
     const teamArr = [
         {
             id:1,
-            name: "SYKUNNO",
-            role:"Backend Developer",
+            name: "Shounak",
+            role:"Frontend Developer",
             image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
@@ -49,7 +49,7 @@ const TeamPage = () => {
         },
         {
             id:5,
-            name: "RYAN",
+            name: "Nikunj",
             role:"Frontend Developer",
             image: team2,
             github:"username.github.com",
@@ -60,9 +60,9 @@ const TeamPage = () => {
         },
         {
             id:6,
-            name: "POSIDON",
-            role:"Designer",
-            image: team3,
+            name: "Sujal",
+            role:"Backend Developer",
+            image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",

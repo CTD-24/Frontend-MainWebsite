@@ -189,17 +189,20 @@
     let rules;
     let contact;
     let fees;
+    let mode;
 
   if(eventName === "NCC"){
     name = "NCC"
+    mode = "ONLINE"
     description = [
-      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-      "The National Computing Competition lets you test your coding skills with other coders.",
+      "Think you're the best coder?",
+      "Prove it in the National Computing Competition.",
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
       <>
       <div className=" w-full flex justify-between text-xl pt-4">
         <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: ₹20</h2>
-        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:00am - 10:00am</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:00 PM - 10:00 PM</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
         </div>
        </>,
       
@@ -249,12 +252,14 @@
 
   else if(eventName==="RC"){
     name = "RC"
+    mode = "ONLINE"
     description = [
       "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
       "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
       <div className=" w-full flex justify-between text-xl pt-4">
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">FEES: ₹20</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:30am - 10:30am</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:30 PM - 10:30 PM</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
       
     ]
@@ -300,12 +305,14 @@
 
   else if(eventName==="Decode Rush"){
     name = "Decode Rush"
+    mode = "OFFLINE"
     description = [
       "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
-      "Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
+      "Embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer",
       <div className=" w-full flex justify-between text-xl pt-4">
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: ₹50</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:15pm Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:15 PM Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
     ]
 
@@ -372,13 +379,15 @@
 
   else if(eventName==="NTH"){
     name = "NTH"
+    mode = "ONLINE"
     description = [
-      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-      "The National Computing Competition lets you test your coding skills with other coders.",
-      "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      "NTH is an online treasure hunt that encourages you to scour the nooks and crannies of the World Wide Web in search of answers for various mind twisters",
+      "Read between the lines, find the hidden clues and connect the dots.",
+      "You can use every tool at your disposal. Even with Google and Wikipedia by your side, it's going to be fun and challenging.",
       <div className=" w-full flex justify-between text-xl pt-4">
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE OF COST</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 9:00pm Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 9:00 PM Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
     ]
 
@@ -387,32 +396,53 @@
 
       rules = [
         {
-          ruleNo: 1,
-          ruleDesc: "Contest will contain 5-6 problems that need to be coded in Python, C++, or C."
+            ruleNo: 1,
+            ruleDesc: "The questions in this contest have clues and hints in the form of images, video, GIFs, audio, and text."
         },
         {
-          ruleNo: 2,
-          ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+            ruleNo: 2,
+            ruleDesc: "A user can submit their answer after 'question/' in the URL by replacing put_your_answer_here; the answer shouldn't contain any spaces."
         },
         {
-          ruleNo: 3,
-          ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+            ruleNo: 3,
+            ruleDesc: "A correct answer will direct the user to the next question while an incorrect answer will redirect the user to the same question as before."
         },
         {
-          ruleNo: 4,
-          ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
+            ruleNo: 4,
+            ruleDesc: "Top scorers will be visible on a dynamic leaderboard."
         },
         {
-          ruleNo: 5,
-          ruleDesc: "Plagiarism checks would be done after the contest."
+            ruleNo: 5,
+            ruleDesc: "Additionally, a user will be awarded keys after solving a question and free keys will be awarded to active users after a certain duration of time."
+        },
+        {
+            ruleNo: 6,
+            ruleDesc: "Keys can be used to claim extra hints for questions further in the hunt."
+        },
+        {
+            ruleNo: 7,
+            ruleDesc: "The cost of the extra hint will be the ceiling function of 1.5 times the level of the current question."
+        },
+        {
+            ruleNo: 8,
+            ruleDesc: "A user can claim only 1 extra hint per question, so use this facility wisely."
+        },
+        {
+            ruleNo: 9,
+            ruleDesc: "After the 24-hour hunt, the one on the top of the leaderboard wins!"
+        },
+        {
+            ruleNo: 10,
+            ruleDesc: "The winner will be declared once, and there will be no change in our decision. Furthermore, users should play with one account only."
         }
-      ]
+    ];
+    
 
       prizes = [
-        { winners: "3000" },
-        { runnerUp: "1500" }
+        { winners: "1500" },
+        { runnerUp: "1000" }
       ]
-      date = "17"
+      date = "19"
       contact = [
         { name: "Samir Wankhede", num: 7770011526 }
       ]
@@ -421,13 +451,14 @@
 
   else if(eventName==="Enigma"){
     name = "Enigma"
+    mode = "OFFLINE"
     description = [
-      "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
-      "The National Computing Competition lets you test your coding skills with other coders.",
-      "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
+      "Whether you're a puzzle enthusiast or a curious novice",
+      "Get ready to ignite your cognitive powers with the ultimate head-scratching aptitude test!",
       <div className=" w-full flex justify-between text-xl pt-4">
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE OF COST</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:30pm Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:30 PM Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
     ]
 
@@ -458,8 +489,8 @@
       ]
 
       prizes = [
-        { winners: "3000" },
-        { runnerUp: "1500" }
+        { winners: "1500" },
+        { runnerUp: "1000" }
       ]
       date = "17"
 
@@ -601,6 +632,8 @@
             >
               <h1 className="text-[4vw] max-md:text-[4vh]">{date}</h1>
               <h1 className="text-[2vw] max-md:text-[3vh]">OCTOBER</h1>
+              {name == "NTH" && <h1 className="text-[2vw] max-md:text-[3vh]">(Tentative)</h1> }
+              
             </div>
           </div>
 
