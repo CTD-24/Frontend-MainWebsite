@@ -191,7 +191,7 @@
     let fees;
     let mode;
 
-  if(eventName === "NCC"){
+  if(eventName === "N.C.C."){
     name = "N.C.C."
     mode = "ONLINE"
     description = [

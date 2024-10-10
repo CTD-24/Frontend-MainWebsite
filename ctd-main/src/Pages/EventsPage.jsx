@@ -10,7 +10,7 @@ const EventsPage = () => {
   const eventsData = [
     {
       id: 1,
-      name: "NCC",
+      name: "N.C.C.",
       description: [
         "The best algorithm is ten steps ahead of the second-best. So are you good enough to code the best one?",
         "The National Computing Competition lets you test your coding skills with other coders.",
@@ -48,7 +48,7 @@ const EventsPage = () => {
 
     {
       id: 2,
-      name: "RC",
+      name: "R.C.",
       description:
         ["Reverse Coding is a coding competition to analyze your problem-solving ability with programming knowledge along with mathematical skills. Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java, and Python."],
       rules: [],
