@@ -11,6 +11,8 @@ import gsap from 'gsap';
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
 
+ 
+
   const navigate = useNavigate();
 
   const toPage = (link) => {
@@ -28,10 +30,12 @@ const CartPage = () => {
       const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/delete/${eventName}`, {}, { withCredentials: true });
       console.log("res", res);
       dispatch(removeItemFromCart(eventId)); // Dispatch after success
+      
     } 
     
     catch (error) {
       console.error("error removing from cart", error);
+      
     }
   };
   

@@ -60,6 +60,13 @@ function LoginPage() {
           severity: "error",
           visible: true,
         });
+        setTimeout(() => {
+          setAlert({
+            message: "",
+            severity: "",
+            visible: false,
+          });
+        }, 5000); 
       } 
       
       else {
@@ -68,6 +75,13 @@ function LoginPage() {
           severity: "error",
           visible: true,
         });
+        setTimeout(() => {
+          setAlert({
+            message: "",
+            severity: "",
+            visible: false,
+          });
+        }, 5000); 
       }
     }
   };

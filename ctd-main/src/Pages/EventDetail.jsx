@@ -498,6 +498,12 @@
       setIsModalOpen(false);
     };
 
+    const [alert, setAlert] = useState({
+      message: "",
+      severity: "",
+      visible: false,
+    });
+
     const addToCartHandler = async () => {
       
   
@@ -518,11 +524,38 @@
         const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/add_cart`, formData, {
           withCredentials: true,
         });
+
         dispatch(addItemToCart(eventItem));
+        if(res.status == 201){
+          setAlert({
+            message: "Event Added to Cart!",
+            severity: "success",
+            visible: true,
+          });
+          setTimeout(() => {
+            setAlert({
+              message: "",
+              severity: "",
+              visible: false,
+            });
+          }, 5000); 
+        }
         console.log("res", res);
         
       } catch (error) {
         console.error("error adding to cart", error);
+        setAlert({
+          message: "Event Already in the Cart!",
+          severity: "error",
+          visible: true,
+        });
+        setTimeout(() => {
+          setAlert({
+            message: "",
+            severity: "",
+            visible: false,
+          });
+        }, 5000); 
       }
   
       
