@@ -13,6 +13,7 @@ import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import { IoCloseOutline } from "react-icons/io5";
 import { clearCart } from "../redux/slices/cartSlice";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   gsap.registerPlugin(ScrollTrigger);
