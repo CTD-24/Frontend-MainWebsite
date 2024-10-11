@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import qr from "../../assets/qrCode.png"
 import qr from "../assets/pictqr.jpg";
@@ -9,6 +10,9 @@ import qr from "../assets/pictqr.jpg";
 const PaymentPage = () => {
   const [transactionId, setTransactionId] = useState("");
 
+  const navigate = useNavigate();
+
+  const [isClicked, setIsClicked] = useState(false);
   // Access the cart state from Redux
   const cartItems = useSelector((state) => state.cart.items);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
@@ -37,6 +41,8 @@ const PaymentPage = () => {
       return;
     }
 
+    setIsClicked(true);
+
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/submitTransaction`,
@@ -45,7 +51,11 @@ const PaymentPage = () => {
       );
 
       console.log("transaction submitted successfully");
+      alert("Transaction successful!");
+
+      navigate('/');
     } catch (error) {
+      alert("Error making payment, Please try again!")
       console.error("Error making payment", error);
     }
   };
@@ -131,6 +141,7 @@ const PaymentPage = () => {
       <div className="h-auto w-full flex justify-center items-center py-[3vh]">
         <button
           onClick={makePayment}
+          disabled={isClicked}
           className="bg-white text-black py-[1vh] px-[5vw] rounded-full border-white border-[1px] border-solid font-semibold hover:bg-transparent hover:text-white"
         >
           Submit
