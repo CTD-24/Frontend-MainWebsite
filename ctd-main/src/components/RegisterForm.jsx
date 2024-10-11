@@ -61,6 +61,7 @@ const RegisterForm = ({ closeModal, name, price }) => {
       dispatch(addItemToCart(eventItem));
       console.log("res", res);
       
+      
     } catch (error) {
       console.error("error adding to cart", error);
     }

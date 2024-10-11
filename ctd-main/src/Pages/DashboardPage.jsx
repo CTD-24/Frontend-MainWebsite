@@ -17,6 +17,7 @@ const DashboardPage = () => {
   const [firstName, setFirstName] = useState("");
   const [userName, setUsername] = useState("");
   const [paidOrders, setPaidOrders] = useState([]); // State to hold paid orders
+  const [pendingOrders, setPendingOrders] = useState([]);
 
   const handleLogout = async () => {
     try {
@@ -44,6 +45,14 @@ const DashboardPage = () => {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/my_orders`, { withCredentials: true });
         console.log(res.data);
         setPaidOrders(res.data.paidOrders); // Set paid orders in state
+      } catch (error) {
+        console.error("Error fetching orders", error);
+      }
+
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/view_cart`, { withCredentials: true });
+        console.log(res.data);
+        setPendingOrders(res.data.cartItems); // Set paid orders in state
       } catch (error) {
         console.error("Error fetching orders", error);
       }
@@ -90,6 +99,27 @@ const DashboardPage = () => {
                         <div>
                           <p className="text-green-500">{order.is_paid ? "Paid" : "Not Paid"}</p>
                           <p className="text-gray-400">{new Date(order.createdAt).toLocaleDateString()}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>No paid orders found.</p>
+                )}
+              </div>
+
+              <div className="bg--600 max-lg:py-[2vh] w-full mt-2 p-4 rounded-md">
+                <h3 className="text-xl mb-4 font-bold">My Pending Orders</h3>
+                {pendingOrders.length > 0 ? (
+                  <ul className="space-y-2">
+                    {pendingOrders.map((order) => (
+                      <li key={order.cart_id} className="flex justify-between bg-gray-800 px-4 py-2 rounded-lg">
+                        <div>
+                          <p className="font-semibold">{order.event_name}</p>
+                        </div>
+                        <div>
+                          <p className="text-red-500">Pending</p>
+                          {/* <p className="text-gray-400">{new Date(order.createdAt).toLocaleDateString()}</p> */}
                         </div>
                       </li>
                     ))}

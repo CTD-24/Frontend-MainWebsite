@@ -1,15 +1,7 @@
-import green from "../assets/greenPexel.jpg";
-// import cube from "../assets/blueCube.jpg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import MainGradient from "../assets/colorBg.jpg";
-import code from "../assets/codeSticker.png";
-
-// import MainGradient from "../assets/MainGradient.png";
-import future from "./PageAssets/future.mp4";
-import coder from "../assets/bgGrad.mp4";
 import React from "react";
 import ReactDOM from "react-dom";
 import Countdown from "react-countdown";
@@ -20,8 +12,6 @@ import LocomotiveScroll from "locomotive-scroll";
 import AboutPage from "./AboutPage";
 import EventsPage from "./EventsPage";
 
-import bgVideo from "../assets/wave3.mp4";
-import wavebg from "../assets/wavebg.mp4";
 
 import { FaArrowRight } from "react-icons/fa6";
 

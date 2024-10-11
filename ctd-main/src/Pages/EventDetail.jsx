@@ -243,8 +243,7 @@
 
       contact = [
         {name:"Atharv Fakatkar",num:9921277385},
-        {name:"Palak Agrawal",num:7030301011},
-        {name:"Shounak Mulay",num:7559179362},
+        {name:"Palak Agrawal",num:7030301011}
       ]
       
 
@@ -298,9 +297,8 @@
     date = "17"
 
       contact = [
-        {name:"Neel Satdive",num:9834762879},
         { name: "Divya Pardeshi", num: 9923844914 },
-        { name: "Avadhut Giri", num: 7057420931 },
+        { name: "Avadhut Giri", num: 7057420931 }
 
       ]
 
@@ -702,14 +700,14 @@
                       </div>
                     ))
                   ) : (
-                    <div className="contact-div  w-full border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] h-full max-lg:px-[4vw] rounded-[2vh] max-lg:py-[2vh] px-[2vw] py-[4vh] text-[1.5vw] flex justify-center items-center gap-[5vw] " >
+                    <div className="contact-div  w-full border-[#c4c4c44e] border-[1px] backdrop-blur-[5px] h-full max-lg:px-[4vw] rounded-[2vh] max-lg:py-[2vh] px-[2vw] py-[4vh] text-[1.5vw] flex justify-center items-center max-lg:flex-col gap-[5vw] " >
                       {
                         contact.map((item) => {
                           return(
                             <>
-                              <div className="details h-auto w-auto">
-                              <h2 className="bg--700 text-center text-xl md:text-3xl">{item.name}</h2>
-                              <h3 className="flex bg--700 justify-center items-center gap-[1vw] text-xl md:text-3xl" ><FaPhone size={20} />{item.num}</h3>
+                              <div className="details justify-center item-center h-auto w-auto gap-[1vh] flex flex-col">
+                              <h2 className="bg--700 text-center text-xl md:text-[1.5vw]">{item.name}</h2>
+                              <h3 className="flex bg--700 justify-center items-center gap-[1vw] text-xl md:text-[1.5vw]" ><FaPhone size={20} />{item.num}</h3>
                               </div>
 
                             </>

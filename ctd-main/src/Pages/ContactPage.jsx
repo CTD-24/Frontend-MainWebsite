@@ -19,9 +19,9 @@ const ContactPage = () => {
         },
         {
             id:2,
-            name: "Shrinidhi",
+            name: "Anshul",
             role:".",
-            image: team3,
+            image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
