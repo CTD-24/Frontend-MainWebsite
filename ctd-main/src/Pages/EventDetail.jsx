@@ -732,13 +732,14 @@
             </div>
             <button
               onClick={ () =>  {
+                console.log("islogin? " , isLoggedIn);
                 if(isLoggedIn){
-                if((eventName === "NTH" || eventName === "Decode Rush")){
-                  addToCartHandler();
-                }
-                else{
-                  setIsModalOpen(true);
-                }
+                  if((eventName === "NTH" || eventName === "Decode Rush")){
+                    addToCartHandler();
+                  }
+                  else{
+                    setIsModalOpen(true);
+                  }
               }
               else{
                 navigate("/login");
