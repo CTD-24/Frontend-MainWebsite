@@ -617,6 +617,16 @@
 
     return (
       <>
+      <div className="alert-main h-auto w-auto absolute top-[3%] z-[20000]">
+        {alert.visible && (
+          <Alert severity={alert.severity}>
+            <AlertTitle>
+              {alert.severity.charAt(0).toUpperCase() + alert.severity.slice(1)}
+            </AlertTitle>
+            {alert.message}
+          </Alert>
+        )}
+      </div>
         <div className="Container bg-[#23232397]  min-h-[100vh] flex flex-col max-md:justify-end max-md:py-[3vh] justify-end items-center w-full">
 
           {isModalOpen && ((eventName !=="Decode Rush") && (eventName !=="NTH"))  && (

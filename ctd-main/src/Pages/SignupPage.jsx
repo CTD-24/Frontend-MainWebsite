@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import MainGradient from "../assets/MainBG.png";
 import { useNavigate } from "react-router-dom";
 import { onRegistration } from "../api/auth";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 import axios from 'axios'
 
 
@@ -25,6 +27,12 @@ function SignupPage() {
 
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const [alert, setAlert] = useState({
+    message: "",
+    severity: "",
+    visible: false,
+  });
 
   const handleRadioChange = (e) => {
     setValues({ ...values, is_junior: e.target.value === "junior" });
@@ -61,14 +69,54 @@ function SignupPage() {
       );
 
       console.log("Registration successful:", response.data);
+      setAlert({
+        message: "Registration successful!",
+        severity: "success",
+        visible: true,
+      });
+      setTimeout(() => {
+        setAlert({
+          message: "",
+          severity: "",
+          visible: false,
+        });
       navigate("/login");
+      }, 2000); 
     } catch (err) {
+
+      
+
+        setAlert({
+          message: err.response.data.message,
+          severity: "error",
+          visible: true,
+        });
+        setTimeout(() => {
+          setAlert({
+            message: "",
+            severity: "",
+            visible: false,
+          });
+        }, 5000); 
+      // } 
+
       console.error("Registration error:", err);
       setError(err.response?.data?.message || "Registration failed");
     }
   };
 
   return (
+    <>
+    <div className="alert-main h-auto w-auto absolute top-[3%] z-[20000]">
+        {alert.visible && (
+          <Alert severity={alert.severity}>
+            <AlertTitle>
+              {alert.severity.charAt(0).toUpperCase() + alert.severity.slice(1)}
+            </AlertTitle>
+            {alert.message}
+          </Alert>
+        )}
+      </div>
     <div className="flex bg-[#0000008f] max-md:min-h-[100vh] justify-center items-center loginContainer h-[100vh] w-[100vw] pt-[8vh]">
       {/* <img
         className="h-[100%] w-[100%] absolute top-0 left-0 z-[1] object-cover"
@@ -191,6 +239,7 @@ function SignupPage() {
         </div>
       </form>
     </div>
+  </>
   );
 }
 
