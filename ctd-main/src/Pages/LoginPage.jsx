@@ -15,6 +15,7 @@ const getToken = () => {
   if (parts.length === 2) return parts.pop().split(";").shift();
 };
 
+
 function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function LoginPage() {
 
   const [isLogin, setIsLogin] = useState(false);
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -49,7 +51,8 @@ function LoginPage() {
       dispatch(authenticateUser());
       navigate("/");
       setError(false);
-    } catch (error) {
+    } 
+    catch (error) {
       setError(true);
       console.log("Error logging in: ", error);
       if (error.response && error.response.status === 403) {
@@ -67,13 +70,7 @@ function LoginPage() {
       }
     }
   };
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const imageUrl = URL.createObjectURL(file); // Convert file to URL
-  //     setImg(imageUrl); // Set this URL to the context
-  //   }
-  // };
+
   const toSignup = () => {
     navigate("/signup");
   };
@@ -147,26 +144,7 @@ function LoginPage() {
       </div>
     </>
   );
-  function Button({ content }) {
-    return (
-      <button
-        onClick={handleSubmit}
-        className="loginButton bg-white text-black text-uppercase flex justify-center items-center  w-[80%] h-[6vh] border-none rounded-[0.6vw] cursor-pointer font-semibold tracking-normal text-[1vw]"
-      >
-        {content}
-      </button>
-    );
-  }
-  // function Input({ type, placeholder, value }) {
-  //   return (
-  //     <input
-  //       type={type}
-  //       value={value}
-  //       placeholder={placeholder}
-  //       className="inputPlaceholders w-[80%] h-[6vh] max-md-[1920px]:h-[5vh] px-[2vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white tracking-normal mt-2 text-[0.9vw]"
-  //     />
-  //   );
-  // }
+  
 }
 
 export default LoginPage;
