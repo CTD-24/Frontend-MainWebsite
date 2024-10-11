@@ -4,6 +4,8 @@ import { IoClose } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/slices/cartSlice";
 import axios from "axios";
+import { toast } from "react-toastify";
+
 
 const RegisterForm = ({ closeModal, name, price }) => {
   const [activeButton, setActiveButton] = useState(false);

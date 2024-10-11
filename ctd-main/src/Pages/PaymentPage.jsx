@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import qr from "../../assets/qrCode.png"
 import qr from "../assets/pictqr.jpg";
-
+import { toast } from "react-toastify";
 
 
 const PaymentPage = () => {

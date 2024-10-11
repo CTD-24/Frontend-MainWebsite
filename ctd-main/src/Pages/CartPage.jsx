@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import QrModal from '../components/QrModal';
 import gsap from 'gsap';
-
+import { toast } from "react-toastify";
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
 
