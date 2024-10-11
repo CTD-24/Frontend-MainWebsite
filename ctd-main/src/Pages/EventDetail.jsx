@@ -6,6 +6,7 @@
   import AlertTitle from "@mui/material/AlertTitle";
   import RegisterForm from "../components/RegisterForm";
   import { FaPhone } from "react-icons/fa6";
+  import { useNavigate } from "react-router-dom";
   import { useSelector } from 'react-redux';
 
   import axios from "axios";
