@@ -51,11 +51,13 @@ const PaymentPage = () => {
       );
 
       console.log("transaction submitted successfully");
-      alert("Transaction successful!");
+      // alert("Transaction successful!");
+      toast.success("Transaction successful!");
 
       navigate('/');
     } catch (error) {
-      alert("Error making payment, Please try again!")
+      // alert("Error making payment, Please try again!")
+      toast.error("Error making payment, Please try again!");
       console.error("Error making payment", error);
     }
   };
