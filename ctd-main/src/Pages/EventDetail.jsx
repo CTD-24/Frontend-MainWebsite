@@ -731,9 +731,9 @@
                 
               </div>
             </div>
+            {console.log("islogin? " , isLoggedIn)}
             <button
               onClick={ () =>  {
-                console.log("islogin? " , isLoggedIn);
                 if(isLoggedIn){
                   if((eventName === "NTH" || eventName === "Decode Rush")){
                     addToCartHandler();
