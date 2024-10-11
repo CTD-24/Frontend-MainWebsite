@@ -169,7 +169,7 @@ const Navbar = () => {
     try {
 
       dispatch(unauthenticateUser()); // Dispatch the unauthentication action after successful logout
-      dispatch(clearCart());
+      // dispatch(clearCart());
       console.log("Logged out Successfully...");
       navigate("/login");
 
