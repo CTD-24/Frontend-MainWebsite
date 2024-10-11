@@ -729,7 +729,14 @@
               </div>
             </div>
             <button
-              onClick={ () =>  setIsModalOpen(true)}
+              onClick={ () =>  {
+                if(eventName === "NTH" || eventName === "Decode Rush"){
+                  addToCartHandler();
+                }
+                else{
+                  setIsModalOpen(true);
+                }
+              }}
               className="bg-white text-black max-md:w-[50%] max-md:text-[1.5vh] font-bold px-[4vw] py-[1.5vh] rounded-full text-[1vw]"
             >
               REGISTER
