@@ -7,7 +7,7 @@
   import RegisterForm from "../components/RegisterForm";
   import { FaPhone } from "react-icons/fa6";
   import { useNavigate } from "react-router-dom";
-  import { useSelector } from 'react-redux';
+  // import { useSelector } from 'react-redux';
 
   import axios from "axios";
   const EventDetail = () => {
