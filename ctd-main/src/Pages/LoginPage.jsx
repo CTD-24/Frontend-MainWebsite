@@ -8,6 +8,7 @@ import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const getToken = () => {
   const value = `; ${document.cookie}`;
@@ -49,6 +50,7 @@ function LoginPage() {
       const token = getToken();
       // console.log("JWT Token:", token);
       dispatch(authenticateUser());
+      toast.success("Login successful!");
       navigate("/");
       setError(false);
     } 
@@ -57,33 +59,11 @@ function LoginPage() {
       setError(true);
       console.log("Error logging in: ", error);
       if (error.response && error.response.status === 403) {
-        setAlert({
-          message: "Wrong credentials! Please try again.",
-          severity: "error",
-          visible: true,
-        });
-        setTimeout(() => {
-          setAlert({
-            message: "",
-            severity: "",
-            visible: false,
-          });
-        }, 5000); 
+        toast.error("Wrong credentials! Please try again.");
       } 
       
       else {
-        setAlert({
-          message: "Error during Login",
-          severity: "error",
-          visible: true,
-        });
-        setTimeout(() => {
-          setAlert({
-            message: "",
-            severity: "",
-            visible: false,
-          });
-        }, 5000); 
+        toast.error("Error during Login");
       }
     }
   };
@@ -94,14 +74,14 @@ function LoginPage() {
   return (
     <>
       <div className="alert-main h-auto w-auto absolute top-[3%] z-[20000]">
-        {alert.visible && (
+        {/* {alert.visible && (
           <Alert severity={alert.severity}>
             <AlertTitle>
               {alert.severity.charAt(0).toUpperCase() + alert.severity.slice(1)}
             </AlertTitle>
             {alert.message}
           </Alert>
-        )}
+        )} */}
       </div>
       <div className="flex justify-center items-center loginContainer h-[100vh] w-[100vw] pt-[8vh] md:pt-[10vh] bg-[#00000090] ">
         {/* <img

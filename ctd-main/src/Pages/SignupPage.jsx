@@ -3,7 +3,7 @@ import MainGradient from "../assets/MainBG.png";
 import { useNavigate } from "react-router-dom";
 import { onRegistration } from "../api/auth";
 import axios from 'axios'
-
+import { toast } from "react-toastify";
 
 function SignupPage() {
   const navigate = useNavigate();
@@ -61,10 +61,12 @@ function SignupPage() {
       );
 
       console.log("Registration successful:", response.data);
+      toast.success("Registration Successful");
       navigate("/login");
     } catch (err) {
       console.error("Registration error:", err);
       setError(err.response?.data?.message || "Registration failed");
+      toast.error("Registration Failed");
     }
   };
 
