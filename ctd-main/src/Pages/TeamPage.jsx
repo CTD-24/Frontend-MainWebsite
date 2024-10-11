@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 import TeamCards from "../components/TeamCards";
 import team1 from "./TeamAssets/team1.png";
-import team2 from "./TeamAssets/team2.png";
-import team3 from "./TeamAssets/team3.png";
+// import team2 from "./TeamAssets/team2.png";
+// import team3 from "./TeamAssets/team3.png";
+import neel from "./TeamAssets/neel.jpg";
+import palak from "./TeamAssets/palak.jpg";
+import divya from "./TeamAssets/divya.jpeg";
+import avadhut from "./TeamAssets/avadhut.jpeg";
+import aniket from "./TeamAssets/aniket.jpeg";
+import atharv from "./TeamAssets/atharv.jpeg";
+
+
 import gsap from "gsap";
 
 const TeamPage = () => {
@@ -10,18 +18,18 @@ const TeamPage = () => {
     const teamArr = [
         {
             id:1,
-            name: "Shounak",
-            role:"Frontend Developer",
-            image: team1,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
+            name: "NEEL",
+            role:"Designer/Frontend Developer",
+            image: neel,
+            github:"https://github.com/blueinabaux",
+            gmail:"satdiveneel3004@gmail.com",
+            linkedin:"https://www.linkedin.com/in/neel-satdive-6335n/",
         },
         {
             id:2,
-            name: "NEEL",
-            role:"Frontend Developer",
-            image: team2,
+            name: "SUJAL",
+            role:"Backend Developer",
+            image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
@@ -31,17 +39,17 @@ const TeamPage = () => {
         {
             id:3,
             name: "PALAK",
-            role:"Designer",
-            image: team3,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
+            role:"Frontend Developer",
+            image: palak,
+            github:"https://github.com/PalakAgrawal04",
+            gmail:"palaka2805@gmail.com",
+            linkedin:"https://www.linkedin.com/in/palak-agrawal-a19b3b281/",
 
         },
         {
             id:4,
             name: "DIGAMBAR",
-            role:"Backend Developer",
+            role:"Frontend Developer",
             image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
@@ -49,9 +57,9 @@ const TeamPage = () => {
         },
         {
             id:5,
-            name: "Nikunj",
+            name: "DIVYA",
             role:"Frontend Developer",
-            image: team2,
+            image: divya,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
@@ -60,12 +68,42 @@ const TeamPage = () => {
         },
         {
             id:6,
-            name: "Sujal",
-            role:"Backend Developer",
+            name: "SHOUNAK",
+            role:"Frontend Developer",
             image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
+
+        },
+        {
+            id:7,
+            name: "AVADHUT",
+            role:"Backend Developer",
+            image: avadhut,
+            github:"https://github.com/avadhutgiri",
+            gmail:"avadg252@gmail.com",
+            linkedin:"https://www.linkedin.com/in/Avadhutgiri/",
+
+        },
+        {
+            id:8,
+            name: "ATHARV",
+            role:"Backend Developer",
+            image: atharv,
+            github:"https://github.com/atharvfakatkar",
+            gmail:"atharvfakatkar56@gmail.com",
+            linkedin:"https://www.linkedin.com/in/atharvfakatkar",
+
+        },
+        {
+            id:9,
+            name: "ANIKET",
+            role:"Backend Developer",
+            image: aniket,
+            github:"https://github.com/aniketk17",
+            gmail:"aniketkardile243@gmail.com",
+            linkedin:"https://www.linkedin.com/in/aniket-kardile/",
 
         },
     ];
@@ -134,7 +172,27 @@ const TeamPage = () => {
                         })
                     }
                 </div>
-                
+                <div className="row-3 h-auto w-[100vw] max-lg:flex-col max-lg:gap-[2vh] bg--500 flex justify-around items-center">
+                    {
+                        teamArr.slice(6,9).map((team, index) => {
+                            return(
+                                <>
+                                     <TeamCards
+                                    key={team.id}
+                                    name={team.name}
+                                    role={team.role}
+                                    image={team.image}
+                                    github={team.github}
+                                    gmail={team.gmail}
+                                    linkedin={team.linkedin}
+                                    isSpread={spreadStates[index + 6]}
+                                    onButtonClick={() => handleButtonClick(index + 6)}
+                        />
+                                </>
+                            );
+                        })
+                    }
+                </div>
             </div>
         </div>
         </>
