@@ -44,7 +44,7 @@ const CartPage = () => {
   const regEvents = async () => {
   
     try {
-      const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/view_cart`, {}, { withCredentials: true });
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/view_cart`, {}, { withCredentials: true });
       console.log("CARTPAGE: ", res);
       // dispatch(removeItemFromCart(eventId)); // Dispatch after success
       
