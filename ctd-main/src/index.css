@@ -29,13 +29,13 @@ h1 {
   /* font-family: "Big Shoulders Display", sans-serif; */
 }
 
-h2{
+
+h2,.inputPlaceholders {
   font-family: "Manrope", sans-serif;
 }
 
 span,
 .loginButton,
-.inputPlaceholders,
 h4, .homeLogo {
   font-family: "Orbitron", sans-serif;
 }

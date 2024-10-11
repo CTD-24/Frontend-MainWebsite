@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 
+import ctdLogo from "../assets/ctdlogo.png"
+
 const AboutPage = () => {
 
     useEffect(() => {
@@ -36,15 +38,24 @@ const AboutPage = () => {
     }, [])
     return ( 
         <>
-            <div className="aboutContainer min-h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-center items-center ">
-                <div className="aboutTitle h-[30vh] w-full bg--600 flex flex-col justify-center items-start px-[4vw]  text-white  ">
-                    <h1 className="text-[8vw] bg--500 h-[16vh] flex justify-center items-center">ABOUT</h1>
-                    <p className="w-[60%] bg--500 text-[1vw] h-[10vh] flex justify-center items-center">Credenz Tech Dayz, the annual intra-college techfest organized by the PICT IEEE Student Branch, gathers PICT's brightest minds for competitions.</p>
-                </div>
-                <div className="aboutMain  h-[100vh] w-full bg--700 flex justify-center items-center relative   ">
+            <div className="aboutContainer h-[100vh] w-[100vw] bg-[#1818188d] flex flex-col justify-end items-center ">
+                {/* <div className="aboutTitle h-[20%] w-full bg--600 flex flex-col justify-center items-start px-[4vw]  text-white  ">
+                    <h1 className="text-[5vw] bg--500 h-[16vh] flex justify-center items-center max-sm:text-[7vh]">ABOUT</h1>
+                    
+                </div> */}
+                <div className="aboutMain  h-[100%] w-full bg--700 flex justify-center items-start relative overflow-y-auto   ">
                     {/* <img src={about} alt="" className=" absolute opacity-[90%] overflow-hidden aboutBack rounded-[1.5vw] object-cover z-[10] w-[93%] " /> */}
-                    <div className="aboutScroll  h-full w-[200vw] flex justify-between items-center overflow-x-auto">
-                        <div className="allAbout bg-blue-700 opacity-0 hidden h-full min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
+                    <div className="aboutScroll  min-h-[100vh] w-[100vw] flex flex-col justify-between items-center ">
+
+                        <div className="top-content-about h-[100vh] w-[80%] bg--700 flex flex-col justify-center items-center text-white text-center gap-[2vh] ">
+                            <img className="h-[20vw] w-[35vw] " src={ctdLogo} alt="" />
+                            <p className="text-[1.1vw]">Credenz Tech Dayz is an intra-college annual techfest organized by the PICT IEEE Student Branch where the brightest minds of PICT compete in technical as well as non-technical events. Participants get a chance to test their logical aptitute and problem solving skills in events like National Computing Contest, Reverse Coding and Enigma. Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure. Participants embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer</p>
+                        </div>
+
+                        {/* <div className="other-content-about h-[100vh] w-full bg-purple-700 flex flex-col justify-center items-center  ">
+
+                        </div> */}
+                        {/* <div className="allAbout bg-zinc-800 opacity-0 py-[5vh] h-auto min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
                             <div className="ieee h-[15vh] w-full bg--600 flex justify-start items-center px-[6vw] text-[6vw] text-white">
                                 <h1>IEEE</h1>
                             </div>
@@ -56,7 +67,7 @@ const AboutPage = () => {
                                 </div>
                             </div> 
                         </div>
-                        <div className="allAbout opacity-0 hidden h-full min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
+                        <div className="allAbout opacity-0 h-auto min-w-[100vw] py-[5vh] z-[100] bg-zinc-800 flex-col justify-center items-center">
                             <div className="ieee h-[15vh] w-full bg--600 flex justify-start items-center px-[6vw] text-[6vw] text-white">
                                 <h1>PISB</h1>
                             </div>
@@ -68,7 +79,7 @@ const AboutPage = () => {
                                 </div>
                             </div> 
                         </div>
-                        <div className="allAbout opacity-0 hidden h-full min-w-[100vw] z-[100] bg--500 flex-col justify-center items-center">
+                        <div className="allAbout opacity-0  h-auto min-w-[100vw] z-[100] py-[5vh] bg-zinc-800 flex-col justify-center items-center">
                             <div className="ieee h-[15vh] w-full bg--600 flex justify-start items-center px-[6vw] text-[6vw] text-white">
                                 <h1>P.I.N.G.</h1>
                             </div>
@@ -79,11 +90,12 @@ const AboutPage = () => {
                                     
                                 </div>
                             </div> 
-                        </div>
+                        </div> */}
                         
                     </div>
                 </div>
             </div>
+            
         </>
      );
 }

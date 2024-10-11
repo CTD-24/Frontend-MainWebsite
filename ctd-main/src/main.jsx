@@ -22,25 +22,27 @@ import DashboardPage from "./Pages/DashboardPage.jsx";
 import CartPage from "./Pages/CartPage.jsx";
 import EventsPage from "./Pages/EventsPage.jsx";
 import RegisterForm from "./components/RegisterForm.jsx";
+import PaymentPage from "./Pages/PaymentPage.jsx";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../src/redux/store.js";
 import ForgotPassword from "./Pages/ForgotPassword.jsx";
 import EventDetail from "./Pages/EventDetail.jsx";
+import { useSelector } from "react-redux";
 
 
 
 const PrivateRoute = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth); // get isAuthenticated from Redux store
+  return isAuth ? <Outlet /> : <Navigate to="/login" />;
+};
 
-  const isAuth = false;
-  return (isAuth ? <Outlet/> : <Navigate to="/login"/>)
-}
-
+// RestrictedRoute Component
 const RestrictedRoute = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth); // get isAuthenticated from Redux store
+  return !isAuth ? <Outlet /> : <Navigate to="/dashboard" />;
+};
 
-  const isAuth = false;
-  return (!isAuth ? <Outlet/> : <Navigate to="/dashboard"/>)
-}
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
@@ -50,16 +52,16 @@ const router = createBrowserRouter(
       <Route path='/about' element={<AboutPage/>} />
       <Route path='/team' element={<TeamPage/>} />
       <Route path='/contact' element={<ContactPage/>} />
-      <Route path='/cart' element={<CartPage/>} />
+      {/* <Route path='/cart' element={<CartPage/>} /> */}
       <Route path='/events' element={<EventsPage />} />
       <Route path='/registerform' element={<RegisterForm />} />
       <Route path='/forgotpassword' element={<ForgotPassword/>} />
-      <Route path='/event/:name' element={<EventDetail/>} />
-
-      
+      <Route path='/eventDesc/:eventName' element={<EventDetail/>} />
 
       <Route element={<PrivateRoute/>}>
         <Route path='/dashboard' element={<DashboardPage/>} />
+        <Route path='/pay' element={<PaymentPage/>} />
+      <Route path='/cart' element={<CartPage/>} />
 
 
       </Route>
@@ -68,7 +70,6 @@ const router = createBrowserRouter(
         <Route path='/signup' element={<SignupPage/>} />
       </Route>
  
-
     </Route>
  
   )

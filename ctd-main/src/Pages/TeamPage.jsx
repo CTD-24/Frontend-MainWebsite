@@ -10,8 +10,8 @@ const TeamPage = () => {
     const teamArr = [
         {
             id:1,
-            name: "SYKUNNO",
-            role:"Backend Developer",
+            name: "Shounak",
+            role:"Frontend Developer",
             image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
@@ -49,7 +49,7 @@ const TeamPage = () => {
         },
         {
             id:5,
-            name: "RYAN",
+            name: "Nikunj",
             role:"Frontend Developer",
             image: team2,
             github:"username.github.com",
@@ -60,9 +60,9 @@ const TeamPage = () => {
         },
         {
             id:6,
-            name: "POSIDON",
-            role:"Designer",
-            image: team3,
+            name: "Sujal",
+            role:"Backend Developer",
+            image: team1,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
@@ -85,12 +85,14 @@ const TeamPage = () => {
     return ( 
         <>
         <div className="team-cont min-h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-start items-center ">
-            <div className="events-head h-[35vh] w-[100vw] bg--600 flex justify-start items-end px-[5vw]  ">
-                <h1 className="text-white text-[6vw]">OUR TEAM</h1>
+
+
+            <div className="events-head h-[35vh] w-[100vw] bg--600 flex justify-start items-end px-[5vw] max-lg:py-[2vh] max-lg:h-[22vh]   ">
+                <h1 className="text-white text-[6vw] max-lg:text-[6vh]">OUR TEAM</h1>
             </div>
 
-            <div className="events-head min-h-[100vh] w-[100vw] bg--600 flex flex-col justify-center  items-center   ">
-                <div className="row-1 h-[70vh] w-[100vw] bg--500 flex justify-around items-center">
+            <div className="events-head min-h-[100vh] w-[100vw] bg--600 flex flex-col justify-center max-lg:gap-[2vh]  items-center gap-[3vh]   ">
+                <div className="row-1 h-auto w-[100vw] bg--500 flex justify-around items-center max-lg:gap-[2vh] max-lg:flex-col">
                     {
                         teamArr.slice(0,3).map((team, index) => {
                             return(
@@ -111,7 +113,7 @@ const TeamPage = () => {
                         })
                     }
                 </div>
-                <div className="row-2 h-[70vh] w-[100vw] bg--500 flex justify-around items-center">
+                <div className="row-2 h-auto w-[100vw] max-lg:flex-col max-lg:gap-[2vh] bg--500 flex justify-around items-center">
                     {
                         teamArr.slice(3,6).map((team, index) => {
                             return(
