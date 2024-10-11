@@ -7,6 +7,9 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 0px;
+}
 html,
 body {
   height: 100vh;
@@ -36,6 +39,4 @@ span,
 h4, .homeLogo {
   font-family: "Orbitron", sans-serif;
 }
-::-webkit-scrollbar {
-  width: 1px;
-}
+

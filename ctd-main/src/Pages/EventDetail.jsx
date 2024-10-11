@@ -242,11 +242,11 @@
       date = "18"
 
       contact = [
-        {
-          name:"Avadhut Giri",
-          num:7057420931
-        }
+        {name:"Atharv Fakatkar",num:9921277385},
+        {name:"Palak Agrawal",num:7030301011},
+        {name:"Shounak Mulay",num:7559179362},
       ]
+      
 
     }
 
@@ -298,7 +298,10 @@
     date = "17"
 
       contact = [
-        { name: "Atharv Fakatkar", num: 9921277385 }
+        {name:"Neel Satdive",num:9834762879},
+        { name: "Divya Pardeshi", num: 9923844914 },
+        { name: "Avadhut Giri", num: 7057420931 },
+
       ]
 
     }
@@ -372,7 +375,8 @@
     date = "16"
 
       contact = [
-        { name: "B Shrinidhi", num: 7506211747 }
+        { name: "B Shrinidhi", num: 7506211747 },
+        { name: "Chirag Meghani", num:9922684190 }
       ]
 
     }
@@ -444,7 +448,9 @@
       ]
       date = "19"
       contact = [
-        { name: "Samir Wankhede", num: 7770011526 }
+        { name: "Samir Wankhede", num: 7770011526 },
+        { name: "B Shrinidhi", num: 7506211747 }
+
       ]
 
     }
@@ -692,8 +698,8 @@
                           return(
                             <>
                               <div className="details h-auto w-auto">
-                              <h2 className="bg--700 text-center text-xl md:text-4xl">{item.name}</h2>
-                              <h3 className="flex bg--700 justify-center items-center gap-[1vw] text-xl md:text-4xl" ><FaPhone size={20} />{item.num}</h3>
+                              <h2 className="bg--700 text-center text-xl md:text-3xl">{item.name}</h2>
+                              <h3 className="flex bg--700 justify-center items-center gap-[1vw] text-xl md:text-3xl" ><FaPhone size={20} />{item.num}</h3>
                               </div>
 
                             </>

@@ -15,6 +15,7 @@ const getToken = () => {
   if (parts.length === 2) return parts.pop().split(";").shift();
 };
 
+
 function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function LoginPage() {
 
   const [isLogin, setIsLogin] = useState(false);
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -153,7 +155,6 @@ function LoginPage() {
       </div>
     </>
   );
-
 }
 
 export default LoginPage;
