@@ -35,6 +35,7 @@ function LoginPage() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let loadingToast = toast.loading("Logging In...");
     try {
       const response = await onLogin({
         username: username,
@@ -50,22 +51,24 @@ function LoginPage() {
       const token = getToken();
       // console.log("JWT Token:", token);
       dispatch(authenticateUser());
-      toast.success("Login successful!");
-      console.log("reslgn" , response);
+      toast.success(res.data.message);
+      // console.log("reslgn" , response);
       navigate("/");
+      toast.dismiss(loadingToast);
       setError(false);
     } 
     
     catch (error) {
       // setError(true);
       // console.log("Error logging in: ", error);
-      if (error.response && error.response.status === 403) {
-        toast.error("Wrong credentials! Please try again.");
-      } 
+      toast.error(error.response.data.message || "Error During Login");
+      // if (error.response && error.response.status === 403) {
+      //   toast.error("Wrong credentials! Please try again.");
+      // } 
       
-      else {
-        toast.error("Error during Login");
-      }
+      // else {
+      //   toast.error("Error during Login");
+      // }
     }
   };
 

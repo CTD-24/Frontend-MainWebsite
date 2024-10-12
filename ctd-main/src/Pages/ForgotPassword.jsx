@@ -33,6 +33,7 @@ const ForgotPassword = () => {
   const handleSubmitEmail = async (e) => {
     e.preventDefault();
     setLoading(true); 
+    let loadingToast = toast.loading("Processing...");
     try {
       const response = await forgotPassword({ email: userData.email });
       // setAlert({
@@ -41,6 +42,7 @@ const ForgotPassword = () => {
       //   visible: true,
       // });
       toast.success(response.data.message);
+      toast.dismiss(loadingToast);
       setStep(2);
     } catch (error) {
       // setAlert({

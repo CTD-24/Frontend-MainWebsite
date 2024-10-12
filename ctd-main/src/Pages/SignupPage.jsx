@@ -59,7 +59,7 @@ function SignupPage() {
       };
 
       // console.log('reg',registrationData)
-
+      let loadingToast = toast.loading("Registering...");
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/auth/register`,registrationData,{
           headers: {
@@ -74,15 +74,14 @@ function SignupPage() {
       //   severity: "success",
       //   visible: true,
       // });
-      setTimeout(() => {
-        setAlert({
-          message: "",
-          severity: "",
-          visible: false,
-        });
-      toast.success("Registration Successful");
-      navigate("/login");
-      }, 2000); 
+        // setAlert({
+        //   message: "",
+        //   severity: "",
+        //   visible: false,
+        // });
+      toast.dismiss(loadingToast);
+      toast.success(response.data.message);
+      navigate("/login"); 
     } catch (err) {
 
       
