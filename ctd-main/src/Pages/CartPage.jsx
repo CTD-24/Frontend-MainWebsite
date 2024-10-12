@@ -185,7 +185,7 @@ const CartPage = () => {
                     let loadingToast = toast.loading("Processing Transaction!");
                     var min = 10000;
                     var max = 99999;
-                    const transactionId = Math.floor(Math.random() * (max - min + 1)) + min;  
+                    const transactionId = 11223344;  
                     console.log("trsnidff" , transactionId);
                     try {
                       const response = await axios.post(
