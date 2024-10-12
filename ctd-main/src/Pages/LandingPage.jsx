@@ -61,36 +61,36 @@ const LandingPage = () => {
     //     ease:"power1.inOut",
     //     opacity: "50%"
     // },"anim")
-    t.to(
-      ".text-box h1",
-      {
-        y: 150,
-        opacity: 0,
-        duration: 2,
-        ease: "power1.inOut",
-      },
-      "anim"
-    );
-    t.to(
-      ".text-box p",
-      {
-        y: 200,
-        opacity: 0,
-        duration: 2,
-        ease: "power1.inOut",
-      },
-      "anim"
-    );
-    t.from(
-      ".top-time h1",
-      {
-        y: -100,
-        opacity: 0,
-        duration: 2,
-        ease: "power1.inOut",
-      },
-      "anim"
-    );
+    // t.to(
+    //   ".text-box h1",
+    //   {
+    //     y: 150,
+    //     opacity: 0,
+    //     duration: 2,
+    //     ease: "power1.inOut",
+    //   },
+    //   "anim"
+    // );
+    // t.to(
+    //   ".text-box p",
+    //   {
+    //     y: 200,
+    //     opacity: 0,
+    //     duration: 2,
+    //     ease: "power1.inOut",
+    //   },
+    //   "anim"
+    // );
+    // t.from(
+    //   ".top-time h1",
+    //   {
+    //     y: -100,
+    //     opacity: 0,
+    //     duration: 2,
+    //     ease: "power1.inOut",
+    //   },
+    //   "anim"
+    // );
 
     const myText = new SplitType(".my-text");
 

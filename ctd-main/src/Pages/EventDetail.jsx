@@ -650,7 +650,7 @@
                 >
                   X
                 </button> */}
-                <RegisterForm closeModal={closeModal} name={name} price={fees}  />
+                <RegisterForm closeModal={closeModal} name={eventName} price={fees}  />
             </div>
           )}
 
