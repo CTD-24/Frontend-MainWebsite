@@ -765,7 +765,12 @@
                   }
               }
               else{
-                navigate("/login");
+                if(eventName === "Decode Rush"){
+                  window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScioEr0sgHapKUqZd2kLnlk0LuqsBw8gKrQtcqV-WTFH1yVEA/viewform';
+                }
+                else{
+                  navigate("/login");
+                }
               }
               }}
               className="bg-white text-black max-md:w-[50%] max-md:text-[1.5vh] font-bold px-[4vw] py-[1.5vh] rounded-full text-[1vw]"
