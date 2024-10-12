@@ -172,11 +172,11 @@ const LandingPage = () => {
 
           <div className="videoDiv h-[100vh] w-[100%] bg-[] z-[400] flex justify-center items-center relative ">
             <div className="video-bottom h-full w-full flex justify-between py-[2vh] px-[2vw] items-end absolute  z-[2000] rounded-[2vh]  text-white max-sm:text-[2.2vw]  ">
-              <div className="flex justify-between w-full">
-              <h2 className="w-fit">The Annual Intra-College Tech-Fest</h2>
-              <h2 className="w-fit">PUNE, MH, 18.4575° N, 73.8508° E</h2>
-              <a href="https://www.pictieee.in/" target="_blank" rel="noopener noreferrer">
-              <h2 className="w-fit cursor-pointer">PICT IEEE Student Branch (PISB)</h2>
+              <div className="flex justify-between w-full z-[500]">
+              <h2 className="w-fit text-[1.8vw] md:text-[1vw]">The Annual Intra-College Tech-Fest</h2>
+              <h2 className="w-fit text-[1.8vw] md:text-[1vw]">PUNE, MH, 18.4575° N, 73.8508° E</h2>
+              <a href="https://www.pictieee.in/" target="_blank" rel="noopener noreferrer" className="z-[1000] cursor-pointer w-fit" style={{ pointerEvents: 'auto' }} >
+              <h2 className="w-fit cursor-pointer text-[1.8vw] md:text-[1vw]">PICT IEEE Student Branch (PISB)</h2>
               </a>
 
       

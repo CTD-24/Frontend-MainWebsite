@@ -67,83 +67,102 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    let t1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: "body",
-        start: "0% 0%",
-        end: "20% 10%",
-        scrub: true,
-      },
-    });
+    // let t1 = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: "body",
+    //     start: "0% 0%",
+    //     end: "20% 10%",
+    //     scrub: true,
+    //   },
+    // });
 
-    t1.to(
-      ".navbar",
-      {
-        height: "10vh",
-        backdropFilter: "blur(10px)",
-        ease: "expo.inOut",
-        duration: 2,
-        delay: 0.5,
-      },
-      "nav"
-    );
-    t1.to(
-      ".nav-mid",
-      {
-        fontSize: "0.8vw",
-        ease: "expo.inOut",
-        duration: 0.9,
-        delay: 0.5,
-      },
-      "nav"
-    );
-    gsap.from(
-      ".nav-mid a",
-      {
-        y: "-10vh",
-        stagger: 0.2,
-        ease: "power1.inOut",
-        duration: 0.9,
-      },
-      "nav"
-    );
+    // t1.to(
+    //   ".navbar",
+    //   {
+    //     height: "10vh",
+    //     backdropFilter: "blur(10px)",
+    //     ease: "expo.inOut",
+    //     duration: 2,
+    //     delay: 0.5,
+    //   },
+    //   "nav"
+    // );
+    // t1.to(
+    //   ".nav-mid",
+    //   {
+    //     fontSize: "0.8vw",
+    //     ease: "expo.inOut",
+    //     duration: 0.9,
+    //     delay: 0.5,
+    //   },
+    //   "nav"
+    // );
+    // setTimeout(() => {
+    //   gsap.from(
+    //     ".nav-mid a",
+    //     {
+    //       y: "-10vh",
+    //       stagger: 0.2,
+    //       ease: "power1.inOut",
+    //       duration: 0.9,
+    //     },
+    //     "nav"
+    //   );
+    // }, 100); // Small delay to ensure elements are ready
   }, []);
 
   const [menuClick, setMenuClick] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
 
-  if (menuClick) {
-    let t1 = gsap.timeline();
-    t1.to(
-      ".resNav",
-      {
-        right: "0%",
+  // Function to handle window resize for mobile responsiveness
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 640);
+  };
+
+  // Add an event listener for window resizing
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Menu open animation
+    if (menuClick) {
+      let t1 = gsap.timeline();
+      t1.to(
+        ".resNav",
+        {
+          right: "0%",
+          ease: "power1.inOut",
+          duration: 0.4,
+          delay: 0.2,
+        },
+        "one"
+      )
+      .from(".res-links h2", {
+        y: "10vh",
+        stagger: 0.2,
+        duration: 0.6,
+        ease: "power1.inOut",
+      });
+    } else {
+      // Menu close animation
+      gsap.to(".menuBtn", {
+        ease: "power1.inOut",
+        duration: 0.8,
+      });
+
+      gsap.to(".resNav", {
+        right: isMobile ? "-100%" : "-50%",  // Responsively handle the sidebar
         ease: "power1.inOut",
         duration: 0.4,
         delay: 0.2,
-      },
-      "one"
-    )
-    .from(".res-links h2", {
-      y: "10vh",
-      stagger: 0.2,
-      duration: 0.6,
-      ease: "power1.inOut",
-    });
-  } else {
-    const isMobile = window.innerWidth <= 640;
-
-    gsap.to(".menuBtn", {
-      ease: "power1.inOut",
-      duration: 0.8,
-    });
-
-    gsap.to(".resNav", {
-      right: isMobile ? "-100%" : "-50%",
-      ease: "power1.inOut",
-      duration: 0.4,
-      delay: 0.2,
-    });
-  }
+      });
+    }
+  }, [menuClick, isMobile]);
   useEffect(() => {
     const menuBtn = document.querySelector(".menuBtn");
 
