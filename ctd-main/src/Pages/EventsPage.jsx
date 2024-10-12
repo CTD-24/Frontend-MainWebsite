@@ -2,7 +2,7 @@ import Eventbox from "../components/Eventbox";
 import rc from "../assets/rc4.png";
 import Enigma from "../assets/engm.png";
 import nth from "../assets/nth1.png";
-import ncc from "../assets/ncc3.png";
+import ncc from "../assets/ncc1.png";
 import dr from "../assets/dr2.png";
 
 
