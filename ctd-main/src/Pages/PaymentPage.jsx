@@ -5,6 +5,9 @@ import axios from "axios";
 // import qr from "../../assets/qrCode.png"
 import qr from "../assets/pictqr.jpg";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux"; // Added useDispatch import
+import { clearCart } from "../redux/slices/cartSlice";
+
 
 
 const PaymentPage = () => {
@@ -17,7 +20,7 @@ const PaymentPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
-  console.log("TOTAL: ",totalAmount);
+  const dispatch = useDispatch();
 
   const [tabs, setTabs] = useState(1);
 
@@ -50,7 +53,7 @@ const PaymentPage = () => {
         { withCredentials: true }
       );
 
-      console.log("transaction submitted successfully");
+      dispatch(clearCart());
       // alert("Transaction successful!");
       toast.success("Transaction successful!");
 
