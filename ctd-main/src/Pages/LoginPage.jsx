@@ -41,11 +41,11 @@ function LoginPage() {
         password: password,
       });
       // console.log("API Response:", response);
-      setAlert({
-        message: "Login successful!",
-        severity: "success",
-        visible: true,
-      });
+      // setAlert({
+      //   message: "Login successful!",
+      //   severity: "success",
+      //   visible: true,
+      // });
       setIsLogin(true);
       const token = getToken();
       // console.log("JWT Token:", token);
@@ -56,7 +56,7 @@ function LoginPage() {
     } 
     
     catch (error) {
-      setError(true);
+      // setError(true);
       // console.log("Error logging in: ", error);
       if (error.response && error.response.status === 403) {
         toast.error("Wrong credentials! Please try again.");
