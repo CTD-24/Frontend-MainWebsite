@@ -595,24 +595,12 @@
 
         dispatch(addItemToCart(eventItem));
         if(res.status == 201){
-          setAlert({
-            message: "Event Added to Cart!",
-            severity: "success",
-            visible: true,
-          });
-          setTimeout(() => {
-            setAlert({
-              message: "",
-              severity: "",
-              visible: false,
-            });
-          }, 5000); 
-        }
+            toast.success("Event Added to Cart!");
         // console.log("res", res);
-        
+        }
       } catch (error) {
         // console.error("error adding to cart", error);
-        toast.error("Error Adding Event To Cart");
+        toast.error(error.response.data.message);
       }
   
       

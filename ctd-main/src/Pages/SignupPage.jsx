@@ -87,23 +87,23 @@ function SignupPage() {
 
       
 
-        setAlert({
-          message: err.response.data.message,
-          severity: "error",
-          visible: true,
-        });
+        // setAlert({
+        //   message: err.response.data.message,
+        //   severity: "error",
+        //   visible: true,
+        // });
         setTimeout(() => {
-          setAlert({
-            message: "",
-            severity: "",
-            visible: false,
-          });
+          // setAlert({
+          //   message: "",
+          //   severity: "",
+          //   visible: false,
+          // });
         }, 5000); 
       // } 
 
       // console.error("Registration error:", err);
       setError(err.response?.data?.message || "Registration failed");
-      toast.error(err.response?.data?.message);
+      toast.error(err.response?.data?.message || "Registration failed");
     }
   };
 

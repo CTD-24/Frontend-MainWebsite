@@ -51,6 +51,7 @@ function LoginPage() {
       // console.log("JWT Token:", token);
       dispatch(authenticateUser());
       toast.success("Login successful!");
+      console.log("reslgn" , response);
       navigate("/");
       setError(false);
     } 

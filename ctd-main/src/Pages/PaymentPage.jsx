@@ -44,25 +44,28 @@ const PaymentPage = () => {
       toast.error("Please enter transaction ID");
       return;
     }
-
     setIsClicked(true);
-
+    let loadingToast = toast.loading("Processing Transaction!");
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/submitTransaction`,
         { transaction_code: transactionId },
         { withCredentials: true }
       );
-
+      toast.dismiss(loadingToast);
       dispatch(clearCart());
       // alert("Transaction successful!");
       toast.success("Transaction successful!");
-
+      console.log("res" , response);
+      
       navigate('/');
     } catch (error) {
       // alert("Error making payment, Please try again!")
-      toast.error("Error making payment, Please try again!");
+      toast.error(error.response.data.message);
       // console.error("Error making payment", error);
+    }
+    finally {
+      setIsClicked(false); // Re-enable the button regardless of success or failure
     }
   };
 
