@@ -562,7 +562,7 @@
 
     const addToCartHandler = async () => {
       
-      console.log("event na",eventName)
+      // console.log("event na",eventName)
 
       if (eventName === 'Decode Rush') {
         window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScioEr0sgHapKUqZd2kLnlk0LuqsBw8gKrQtcqV-WTFH1yVEA/viewform';
@@ -607,7 +607,7 @@
             });
           }, 5000); 
         }
-        console.log("res", res);
+        // console.log("res", res);
         
       } catch (error) {
         console.error("error adding to cart", error);
@@ -753,7 +753,7 @@
                 
               </div>
             </div>
-            {console.log("islogin? " , isLoggedIn)}
+            {/* {console.log("islogin? " , isLoggedIn)} */}
             <button
               onClick={ () =>  {
                 if(isLoggedIn){

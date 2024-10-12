@@ -40,7 +40,7 @@ function LoginPage() {
         username: username,
         password: password,
       });
-      console.log("API Response:", response);
+      // console.log("API Response:", response);
       setAlert({
         message: "Login successful!",
         severity: "success",
@@ -57,7 +57,7 @@ function LoginPage() {
     
     catch (error) {
       setError(true);
-      console.log("Error logging in: ", error);
+      // console.log("Error logging in: ", error);
       if (error.response && error.response.status === 403) {
         toast.error("Wrong credentials! Please try again.");
       } 

@@ -24,10 +24,9 @@ const DashboardPage = () => {
     try {
       await onLogout();
       dispatch(unauthenticateUser());
-      console.log("Logged out Successfully...");
       navigate("/login");
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
     }
   };
 
@@ -35,7 +34,6 @@ const DashboardPage = () => {
     const fetchUser = async () => {
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/profile`, { withCredentials: true });
-        console.log(res.data);
         setUserId(res.data.user.id)
         setFirstName(res.data.user.first_name);
         setUsername(res.data.user.username);
@@ -45,18 +43,17 @@ const DashboardPage = () => {
 
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/my_orders`, { withCredentials: true });
-        console.log(res.data);
+        // console.log(res.data);
         setPaidOrders(res.data.nonPendingOrders); // Set paid orders in state
       } catch (error) {
-        console.error("Error fetching orders", error);
+        // console.error("Error fetching orders", error);
       }
 
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/mypending_orders`, { withCredentials: true });
-        console.log(res.data);
         setPendingOrders(res.data.pendingOrders); // Set paid orders in state
       } catch (error) {
-        console.error("Error fetching orders", error);
+        // console.error("Error fetching orders", error);
       }
     };
 

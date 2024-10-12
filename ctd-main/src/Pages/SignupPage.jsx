@@ -44,7 +44,7 @@ function SignupPage() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted with values:", values);
+    // console.log("Form submitted with values:", values);
 
     try {
       const registrationData = {
@@ -58,7 +58,7 @@ function SignupPage() {
         password: values.password,
       };
 
-      console.log('reg',registrationData)
+      // console.log('reg',registrationData)
 
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/auth/register`,registrationData,{
@@ -68,7 +68,7 @@ function SignupPage() {
         }
       );
 
-      console.log("Registration successful:", response.data);
+      // console.log("Registration successful:", response.data);
       setAlert({
         message: "Registration successful!",
         severity: "success",

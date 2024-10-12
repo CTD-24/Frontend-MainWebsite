@@ -22,7 +22,6 @@ const Navbar = () => {
   const dispatch = useDispatch(); // Added useDispatch hook
 
   const cart = useSelector((state) => state.cart);
-  console.log("CART: ", cart.items.length);
 
   const navigate = useNavigate();
 
@@ -188,7 +187,6 @@ const Navbar = () => {
 
       dispatch(unauthenticateUser()); // Dispatch the unauthentication action after successful logout
       dispatch(clearCart());
-      console.log("Logged out Successfully...");
       navigate("/login");
       toast.success("Logged out Successfully");
       await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/logout`, {}, { withCredentials: true });
@@ -197,7 +195,6 @@ const Navbar = () => {
 
       
     } catch (error) {
-      console.log(error.message);
       toast.success("Error Logging out");
     }
   };

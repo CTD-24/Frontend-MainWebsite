@@ -143,7 +143,7 @@ const TeamPage = () => {
 
         },
     ];
-    console.log(teamArr.length);
+    // console.log(teamArr.length);
 
     const [spreadStates, setSpreadStates] = useState(Array(teamArr.length).fill(false));
 

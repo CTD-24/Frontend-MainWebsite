@@ -27,10 +27,8 @@ const CartPage = () => {
     const eventName = eventId;
   
     try {
-      const res = await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/delete/${eventName}`, {}, { withCredentials: true });
-      console.log("res", res);
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/delete/${eventName}`, {}, { withCredentials: true });
       dispatch(removeItemFromCart(eventId)); // Dispatch after success
-      console.log("DELETE Response: ", res.status);
       
     } 
     
@@ -46,7 +44,6 @@ const CartPage = () => {
   
     try {
       const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/view_cart`, {}, { withCredentials: true });
-      console.log("CARTPAGE: ", res);
       // dispatch(removeItemFromCart(eventId)); // Dispatch after success
       
     } 

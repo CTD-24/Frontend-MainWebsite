@@ -38,7 +38,6 @@ const ContactPage = () => {
       linkedin: "username.github.com",
     },
   ];
-  console.log(teamArr.length);
 
   const [spreadStates, setSpreadStates] = useState(
     Array(teamArr.length).fill(false)
