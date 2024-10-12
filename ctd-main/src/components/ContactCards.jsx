@@ -1,4 +1,4 @@
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaPhone } from "react-icons/fa6";
 import gsap from "gsap";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -6,13 +6,14 @@ import { FiGithub } from "react-icons/fi";
 import { SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa6";
 
-const TeamCards = ({
+const ContactCards
+ = ({
   name,
   role,
   image,
   isSpread,
   onButtonClick,
-  github,
+  phone,
   gmail,
   linkedin,
 }) => {
@@ -65,13 +66,7 @@ const TeamCards = ({
         <div
           className={`member-links member-links-${name} h-[70%] w-[100%] bg--500 flex flex-col justify-end items-center scale-0 absolute top-0 left-0 z-[6000] opacity-0`}
         >
-          <Link
-            to={github}
-            className="h-[8vh] w-full bg--500 flex justify-center items-center gap-[1vw] overflow-hidden"
-          >
-            {" "}
-            <FiGithub size={25} /> <h2 className="text-[1.1vw] max-lg:text-[2vh]">GITHUB</h2>
-          </Link>
+          
           <a
             href={`mailto:${gmail}`}
             className="h-[8vh] w-full bg--900 flex justify-center items-center gap-[1vw] overflow-hidden"
@@ -85,6 +80,13 @@ const TeamCards = ({
           >
             <FaLinkedinIn size={25} />
             <h2 className="text-[1.1vw] max-lg:text-[2vh]">LINKEDIN</h2>
+          </Link>
+
+          <Link
+            className="h-[8vh] w-full bg--500 flex justify-center items-center gap-[1vw] overflow-hidden"
+          >
+            {" "}
+            <FaPhone size={20} /> <h2 className="text-[1.1vw] max-lg:text-[2vh]">{phone}</h2>
           </Link>
         </div>
 
@@ -119,4 +121,5 @@ const TeamCards = ({
   );
 };
 
-export default TeamCards;
+export default ContactCards
+;

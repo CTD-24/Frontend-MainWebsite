@@ -13,7 +13,8 @@ import sameer from "./TeamAssets/sameer.jpeg";
 import shrinidhi from "./TeamAssets/shrinidhi.jpeg";
 import atharv from "./TeamAssets/atharv.jpeg";
 import digambar from "./TeamAssets/digmabar.jpg";
-
+import nik from './TeamAssets/nik.jpg'
+import shounak from './TeamAssets/shounak.jpg'
 
 
 import gsap from "gsap";
@@ -54,7 +55,7 @@ const TeamPage = () => {
         {
             id:4,
             name: "DIGAMBAR",
-            role:"Fullstack Developer",
+            role:"Full Stack Developer",
             image: digambar,
             github:"https://github.com/digambarJail",
             gmail:"ddjail2004@gmail.com",
@@ -75,7 +76,7 @@ const TeamPage = () => {
             id:6,
             name: "SHOUNAK",
             role:"Frontend Developer",
-            image: team1,
+            image: shounak,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
@@ -113,9 +114,9 @@ const TeamPage = () => {
         },
         {
             id:10,
-            name: "JOBIN",
-            role:"Enigma",
-            image: team1,
+            name: "NIKUNJ",
+            role:"Frontend Developer",
+            image: nik,
             github:"",
             gmail:"",
             linkedin:"",

@@ -16,6 +16,8 @@
     const {eventName} = useParams();
     const navigate = useNavigate();
 
+  
+
     //   const eventsData = [
     //   {
     //     id:1,
@@ -203,7 +205,7 @@
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
       <>
       <div className=" w-full flex justify-between text-xl pt-4">
-        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">FEES: ₹50</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">FEES: ₹20</h2>
         <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">TIME: 8:00 PM - 10:00 PM</h2>
         <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">MODE: {mode}</h2>
         </div>
@@ -212,7 +214,7 @@
 
       ]
 
-      fees = 50;
+      fees = 20;
 
       rules = [
         {
@@ -259,14 +261,14 @@
       "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
       "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">FEES: ₹50</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">FEES: ₹20</h2>
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">TIME: 8:30 PM - 10:30 PM</h2>
       <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
       
     ]
 
-      fees = 50;
+      fees = 20;
 
 
       rules = [
@@ -321,7 +323,6 @@
     ]
 
       fees = 50;
-
 
       rules = [
         {
@@ -561,6 +562,12 @@
 
     const addToCartHandler = async () => {
       
+      console.log("event na",eventName)
+
+      if (eventName === 'Decode Rush') {
+        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScioEr0sgHapKUqZd2kLnlk0LuqsBw8gKrQtcqV-WTFH1yVEA/viewform';
+        return;
+      }
   
       const eventItem = {
         id: eventName,
@@ -574,6 +581,11 @@
         eventName: eventName,
         user_id:null,
       };
+
+      if(eventName === 'Decode rush'){
+        navigate('https://docs.google.com/forms/d/e/1FAIpQLScioEr0sgHapKUqZd2kLnlk0LuqsBw8gKrQtcqV-WTFH1yVEA/viewform');
+        return ;
+      }
   
       try {
         const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/add_cart`, formData, {
@@ -753,7 +765,12 @@
                   }
               }
               else{
-                navigate("/login");
+                if(eventName === "Decode Rush"){
+                  window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScioEr0sgHapKUqZd2kLnlk0LuqsBw8gKrQtcqV-WTFH1yVEA/viewform';
+                }
+                else{
+                  navigate("/login");
+                }
               }
               }}
               className="bg-white text-black max-md:w-[50%] max-md:text-[1.5vh] font-bold px-[4vw] py-[1.5vh] rounded-full text-[1vw]"

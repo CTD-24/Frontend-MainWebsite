@@ -6,107 +6,86 @@ import shreyas from "./TeamAssets/Shreyas.jpg";
 import gitesh from "./TeamAssets/gitesh.jpg";
 import anshul from "./TeamAssets/anshul.jpeg";
 import gsap from "gsap";
+import ContactCards from "../components/ContactCards";
 
 const ContactPage = () => {
+  const teamArr = [
+    {
+      id: 1,
+      name: "SHREYAS",
+      role: "Core Team",
+      image: shreyas,
+      phone: "+91 7666521232",
+      gmail: "username.github.com",
+      linkedin: "username.github.com",
+    },
+    {
+      id: 2,
+      name: "ANSHUL",
+      role: "Core Team",
+      image: anshul,
+      phone: "+91 8999813108",
+      gmail: "username.github.com",
+      linkedin: "username.github.com",
+    },
+    {
+      id: 3,
+      name: "GITESH",
+      role: "Core Team",
+      image: gitesh,
+      phone: "+91 8999813108",
+      gmail: "username.github.com",
+      linkedin: "username.github.com",
+    },
+  ];
+  console.log(teamArr.length);
 
-    const teamArr = [
-        {
-            id:1,
-            name: "Shreyas",
-            role:".",
-            image: shreyas,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
-        },
-        {
-            id:2,
-            name: "Anshul",
-            role:".",
-            image: anshul,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
+  const [spreadStates, setSpreadStates] = useState(
+    Array(teamArr.length).fill(false)
+  );
 
+  const handleButtonClick = (index) => {
+    setSpreadStates((prevStates) => {
+      const newStates = [...prevStates];
+      newStates[index] = !newStates[index];
+      return newStates;
+    });
+  };
 
-        },
-        {
-            id:3,
-            name: "Gitesh",
-            role:".",
-            image: gitesh,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
-
-        },
-    ];
-    console.log(teamArr.length);
-
-    const [spreadStates, setSpreadStates] = useState(Array(teamArr.length).fill(false));
-
-    const handleButtonClick = (index) => {
-        setSpreadStates(prevStates => {
-            const newStates = [...prevStates];
-            newStates[index] = !newStates[index];
-            return newStates;
-        });
-    };
-
-
-    return ( 
-        <>
-        <div className="team-cont min-h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-start items-center ">
-
-
-            <div className="events-head min-h-[100vh] w-[100vw] bg--600 flex flex-col justify-center max-lg:gap-[2vh]  items-center gap-[3vh]   ">
-                <div className="row-1 h-auto w-[100vw] bg--500 flex justify-around items-center max-lg:gap-[2vh] max-lg:flex-col">
-                    {
-                        teamArr.slice(0,3).map((team, index) => {
-                            return(
-                                <>
-                                    <TeamCards
-                                        key={team.id}
-                                        name={team.name}
-                                        role={team.role}
-                                        image={team.image}
-                                        github={team.github}
-                                        gmail={team.gmail}
-                                        linkedin={team.linkedin}
-                                        isSpread={spreadStates[index]}
-                                        onButtonClick={() => handleButtonClick(index)}
-                        />
-                                </>
-                            );
-                        })
-                    }
-                </div>
-                <div className="row-2 h-auto w-[100vw] max-lg:flex-col max-lg:gap-[2vh] bg--500 flex justify-around items-center">
-                    {
-                        teamArr.slice(3,6).map((team, index) => {
-                            return(
-                                <>
-                                     <TeamCards
-                                    key={team.id}
-                                    name={team.name}
-                                    role={team.role}
-                                    image={team.image}
-                                    github={team.github}
-                                    gmail={team.gmail}
-                                    linkedin={team.linkedin}
-                                    isSpread={spreadStates[index + 3]}
-                                    onButtonClick={() => handleButtonClick(index + 3)}
-                        />
-                                </>
-                            );
-                        })
-                    }
-                </div>
-                
-            </div>
+  return (
+    <>
+      <div className="team-cont min-h-[100vh] w-[100vw] bg-[#181818] flex flex-col justify-start items-center ">
+        <div className="events-head h-[35vh] w-[100vw] bg--600 flex justify-start  max-lg:justify-center items-end px-[5vw] max-lg:py-[2vh] max-lg:h-[22vh]   ">
+          <h1 className="text-white text-[6vw] max-lg:text-[6vh]">
+            CONTACT US
+          </h1>
         </div>
-        </>
-     );
-}
- 
+
+        <div className="events-head min-h-[70vh] w-[100vw] bg--600 flex flex-col justify-center max-lg:gap-[2vh]   items-center gap-[3vh]   ">
+          <div className="row-1 h-auto w-[100vw] bg--500 flex justify-around items-center max-lg:gap-[2vh] max-lg:flex-col">
+            {teamArr.slice(0, 3).map((team, index) => {
+              return (
+                <>
+                  <ContactCards
+                    key={team.id}
+                    name={team.name}
+                    role={team.role}
+                    image={team.image}
+                    gmail={team.gmail}
+                    phone={team.phone}
+                    linkedin={team.linkedin}
+                    isSpread={spreadStates[index]}
+                    onButtonClick={() => handleButtonClick(index)}
+                  />
+                </>
+              );
+            })}
+          </div>
+          
+        </div>
+      </div>
+    </>
+  );
+};
+
 export default ContactPage;

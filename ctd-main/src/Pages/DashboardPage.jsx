@@ -16,6 +16,7 @@ const DashboardPage = () => {
 
   const [firstName, setFirstName] = useState("");
   const [userName, setUsername] = useState("");
+  const [userId, setUserId] = useState('')
   const [paidOrders, setPaidOrders] = useState([]); // State to hold paid orders
   const [pendingOrders, setPendingOrders] = useState([]);
 
@@ -35,6 +36,7 @@ const DashboardPage = () => {
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/profile`, { withCredentials: true });
         console.log(res.data);
+        setUserId(res.data.user.id)
         setFirstName(res.data.user.first_name);
         setUsername(res.data.user.username);
       } catch (error) {
@@ -44,15 +46,15 @@ const DashboardPage = () => {
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/my_orders`, { withCredentials: true });
         console.log(res.data);
-        setPaidOrders(res.data.paidOrders); // Set paid orders in state
+        setPaidOrders(res.data.nonPendingOrders); // Set paid orders in state
       } catch (error) {
         console.error("Error fetching orders", error);
       }
 
       try {
-        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/view_cart`, { withCredentials: true });
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/mypending_orders`, { withCredentials: true });
         console.log(res.data);
-        setPendingOrders(res.data.cartItems); // Set paid orders in state
+        setPendingOrders(res.data.pendingOrders); // Set paid orders in state
       } catch (error) {
         console.error("Error fetching orders", error);
       }
@@ -78,6 +80,7 @@ const DashboardPage = () => {
               <div>
                 <h2 className="text-2xl font-bold">{firstName}</h2>
                 <p className="text-gray-400">{userName}</p>
+                <p className="text-gray-400">User Id : {userId}</p>
               </div>
               <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
                 Edit
@@ -89,7 +92,7 @@ const DashboardPage = () => {
               {/* Displaying Paid Orders */}
               <div className="bg--600 max-lg:py-[2vh] w-full p-4 rounded-md">
                 <h3 className="text-xl mb-4 font-bold">My Paid Orders</h3>
-                {paidOrders.length > 0 ? (
+                {paidOrders && paidOrders.length > 0 ? (
                   <ul className="space-y-2">
                     {paidOrders.map((order) => (
                       <li key={order.cart_id} className="flex justify-between bg-gray-800 px-4 py-2 rounded-lg">
@@ -110,7 +113,7 @@ const DashboardPage = () => {
 
               <div className="bg--600 max-lg:py-[2vh] w-full mt-2 p-4 rounded-md">
                 <h3 className="text-xl mb-4 font-bold">My Pending Orders</h3>
-                {pendingOrders.length > 0 ? (
+                {pendingOrders && pendingOrders.length > 0 ? (
                   <ul className="space-y-2">
                     {pendingOrders.map((order) => (
                       <li key={order.cart_id} className="flex justify-between bg-gray-800 px-4 py-2 rounded-lg">

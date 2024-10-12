@@ -54,13 +54,13 @@ const Navbar = () => {
     },
 
     {
-      id: 4,
+      id: 5,
       name: "YOUR CART",
       link: "/cart",
     },
 
     {
-      id: 5,
+      id: 6,
       name: "LOGIN",
       link: "/login",
     },
@@ -267,6 +267,15 @@ const Navbar = () => {
               </button>
             );
           })}
+          {isLogin && <button
+           onClick={() => {
+                  toPage('/dashboard');
+                  setMenuClick(!menuClick);
+                }} className="linkBox hover:bg-white hover:text-black hover:rounded-[1vh] overflow-hidden max-md:h-[10vh] h-[20vh] w-full bg--700 flex justify-end items-end border-b-[#585858] border-solid border-b-[1px] text-white text-[2.2vw] max-md:text-[5vh]">
+                  <h2 className="text-[2.2vw] max-md:text-[5vh]">DASHBOARD</h2>
+              </button>
+            }
+
         </div>
       </div>
     </>
