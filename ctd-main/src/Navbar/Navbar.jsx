@@ -66,14 +66,14 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    // let t1 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: "body",
-    //     start: "0% 0%",
-    //     end: "20% 10%",
-    //     scrub: true,
-    //   },
-    // });
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "body",
+        start: "0% 0%",
+        end: "20% 10%",
+        scrub: true,
+      },
+    });
 
     t1.to(
       ".navbar",
