@@ -195,7 +195,7 @@ const Navbar = () => {
 
       
     } catch (error) {
-      toast.success("Error Logging out");
+      toast.error("Error Logging out");
     }
   };
 

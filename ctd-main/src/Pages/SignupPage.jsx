@@ -69,11 +69,11 @@ function SignupPage() {
       );
 
       // console.log("Registration successful:", response.data);
-      setAlert({
-        message: "Registration successful!",
-        severity: "success",
-        visible: true,
-      });
+      // setAlert({
+      //   message: "Registration successful!",
+      //   severity: "success",
+      //   visible: true,
+      // });
       setTimeout(() => {
         setAlert({
           message: "",
@@ -101,9 +101,9 @@ function SignupPage() {
         }, 5000); 
       // } 
 
-      console.error("Registration error:", err);
+      // console.error("Registration error:", err);
       setError(err.response?.data?.message || "Registration failed");
-      toast.error("Registration Failed");
+      toast.error(err.response?.data?.message);
     }
   };
 
@@ -165,7 +165,7 @@ function SignupPage() {
                 name="enrollment_number"
                 value={values.enrollment_number}
                 onChange={onChange}
-                placeholder="ENROLLMENT NUMBER"
+                placeholder="ENROLLMENT NUMBER (C2K,I2K,E2K..,etc)"
                 className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded -lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
               <input

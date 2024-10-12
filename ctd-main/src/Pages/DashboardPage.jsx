@@ -8,7 +8,7 @@ import astro from "../assets/astronaut.png";
 import { useSelector, useDispatch } from "react-redux";
 import { IoIosMusicalNote } from "react-icons/io";
 import { faker } from '@faker-js/faker';
-
+import { toast } from "react-toastify";
 const DashboardPage = () => {
   const { isLogin } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -25,8 +25,10 @@ const DashboardPage = () => {
       await onLogout();
       dispatch(unauthenticateUser());
       navigate("/login");
+      toast.success("Logged Out Successfully!");
     } catch (error) {
       // console.log(error.message);
+      toast.error("Error Logging Out!");
     }
   };
 
@@ -38,7 +40,8 @@ const DashboardPage = () => {
         setFirstName(res.data.user.first_name);
         setUsername(res.data.user.username);
       } catch (error) {
-        console.error("Error fetching user", error);
+        // console.error("Error fetching user", error);
+        toast.error("Error Fetching User");
       }
 
       try {
@@ -47,6 +50,7 @@ const DashboardPage = () => {
         setPaidOrders(res.data.nonPendingOrders); // Set paid orders in state
       } catch (error) {
         // console.error("Error fetching orders", error);
+        toast.error("Error Fetching orders");
       }
 
       try {
@@ -54,6 +58,7 @@ const DashboardPage = () => {
         setPendingOrders(res.data.pendingOrders); // Set paid orders in state
       } catch (error) {
         // console.error("Error fetching orders", error);
+        toast.error("Error Fetching Pending orders");
       }
     };
 
@@ -79,9 +84,9 @@ const DashboardPage = () => {
                 <p className="text-gray-400">{userName}</p>
                 <p className="text-gray-400">User Id : {userId}</p>
               </div>
-              <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
+              {/* <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
                 Edit
-              </button>
+              </button> */}
             </div>
 
             <div className="space-y-2 max-lg:w-full h-auto bg--600">

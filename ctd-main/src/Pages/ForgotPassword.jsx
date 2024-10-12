@@ -5,6 +5,7 @@ import axios from "axios";
 import MainGradient from "../assets/MainBG.png";
 import CircularProgress from "@mui/material/CircularProgress"; 
 import { forgotPassword, resetPassword } from "../api/auth";
+import { toast } from "react-toastify";
 const ForgotPassword = () => {
   const [userData, setUserData] = useState({
     email: "",
@@ -34,18 +35,20 @@ const ForgotPassword = () => {
     setLoading(true); 
     try {
       const response = await forgotPassword({ email: userData.email });
-      setAlert({
-        message: response.data.message,
-        severity: "success",
-        visible: true,
-      });
+      // setAlert({
+      //   message: response.data.message,
+      //   severity: "success",
+      //   visible: true,
+      // });
+      toast.success(response.data.message);
       setStep(2);
     } catch (error) {
-      setAlert({
-        message: error.response.data.message,
-        severity: "error",
-        visible: true,
-      });
+      // setAlert({
+      //   message: error.response.data.message,
+      //   severity: "error",
+      //   visible: true,
+      // });
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }

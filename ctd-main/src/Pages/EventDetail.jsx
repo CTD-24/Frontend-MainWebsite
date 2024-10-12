@@ -8,6 +8,7 @@
   import { FaPhone } from "react-icons/fa6";
   import { useNavigate } from "react-router-dom";
   // import { useSelector } from 'react-redux';
+  import { toast } from "react-toastify";
 
   import axios from "axios";
   const EventDetail = () => {
@@ -610,19 +611,8 @@
         // console.log("res", res);
         
       } catch (error) {
-        console.error("error adding to cart", error);
-        setAlert({
-          message: "Event Already in the Cart!",
-          severity: "error",
-          visible: true,
-        });
-        setTimeout(() => {
-          setAlert({
-            message: "",
-            severity: "",
-            visible: false,
-          });
-        }, 5000); 
+        // console.error("error adding to cart", error);
+        toast.error("Error Adding Event To Cart");
       }
   
       

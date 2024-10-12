@@ -16,8 +16,8 @@ const ContactPage = () => {
       role: "Core Team",
       image: shreyas,
       phone: "+91 7666521232",
-      gmail: "username.github.com",
-      linkedin: "username.github.com",
+      gmail: "gitpats@gmail.com",
+      linkedin: "http://www.linkedin.com/in/giteshapatil",
     },
     {
       id: 2,

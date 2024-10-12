@@ -93,8 +93,8 @@ const TeamCards = ({
         <div className="team-info h-[100%] w-[100%] bg-transparent absolute top-0 left-0 flex justify-center items-end rounded-[20px] opacity-[100%] z-[2000]  ">
           <div className="team-bottom h-[16vh] w-[100%] bg--500 max-lg:px-[2vw] flex justify-between items-center">
             <div className="team-left h-[100%] w-[65%] bg--500 flex flex-col justify-center items-start px-[1.5vw]">
-              <h1 className="text-white text-[6vh] leading-[8vh]">{name}</h1>
-              <p className="text-white text-[1.8vh] max-lg:text-[1.5vh] bg--500">{role}</p>
+              <h1 className="text-white text-[6vh] leading-[8vh] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1.4)]">{name}</h1>
+              <p className="text-white text-[1.8vh] max-lg:text-[1.5vh] bg--500 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1.4)]">{role}</p>
             </div>
             <div className="team-right h-[100%] w-[35%] bg--500 flex justify-center max-lg:justify-end items-center relative">
               <button
