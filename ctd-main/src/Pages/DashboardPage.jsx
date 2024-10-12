@@ -16,6 +16,7 @@ const DashboardPage = () => {
 
   const [firstName, setFirstName] = useState("");
   const [userName, setUsername] = useState("");
+  const [userId, setUserId] = useState('')
   const [paidOrders, setPaidOrders] = useState([]); // State to hold paid orders
   const [pendingOrders, setPendingOrders] = useState([]);
 
@@ -35,6 +36,7 @@ const DashboardPage = () => {
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/profile`, { withCredentials: true });
         console.log(res.data);
+        setUserId(res.data.user.id)
         setFirstName(res.data.user.first_name);
         setUsername(res.data.user.username);
       } catch (error) {
@@ -78,6 +80,7 @@ const DashboardPage = () => {
               <div>
                 <h2 className="text-2xl font-bold">{firstName}</h2>
                 <p className="text-gray-400">{userName}</p>
+                <p className="text-gray-400">User Id : {userId}</p>
               </div>
               <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
                 Edit
