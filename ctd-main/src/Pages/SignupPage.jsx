@@ -5,7 +5,7 @@ import { onRegistration } from "../api/auth";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import axios from 'axios'
-
+import { toast } from "react-toastify";
 
 function SignupPage() {
   const navigate = useNavigate();
@@ -80,6 +80,7 @@ function SignupPage() {
           severity: "",
           visible: false,
         });
+      toast.success("Registration Successful");
       navigate("/login");
       }, 2000); 
     } catch (err) {
@@ -102,6 +103,7 @@ function SignupPage() {
 
       console.error("Registration error:", err);
       setError(err.response?.data?.message || "Registration failed");
+      toast.error("Registration Failed");
     }
   };
 

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import qr from "../../assets/qrCode.png"
 import qr from "../assets/pictqr.jpg";
-
+import { toast } from "react-toastify";
 
 
 const PaymentPage = () => {
@@ -51,11 +51,13 @@ const PaymentPage = () => {
       );
 
       console.log("transaction submitted successfully");
-      alert("Transaction successful!");
+      // alert("Transaction successful!");
+      toast.success("Transaction successful!");
 
       navigate('/');
     } catch (error) {
-      alert("Error making payment, Please try again!")
+      // alert("Error making payment, Please try again!")
+      toast.error("Error making payment, Please try again!");
       console.error("Error making payment", error);
     }
   };

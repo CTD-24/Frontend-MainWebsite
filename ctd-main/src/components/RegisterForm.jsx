@@ -4,6 +4,8 @@ import { IoClose } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/slices/cartSlice";
 import axios from "axios";
+import { toast } from "react-toastify";
+
 
 const RegisterForm = ({ closeModal, name, price }) => {
   const [activeButton, setActiveButton] = useState(false);
@@ -60,10 +62,12 @@ const RegisterForm = ({ closeModal, name, price }) => {
       });
       dispatch(addItemToCart(eventItem));
       console.log("res", res);
+      toast.success("Event Added to the Cart Successfully");
       
       
     } catch (error) {
       console.error("error adding to cart", error);
+      toast.error("Error Adding Event to Cart");
     }
 
     

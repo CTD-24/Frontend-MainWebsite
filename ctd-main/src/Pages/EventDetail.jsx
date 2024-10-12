@@ -6,12 +6,15 @@
   import AlertTitle from "@mui/material/AlertTitle";
   import RegisterForm from "../components/RegisterForm";
   import { FaPhone } from "react-icons/fa6";
+  import { useNavigate } from "react-router-dom";
+  // import { useSelector } from 'react-redux';
 
   import axios from "axios";
   const EventDetail = () => {
     const dispatch = useDispatch();
-
+    const isLoggedIn = useSelector((state) => state.auth.isAuth);
     const {eventName} = useParams();
+    const navigate = useNavigate();
 
     //   const eventsData = [
     //   {
@@ -738,14 +741,20 @@
                 
               </div>
             </div>
+            {console.log("islogin? " , isLoggedIn)}
             <button
               onClick={ () =>  {
-                if(eventName === "NTH" || eventName === "Decode Rush"){
-                  addToCartHandler();
-                }
-                else{
-                  setIsModalOpen(true);
-                }
+                if(isLoggedIn){
+                  if((eventName === "NTH" || eventName === "Decode Rush")){
+                    addToCartHandler();
+                  }
+                  else{
+                    setIsModalOpen(true);
+                  }
+              }
+              else{
+                navigate("/login");
+              }
               }}
               className="bg-white text-black max-md:w-[50%] max-md:text-[1.5vh] font-bold px-[4vw] py-[1.5vh] rounded-full text-[1vw]"
             >

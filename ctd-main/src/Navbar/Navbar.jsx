@@ -13,6 +13,7 @@ import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import { IoCloseOutline } from "react-icons/io5";
 import { clearCart } from "../redux/slices/cartSlice";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -169,10 +170,10 @@ const Navbar = () => {
     try {
 
       dispatch(unauthenticateUser()); // Dispatch the unauthentication action after successful logout
-      // dispatch(clearCart());
+      dispatch(clearCart());
       console.log("Logged out Successfully...");
       navigate("/login");
-
+      toast.success("Logged out Successfully");
       await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/logout`, {}, { withCredentials: true });
 
 
@@ -180,6 +181,7 @@ const Navbar = () => {
       
     } catch (error) {
       console.log(error.message);
+      toast.success("Error Logging out");
     }
   };
 
