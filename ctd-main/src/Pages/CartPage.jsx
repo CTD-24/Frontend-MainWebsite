@@ -177,11 +177,15 @@ const CartPage = () => {
               {cart.items.length > 0 && (
                 <button
                 onClick={async () => {
-                  if(totalPrice == 0){
+                  if (cart.items.length === 0) {
+                    toast.error("Your cart is empty! Please add items to proceed.");
+                    return; 
+                  }
+                  if(totalPrice === 0){
                     let loadingToast = toast.loading("Processing Transaction!");
                     var min = 10000;
                     var max = 99999;
-                    var transactionId = Math.floor(Math.random() * (max - min + 1)) + min;  
+                    const transactionId = Math.floor(Math.random() * (max - min + 1)) + min;  
                     console.log("trsnidff" , transactionId);
                     try {
                       const response = await axios.post(

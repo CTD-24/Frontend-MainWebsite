@@ -134,7 +134,7 @@ const TeamPage = () => {
         },
         {
             id:12,
-            name: "SAMEER",
+            name: "SAMIR",
             role:"NTH/Decode Rush",
             image: sameer,
             github:"https://github.com/Samir-Wankhede",
