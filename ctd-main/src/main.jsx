@@ -83,9 +83,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <PersistGate loading={null} persistor={persistor}>
   <RouterProvider router={router} />
   <ToastContainer
-position="top-right"
-autoClose={3500}
-hideProgressBar={false}
+position="top-center"
+autoClose={2000}
+hideProgressBar={true}
 newestOnTop={false}
 closeOnClick
 rtl={false}
@@ -93,7 +93,7 @@ pauseOnFocusLoss
 draggable
 pauseOnHover
 theme="dark"
-transition: Zoom
+transition: Flip
 />
   </PersistGate>
   </Provider>
