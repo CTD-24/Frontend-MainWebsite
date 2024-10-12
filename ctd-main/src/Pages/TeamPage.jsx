@@ -111,8 +111,8 @@ const TeamPage = () => {
         },
         {
             id:10,
-            name: "VARAD",
-            role:"Frontend Developer",
+            name: "JOBIN",
+            role:"Enigma",
             image: team1,
             github:"",
             gmail:"",
