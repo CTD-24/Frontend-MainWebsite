@@ -265,7 +265,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="resNav z-[5000] fixed top-0 right-[-50%] h-[100%] w-[50%] max-md:w-[100%] max-md:right-[-100%] bg-[#212121d2] backdrop-blur-[30px] flex flex-col justify-center items-center ">
+      <div className="resNav z-[6000] fixed top-0 right-[-50%] h-[100%] w-[50%] max-md:w-[100%] max-md:right-[-100%] bg-[#181818] backdrop-blur-[30px] flex flex-col justify-center items-center ">
         <div className="res-links h-[80%] w-full px-[3vw] bg--500 flex flex-col justify-center items-center">
           {resLinks.map((item) => {
             return (
@@ -275,7 +275,7 @@ const Navbar = () => {
                   toPage(item.link);
                   setMenuClick(!menuClick);
                 }}
-                className="linkBox hover:bg-white hover:text-black hover:rounded-[1vh] overflow-hidden max-md:h-[10vh] h-[20vh] w-full bg--700 flex justify-end items-end border-b-[#585858] border-solid border-b-[1px] text-white"
+                className="linkBox hover:bg-white hover:text-black hover:rounded-[1vh] overflow-hidden max-md:h-[10vh] h-[20vh] w-full bg--700 flex justify-end items-end border-b-[#333333] border-solid border-b-[1px] text-white"
               >
                 <h2 className="text-[2.2vw] max-md:text-[5vh]">{item.name}</h2>
               </button>

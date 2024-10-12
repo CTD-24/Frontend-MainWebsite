@@ -57,14 +57,14 @@ const ContactCards
 
   return (
     <>
-      <div className="team-card h-[53vh] w-[22vw] bg--400 flex flex-col justify-center items-center rounded-[20px] relative  overflow-hidden max-lg:w-[70vw] max-lg:h-[50vh] ">
+      <div className="team-card h-[53vh] w-[22vw] bg--400 flex flex-col justify-center items-center rounded-[20px] relative  overflow-hidden max-lg:w-[90vw] max-lg:h-[50vh] ">
         <img
-          src={image}
+          src={image}c
           alt="IMAGE"
           className="h-full w-full object-cover rounded-[20px]  absolute top-0 left-0 z-[1000] text-white"
         />
         <div
-          className={`member-links member-links-${name} h-[70%] w-[100%] bg--500 flex flex-col justify-end items-center scale-0 absolute top-0 left-0 z-[6000] opacity-0`}
+          className={`member-links member-links-${name} h-[70%] w-[100%] bg--500 flex flex-col justify-end items-center scale-0 absolute top-0 left-0 z-[5000] opacity-0`}
         >
           
           <a

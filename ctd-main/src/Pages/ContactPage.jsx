@@ -60,7 +60,7 @@ const ContactPage = () => {
           </h1>
         </div>
 
-        <div className="events-head min-h-[70vh] w-[100vw] bg--600 flex flex-col justify-center max-lg:gap-[2vh]   items-center gap-[3vh]   ">
+        <div className="events-head min-h-[70vh] w-[100vw] bg--600 flex flex-col justify-center max-lg:gap-[2vh]  items-center gap-[3vh]   ">
           <div className="row-1 h-auto w-[100vw] bg--500 flex justify-around items-center max-lg:gap-[2vh] max-lg:flex-col">
             {teamArr.slice(0, 3).map((team, index) => {
               return (
