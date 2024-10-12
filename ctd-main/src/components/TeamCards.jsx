@@ -56,7 +56,7 @@ const TeamCards = ({
 
   return (
     <>
-      <div className="team-card h-[53vh] w-[22vw]  bg--400 flex flex-col justify-center items-center rounded-[20px] relative  overflow-hidden max-lg:w-[60vw] max-lg:h-[40vh] ">
+      <div className="team-card h-[53vh] w-[22vw] bg--400 flex flex-col justify-center items-center rounded-[20px] relative  overflow-hidden max-lg:w-[70vw] max-lg:h-[50vh] ">
         <img
           src={image}
           alt="IMAGE"
@@ -88,29 +88,33 @@ const TeamCards = ({
             <h2 className="text-[1.1vw]">LINKEDIN</h2>
           </Link>
         </div>
-        <div className="team-info h-[100%] w-[100%] bg-transparent absolute top-0 left-0 flex justify-center items-end rounded-[20px] opacity-[100%] z-[2000] ">
+
+        <div className="img-cover h-full w-full rounded-[20px] bg-gradient-to-t from-[#000000a3] to-transparent absolute top-0 left-0 z-[1500]  "></div>
+
+        <div className="team-info h-[100%] w-[100%] bg-transparent absolute top-0 left-0 flex justify-center items-end rounded-[20px] opacity-[100%] z-[2000] max-lg:px-[2vw] ">
           <div className="team-bottom h-[16vh] w-[100%] bg--500 flex justify-center items-center">
             <div className="team-left h-[100%] w-[65%] bg--500 flex flex-col justify-center items-start px-[1.5vw]">
               <h1 className="text-white text-[6vh] leading-[8vh]">{name}</h1>
-              <p className="text-white text-[1.8vh] bg--500">{role}</p>
+              <p className="text-white text-[1.8vh] max-lg:text-[1.5vh] bg--500">{role}</p>
             </div>
             <div className="team-right h-[100%] w-[35%] bg--500 flex justify-center items-center relative">
               <button
                 onClick={onButtonClick}
-                className="bg-white rounded-full h-[8vh] w-[8vh] flex  justify-center items-center z-[1000] absolute"
+                className="bg-white rounded-full h-[8vh] w-[8vh] max-lg:h-[6vh] max-lg:w-[6vh] flex  justify-center items-center z-[1000] absolute"
               >
                 <FaArrowRight
-                  size="1.2vw "
-                  className={`arrow-team arrow-team-${name} rotate-[-45deg] absolute z-[2000]  `}
+                  size={15}
+                  className={`arrow-team max-lg:-[2vh] arrow-team-${name} rotate-[-45deg] absolute z-[2000]  `}
                 />
               </button>
 
               <div
-                className={`circle circle-${name} bg-white rounded-full h-[8vh] w-[8vh] flex justify-center items-center absolute z-[100]`}
+                className={`circle circle-${name} bg-white rounded-full h-[8vh] w-[8vh] max-lg:h-[6vh] max-lg:w-[6vh] flex justify-center items-center absolute z-[100]`}
               ></div>
             </div>
           </div>
         </div>
+
       </div>
     </>
   );

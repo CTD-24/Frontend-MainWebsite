@@ -97,16 +97,16 @@ const Navbar = () => {
       },
       "nav"
     );
-    gsap.from(
-      ".nav-mid a",
-      {
-        y: "-10vh",
-        stagger: 0.2,
-        ease: "power1.inOut",
-        duration: 0.9,
-      },
-      "nav"
-    );
+    // gsap.from(
+    //   ".nav-mid a",
+    //   {
+    //     y: "-10vh",
+    //     stagger: 0.2,
+    //     ease: "power1.inOut",
+    //     duration: 0.9,
+    //   },
+    //   "nav"
+    // );
   }, []);
 
   const [menuClick, setMenuClick] = useState(false);
