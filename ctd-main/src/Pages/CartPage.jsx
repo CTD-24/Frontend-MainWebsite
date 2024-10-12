@@ -185,7 +185,7 @@ const CartPage = () => {
                     let loadingToast = toast.loading("Processing Transaction!");
                     var min = 10000;
                     var max = 99999;
-                    const transactionId = 11223344;  
+                    const transactionId = (Math.floor(Math.random() * (max - min + 1)) + min).toString(); 
                     console.log("trsnidff" , transactionId);
                     try {
                       const response = await axios.post(
@@ -196,7 +196,7 @@ const CartPage = () => {
                       toast.dismiss(loadingToast);
                       dispatch(clearCart());
                       // alert("Transaction successful!");
-                      toast.success("Transaction successful!");
+                      toast.success(response.data.message);
                       console.log("res" , response);
                       navigate('/');
                     } catch (error) {
