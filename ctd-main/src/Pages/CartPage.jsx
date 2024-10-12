@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import QrModal from '../components/QrModal';
 import gsap from 'gsap';
 import { toast } from "react-toastify";
+import { clearCart } from "../redux/slices/cartSlice";
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
 
