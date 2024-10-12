@@ -7,7 +7,7 @@ import qr from "../assets/pictqr.jpg";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux"; // Added useDispatch import
 import { clearCart } from "../redux/slices/cartSlice";
-
+// import { toast } from "react-toastify";
 
 
 const PaymentPage = () => {
@@ -41,6 +41,7 @@ const PaymentPage = () => {
 
   const makePayment = async () => {
     if (!transactionId) {
+      toast.error("Please enter transaction ID");
       return;
     }
 
