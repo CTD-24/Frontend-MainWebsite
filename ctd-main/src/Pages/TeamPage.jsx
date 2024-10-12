@@ -14,7 +14,7 @@ import shrinidhi from "./TeamAssets/shrinidhi.jpeg";
 import atharv from "./TeamAssets/atharv.jpeg";
 import digambar from "./TeamAssets/digmabar.jpg";
 import nik from './TeamAssets/nik.jpg'
-import shounak from './TeamAssets/shounak/jpg'
+import shounak from './TeamAssets/shounak.jpg'
 
 
 import gsap from "gsap";
