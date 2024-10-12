@@ -61,7 +61,7 @@ const RegisterForm = ({ closeModal, name, price }) => {
         withCredentials: true,
       });
       dispatch(addItemToCart(eventItem));
-      toast.success("Event Added to the Cart Successfully");
+      toast.success(res.data.message);
       
       
     } catch (error) {

@@ -28,12 +28,13 @@ const DashboardPage = () => {
       toast.success("Logged Out Successfully!");
     } catch (error) {
       // console.log(error.message);
-      toast.error("Error Logging Out!");
+      toast.error(error.response.data.message);
     }
   };
 
   useEffect(() => {
     const fetchUser = async () => {
+      const loadingToast = toast.loading("Loading Dashboard...");
       try {
         const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/profile`, { withCredentials: true });
         setUserId(res.data.user.id)
@@ -41,7 +42,8 @@ const DashboardPage = () => {
         setUsername(res.data.user.username);
       } catch (error) {
         // console.error("Error fetching user", error);
-        toast.error("Error Fetching User");
+        toast.dismiss(loadingToast);
+        toast.error(error.response.data.message);
       }
 
       try {
@@ -50,7 +52,8 @@ const DashboardPage = () => {
         setPaidOrders(res.data.nonPendingOrders); // Set paid orders in state
       } catch (error) {
         // console.error("Error fetching orders", error);
-        toast.error("Error Fetching orders");
+        toast.dismiss(loadingToast);
+        toast.error(error.response.data.message);
       }
 
       try {
@@ -58,8 +61,13 @@ const DashboardPage = () => {
         setPendingOrders(res.data.pendingOrders); // Set paid orders in state
       } catch (error) {
         // console.error("Error fetching orders", error);
-        toast.error("Error Fetching Pending orders");
+        toast.dismiss(loadingToast);
+        toast.error(error.response.data.message);
       }
+      finally{
+        toast.dismiss(loadingToast);
+      }
+      
     };
 
     fetchUser();

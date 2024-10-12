@@ -55,7 +55,7 @@ const PaymentPage = () => {
       toast.dismiss(loadingToast);
       dispatch(clearCart());
       // alert("Transaction successful!");
-      toast.success("Transaction successful!");
+      toast.success(response.data.message);
       console.log("res" , response)
       
       navigate('/');

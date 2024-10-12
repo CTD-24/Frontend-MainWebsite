@@ -35,7 +35,7 @@ const CartPage = () => {
     
     catch (error) {
       // console.error("error removing from cart", error);
-      toast.error("Error Removing from Cart");
+      toast.error(error.response.data.message);
       
     }
   };
@@ -52,7 +52,7 @@ const CartPage = () => {
     
     catch (error) {
       // console.error("Error in cart", error);
-      toast.error("Error Displaying Cart!");
+      toast.error(error.response.data.message);
       
     }
   };
