@@ -65,7 +65,7 @@ const RegisterForm = ({ closeModal, name, price }) => {
       
       
     } catch (error) {
-      console.error("error adding to cart", error);
+      // console.error("error adding to cart", error);
       toast.error(error.response.data.message);
     }
 

@@ -69,11 +69,11 @@ function SignupPage() {
       );
 
       // console.log("Registration successful:", response.data);
-      setAlert({
-        message: "Registration successful!",
-        severity: "success",
-        visible: true,
-      });
+      // setAlert({
+      //   message: "Registration successful!",
+      //   severity: "success",
+      //   visible: true,
+      // });
       setTimeout(() => {
         setAlert({
           message: "",
@@ -101,9 +101,9 @@ function SignupPage() {
         }, 5000); 
       // } 
 
-      console.error("Registration error:", err);
+      // console.error("Registration error:", err);
       setError(err.response?.data?.message || "Registration failed");
-      toast.error("Registration Failed");
+      toast.error(err.response?.data?.message);
     }
   };
 

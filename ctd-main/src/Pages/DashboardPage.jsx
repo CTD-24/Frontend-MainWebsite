@@ -40,7 +40,8 @@ const DashboardPage = () => {
         setFirstName(res.data.user.first_name);
         setUsername(res.data.user.username);
       } catch (error) {
-        console.error("Error fetching user", error);
+        // console.error("Error fetching user", error);
+        toast.error("Error Fetching User");
       }
 
       try {
@@ -49,6 +50,7 @@ const DashboardPage = () => {
         setPaidOrders(res.data.nonPendingOrders); // Set paid orders in state
       } catch (error) {
         // console.error("Error fetching orders", error);
+        toast.error("Error Fetching orders");
       }
 
       try {
@@ -56,6 +58,7 @@ const DashboardPage = () => {
         setPendingOrders(res.data.pendingOrders); // Set paid orders in state
       } catch (error) {
         // console.error("Error fetching orders", error);
+        toast.error("Error Fetching Pending orders");
       }
     };
 
