@@ -41,8 +41,9 @@ const ForgotPassword = () => {
       //   severity: "success",
       //   visible: true,
       // });
-      toast.success(response.data.message);
       toast.dismiss(loadingToast);
+      toast.success(response.data.message);
+      
       setStep(2);
     } catch (error) {
       // setAlert({
@@ -50,6 +51,7 @@ const ForgotPassword = () => {
       //   severity: "error",
       //   visible: true,
       // });
+      toast.dismiss(loadingToast);
       toast.error(error.response.data.message);
     } finally {
       setLoading(false);

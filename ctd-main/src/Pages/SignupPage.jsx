@@ -85,7 +85,7 @@ function SignupPage() {
     } catch (err) {
 
       
-
+      toast.dismiss(loadingToast);
         // setAlert({
         //   message: err.response.data.message,
         //   severity: "error",

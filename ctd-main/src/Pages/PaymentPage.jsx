@@ -61,6 +61,7 @@ const PaymentPage = () => {
       navigate('/');
     } catch (error) {
       // alert("Error making payment, Please try again!")
+      toast.dismiss(loadingToast);
       toast.error(error.response.data.message);
       // console.error("Error making payment", error);
     }

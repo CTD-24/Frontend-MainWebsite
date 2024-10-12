@@ -51,16 +51,17 @@ function LoginPage() {
       const token = getToken();
       // console.log("JWT Token:", token);
       dispatch(authenticateUser());
+      toast.dismiss(loadingToast);
       toast.success(res.data.message);
       // console.log("reslgn" , response);
       navigate("/");
-      toast.dismiss(loadingToast);
       setError(false);
     } 
     
     catch (error) {
       // setError(true);
       // console.log("Error logging in: ", error);
+      toast.dismiss(loadingToast);
       toast.error(error.response.data.message || "Error During Login");
       // if (error.response && error.response.status === 403) {
       //   toast.error("Wrong credentials! Please try again.");
