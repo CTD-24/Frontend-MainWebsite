@@ -165,7 +165,7 @@ function SignupPage() {
                 name="enrollment_number"
                 value={values.enrollment_number}
                 onChange={onChange}
-                placeholder="ENROLLMENT NUMBER"
+                placeholder="ENROLLMENT NUMBER (C2K,I2K,E2K..,etc)"
                 className="inputPlaceholders w-[80%] h-[6vh] px-[2vw] rounded -lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white mt-2 text-[0.9vw] max-md:text-[1.5vh]"
               />
               <input
