@@ -8,6 +8,9 @@ import palak from "./TeamAssets/palak.jpg";
 import divya from "./TeamAssets/divya.jpeg";
 import avadhut from "./TeamAssets/avadhut.jpeg";
 import aniket from "./TeamAssets/aniket.jpeg";
+import sujal from "./TeamAssets/sujal.jpg";
+import sameer from "./TeamAssets/sameer.jpeg";
+import shrinidhi from "./TeamAssets/shrinidhi.jpeg";
 import atharv from "./TeamAssets/atharv.jpeg";
 
 
@@ -29,10 +32,10 @@ const TeamPage = () => {
             id:2,
             name: "SUJAL",
             role:"Backend Developer",
-            image: team1,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
+            image: sujal,
+            github:"https://github.com/bhorsujal",
+            gmail:"bhorsujal@gmail.com",
+            linkedin:"https://linkedin.com/in/sujal-bhor",
 
 
         },
@@ -60,9 +63,9 @@ const TeamPage = () => {
             name: "DIVYA",
             role:"Frontend Developer",
             image: divya,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
+            github:"https://github.com/DivyaaPardeshi",
+            gmail:"divya.nsk22@gmail.com",
+            linkedin:"https://www.linkedin.com/in/divya-pardeshi-521154296",
             
 
         },
@@ -104,6 +107,36 @@ const TeamPage = () => {
             github:"https://github.com/aniketk17",
             gmail:"aniketkardile243@gmail.com",
             linkedin:"https://www.linkedin.com/in/aniket-kardile/",
+
+        },
+        {
+            id:10,
+            name: "VARAD",
+            role:"Frontend Developer",
+            image: team1,
+            github:"",
+            gmail:"",
+            linkedin:"",
+
+        },
+        {
+            id:11,
+            name: "SHRINIDHI",
+            role:"NTH/Decode Rush",
+            image: shrinidhi,
+            github:"https://github.com/shrinidhib",
+            gmail:"b.shrinidhi1214@gmail.com",
+            linkedin:"https://www.linkedin.com/in/b-shrinidhi/",
+
+        },
+        {
+            id:12,
+            name: "SAMEER",
+            role:"NTH/Decode Rush",
+            image: sameer,
+            github:"https://github.com/Samir-Wankhede",
+            gmail:"samirsw04@gmail.com",
+            linkedin:"https://www.linkedin.com/in/samir-wankhede/",
 
         },
     ];
@@ -187,6 +220,27 @@ const TeamPage = () => {
                                     linkedin={team.linkedin}
                                     isSpread={spreadStates[index + 6]}
                                     onButtonClick={() => handleButtonClick(index + 6)}
+                        />
+                                </>
+                            );
+                        })
+                    }
+                </div>
+                <div className="row-4 h-auto w-[100vw] max-lg:flex-col max-lg:gap-[2vh] bg--500 flex justify-around items-center">
+                    {
+                        teamArr.slice(9,12).map((team, index) => {
+                            return(
+                                <>
+                                     <TeamCards
+                                    key={team.id}
+                                    name={team.name}
+                                    role={team.role}
+                                    image={team.image}
+                                    github={team.github}
+                                    gmail={team.gmail}
+                                    linkedin={team.linkedin}
+                                    isSpread={spreadStates[index + 9]}
+                                    onButtonClick={() => handleButtonClick(index + 9)}
                         />
                                 </>
                             );
