@@ -90,22 +90,22 @@ function LoginPage() {
           alt=""
         /> */}
 
-        <div className="absolute z-[2] flex flex-col justify-center items-center h-[70vh] max-md:w-[95%] w-[90vw] md:w-[30vw]  backdrop-blur-[20px] border-[#005a6add] border-[1px] rounded-xl text-white uppercase tracking-normal">
-          <h1 className="text-[8vw] max-md:text-[8vh] sm:text-[4vw]">LOGIN</h1>
+        <div className="absolute z-[2] flex flex-col justify-center items-center h-[70vh]  w-[400px] max-sm:w-[90%]  bg--500  backdrop-blur-[20px] border-[#005a6add] border-[1px] rounded-xl text-white uppercase tracking-normal">
+          <h1 className="text-[50px] max-md:text-[8vh]">LOGIN</h1>
           <div className="bg--700 flex flex-col justify-evenly items-center h-[35%] w-full">
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="USERNAME"
-              className="inputPlaceholders w-[80%] max-md:w-[90%] h-[6vh] max-md:h-[7vh] px-[1.5vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 max-md:px-[4vw] focus:outline-none focus:ring-2 focus:ring-white  mt-2 text-[1vw] max-md:text-[2vh]"
+              className="inputPlaceholders w-[80%] max-md:w-[90%] h-[6vh] max-md:h-[7vh] px-[1.5vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 max-md:px-[4vw] focus:outline-none focus:ring-2 focus:ring-white  mt-2 text-[15px] max-md:text-[2vh]"
             />
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="PASSWORD"
-              className="inputPlaceholders w-[80%] max-md:w-[90%] h-[6vh] max-md:h-[7vh] max-md:px-[4vw] px-[1.5vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white  mt-2 text-[1vw] max-md:text-[2vh]"
+              className="inputPlaceholders w-[80%] max-md:w-[90%] h-[6vh] max-md:h-[7vh] max-md:px-[4vw] px-[1.5vw] rounded-lg bg-white bg-opacity-[0.2] text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white  mt-2 text-[15px] max-md:text-[2vh]"
             />
           </div>
 
@@ -116,12 +116,12 @@ function LoginPage() {
             >
               Forgot Password?
             </Link>
-            <h4
+            <h3
               onClick={toSignup}
               className="cursor-pointer  text-[0.9vw] max-md:text-[1.5vh]"
             >
               No Account?
-            </h4>
+            </h3>
           </div>
           <div className="mt-4 mb-8 w-full flex items-center justify-center">
             <button

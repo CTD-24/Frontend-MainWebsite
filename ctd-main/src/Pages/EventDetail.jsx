@@ -194,8 +194,8 @@
     let fees;
     let mode;
 
-  if(eventName === "N.C.C."){
-    name = "N.C.C."
+  if(eventName === "NCC"){
+    name = "NATIONAL CODING CONTEST"
     mode = "ONLINE"
     description = [
       "Think you're the best coder?",
@@ -203,16 +203,16 @@
       "Sign Up to compete for the 'Overlord Coder' title and get a chance to experience a real-world coding competition!",
       <>
       <div className=" w-full flex justify-between text-xl pt-4">
-        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: ₹20</h2>
-        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:00 PM - 10:00 PM</h2>
-        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">FEES: ₹50</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">TIME: 8:00 PM - 10:00 PM</h2>
+        <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">MODE: {mode}</h2>
         </div>
        </>,
       
 
       ]
 
-      fees = 20;
+      fees = 50;
 
       rules = [
         {
@@ -221,7 +221,7 @@
         },
         {
           ruleNo: 2,
-          ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+          ruleDesc: "Teams of up to two members are allowed, or participants may compete individually. "
         },
         {
           ruleNo: 3,
@@ -252,21 +252,21 @@
 
     }
 
-  else if(eventName==="R.C."){
-    name = "R.C."
+  else if(eventName==="RC"){
+    name = "REVERSE CODING"
     mode = "ONLINE"
     description = [
       "Reverse Coding is a coding competition to analyze your problem solving ability with programming knowledge along with mathematical skills.",
       "Test your ability to decode the pattern through a decipher and code round in any of the languages - C, C++, Java and Python.",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">FEES: ₹20</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">TIME: 8:30 PM - 10:30 PM</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">FEES: ₹50</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">TIME: 8:30 PM - 10:30 PM</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
       
     ]
 
-      fees = 20;
+      fees = 50;
 
 
       rules = [
@@ -276,7 +276,7 @@
         },
         {
           ruleNo: 2,
-          ruleDesc: "It will be individual competition hence teaming up is strictly restricted."
+          ruleDesc: "Teams of up to two members are allowed, or participants may compete individually."
         },
         {
           ruleNo: 3,
@@ -314,9 +314,9 @@
       "Decode Rush is a unique and immersive outdoor quest designed to ignite your sense of adventure.",
       "Embark on a thrilling scavenger hunt, armed with just two crucial elements: a clue that leads to the next location and a riddle that holds the answer.",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: ₹50</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:15 PM Onwards</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">FEES: ₹50</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">TIME: 4:15 PM Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
     ]
 
@@ -383,16 +383,16 @@
     }
 
   else if(eventName==="NTH"){
-    name = "NTH"
+    name = "NETWORK TREASURE HUNT"
     mode = "ONLINE"
     description = [
       "NTH is an online treasure hunt that encourages you to scour the nooks and crannies of the World Wide Web in search of answers for various mind twisters.",
       "Read between the lines, find the hidden clues and connect the dots.",
       "You can use every tool at your disposal. Even with Google and Wikipedia by your side, it's going to be fun and challenging.",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 9:00 PM Onwards</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">FEES: FREE</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">TIME: 9:00 PM Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
     ]
 
@@ -463,9 +463,9 @@
       "Whether you're a puzzle enthusiast or a curious novice",
       "Get ready to ignite your cognitive powers with the ultimate head-scratching aptitude test!",
       <div className=" w-full flex justify-between text-xl pt-4">
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">FEES: FREE</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh] ">TIME: 4:30 PM Onwards</h2>
-      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[3vh] bg--500 h-[8vh]">MODE: {mode}</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">FEES: FREE</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh] ">TIME: 4:30 PM Onwards</h2>
+      <h2 className="w-fit flex text-[1.5vw] max-lg:text-[2vh] bg--500 h-[8vh]">MODE: {mode}</h2>
       </div>,
     ]
 
@@ -628,7 +628,7 @@
           </Alert>
         )}
       </div>
-        <div className="Container bg-[#23232397]  min-h-[100vh] flex flex-col max-md:justify-end max-md:py-[3vh] justify-end items-center w-full">
+        <div className="Container bg-[#23232397]  min-h-[100vh] flex flex-col max-md:justify-end max-md:py-[5vh] justify-end items-center w-full">
 
           {isModalOpen && ((eventName !=="Decode Rush") && (eventName !=="NTH"))  && (
             <div className="modal fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black backdrop-blur-[5px] bg-opacity-50 z-50">
@@ -643,13 +643,13 @@
           )}
 
           <div
-            className="head w-[90%] h-[25%] max-md:w-[95%] max-md:justify-between max-md:h-[10vh] bg--500 flex justify-center items-center rounded-[1.5vw] backdrop-blur-[20px] border-[#0ddbffdd] border-[1px] px-[0.8vw] text-white"
+            className="head w-[90%] h-[25%] max-md:w-[95%] max-md:justify-between max-md:h-[10vh] bg--500 flex justify-between items-center rounded-[1.5vw] backdrop-blur-[20px] border-[#0ddbffdd] border-[1px] px-[0.8vw] text-white"
           >
-            <h1 className="text-[6vw] w-[95%] max-md:w-[30%] bg--500 ml-[1vw] max-md:ml-[5vw] max-md:text-[10vw] max-md:rounded-none max-md:h-full bg--600  h-[20vh] flex justify-between items-center rounded-[2vw] ">
+            <h1 className="text-[80px] w-auto max-md:w-auto bg--500 ml-[1vw] max-md:ml-[2vw] max-md:text-[30px] max-md:rounded-none max-md:h-full bg--600 h-[20vh] flex justify-between items-center ">
               {name}
             </h1>
             <div
-              className="bg-[#18d5f7dd] rounded-[1vw] leading-10 max-md:leading-7  h-[17vh] max-md:h-[90%]  max-md:w-[10vh] w-[9vw] flex flex-col justify-center items-center"
+              className="bg-[#18d5f7dd] rounded-[1vw] leading-10 max-md:leading-7  h-[17vh] max-md:h-[90%]  max-md:w-[10vh] w-[130px] flex flex-col justify-center items-center"
             >
               <h1 className="text-[4vw] max-md:text-[4vh]">{date}</h1>
               <h1 className="text-[2vw] max-md:text-[3vh]">OCTOBER</h1>
@@ -681,10 +681,10 @@
               </div>
               <div className="eachcontent h-auto flex flex-col justify-center items-start bg--500 text-white bg--800  overflow-y-scroll">
 
-                <div className="scroll-div h-[50vh] max-md:h-[40vh] flex flex-col justify-start gap-[2vh] items-center bg--500  text-white w-full  bg--800 px-[0vw]  ">
+                <div className="scroll-div h-[50vh] max-md:h-[40vh] flex flex-col   justify-start gap-[2vh] items-center bg--500  text-white w-full  bg--800 px-[0vw]  ">
                   
                   {activeTab === 1 ? (
-                  <div className="border-[#c4c4c44e] w-full border-[1px] backdrop-blur-[5px] h-auto max-md:px-[4vw] rounded-[2vh] max-md:py-[2vh] px-[1.5vw] py-[5vh]">
+                  <div className="border-[#c4c4c44e] w-full border-[1px] backdrop-blur-[5px] h-auto max-md:px-[4vw] max-md:text-center rounded-[2vh] max-md:py-[2vh] px-[1.5vw] py-[5vh]">
                     {description.map((descItem, index) => (
                       <p key={index} className="mb-[1vh]">
                         {descItem}
@@ -696,9 +696,9 @@
                     rules.map((r) => (
                       <div
                         key={r.ruleNo}
-                        className="ruleDiv h-[auto] flex justify-start items-center bg--500  text-white backdrop-blur-[20px] border-[#c4c4c44e] border-[1px] px-[2vw] py-[2vh] w-full rounded-[1vh] gap-[3vh]"
+                        className="ruleDiv h-[auto] flex justify-start items-center bg--500  text-white backdrop-blur-[20px] border-[#c4c4c44e] border-[1px] px-[2vw] py-[2vh] w-full rounded-[1vh] max-md:gap-[1vh] gap-[3vh]"
                       >
-                        <h2 className="text-[1.5vw] max-lg:text-[1.5vh]">{r.ruleNo}.</h2>
+                        <h2 className="text-[1.5vw] max-lg:text-[3vh]">{r.ruleNo}.</h2>
                         {r.ruleDesc}
                       </div>
                     ))

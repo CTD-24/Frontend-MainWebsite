@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import TeamCards from "../components/TeamCards";
 import team1 from "./TeamAssets/team1.png";
 import team2 from "./TeamAssets/team2.png";
-import team3 from "./TeamAssets/team3.png";
+import shreyas from "./TeamAssets/Shreyas.jpg";
+import gitesh from "./TeamAssets/gitesh.jpg";
+import anshul from "./TeamAssets/anshul.jpeg";
 import gsap from "gsap";
 
 const ContactPage = () => {
@@ -12,7 +14,7 @@ const ContactPage = () => {
             id:1,
             name: "Shreyas",
             role:".",
-            image: team1,
+            image: shreyas,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
@@ -21,7 +23,7 @@ const ContactPage = () => {
             id:2,
             name: "Anshul",
             role:".",
-            image: team1,
+            image: anshul,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
@@ -32,7 +34,7 @@ const ContactPage = () => {
             id:3,
             name: "Gitesh",
             role:".",
-            image: team2,
+            image: gitesh,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",

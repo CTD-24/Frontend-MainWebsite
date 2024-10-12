@@ -128,14 +128,14 @@ function SignupPage() {
 
       <form
         onSubmit={onSubmit}
-        className="absolute  backdrop-blur-[20px] border-[#0ddbffdd] border-[1px] z-[2] max-md:top-[15%] flex flex-col justify-center items-center max-md:h-[100vh] h-[70vh] max-md:w-[95vw] w-[75vw] bg-transparent shadow-lg  rounded-xl text-white uppercase "
+        className="absolute  backdrop-blur-[20px] border-[#0ddbffdd] border-[1px] z-[2] max-md:top-[15%] flex flex-col justify-center items-center max-md:h-[100vh] h-[70vh] max-lg:w-[95vw] w-[1100px] bg-transparent shadow-lg  rounded-xl text-white uppercase "
       >
-        <h1 className="text-[5vw] max-md:text-[8vh] h-[20%] w-full flex justify-center items-start max-md:h-[10%] bg--700">
+        <h1 className="text-[60px] max-md:text-[8vh] h-[20%] w-full flex justify-center items-center max-md:h-[10%] bg--700">
           SIGNUP
         </h1>
-        <div className="signupForm h-[80%] max-md:h-[90%] w-full max-sm:flex-col flex justify-center items-center">
-          <div className="w-[100%] h-[100%] bg--600 max-sm:h-[50%] flex flex-col justify-center items-center max-md:justify-around">
-            <div className="flex flex-col justify-center items-center max-sm:gap-0 max-sm:py-0 gap-6 h-[100%] w-full py-6">
+        <div className="signupForm h-[80%] max-md:h-[90%] w-full max-md:flex-col flex justify-center items-center">
+          <div className="w-[100%] h-[100%] bg--600 max-md:h-[50%] flex flex-col justify-center items-center max-md:justify-around">
+            <div className="flex flex-col justify-center items-center max-md:gap-0 max-md:py-0 gap-6 h-[100%] w-full py-6">
               <input
                 type="text"
                 name="username"
