@@ -56,7 +56,7 @@ const PaymentPage = () => {
       dispatch(clearCart());
       // alert("Transaction successful!");
       toast.success("Transaction successful!");
-      console.log("res" , response);
+      console.log("res" , response)
       
       navigate('/');
     } catch (error) {

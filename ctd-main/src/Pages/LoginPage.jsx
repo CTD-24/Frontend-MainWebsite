@@ -52,7 +52,7 @@ function LoginPage() {
       // console.log("JWT Token:", token);
       dispatch(authenticateUser());
       toast.dismiss(loadingToast);
-      toast.success(res.data.message);
+      toast.success(response.data.message);
       // console.log("reslgn" , response);
       navigate("/");
       setError(false);

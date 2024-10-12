@@ -176,8 +176,36 @@ const CartPage = () => {
             <div className="w-full flex justify-center items-center">
               {cart.items.length > 0 && (
                 <button
-                onClick={() => {
-                  toPage('/pay')
+                onClick={async () => {
+                  if(totalPrice == 0){
+                    let loadingToast = toast.loading("Processing Transaction!");
+                    var min = 10000;
+                    var max = 99999;
+                    var transactionId = Math.floor(Math.random() * (max - min + 1)) + min;  
+                    console.log("trsnidff" , transactionId);
+                    try {
+                      const response = await axios.post(
+                        `${import.meta.env.VITE_BASE_URL}/api/submitTransaction`,
+                        { transaction_code: transactionId },
+                        { withCredentials: true }
+                      );
+                      toast.dismiss(loadingToast);
+                      dispatch(clearCart());
+                      // alert("Transaction successful!");
+                      toast.success("Transaction successful!");
+                      console.log("res" , response);
+                      navigate('/');
+                    } catch (error) {
+                      // alert("Error making payment, Please try again!")
+                      toast.dismiss(loadingToast);
+                      toast.error(error.response.data.message);
+                      // console.error("Error making payment", error);
+                    }
+                  }
+                  else{
+                    toPage('/pay')
+                  }
+                  
                 }}
                 
                  className="bg-white text-black py-[1vh] px-[8vw] rounded-full border-white border-[1px] border-solid font-semibold hover:bg-transparent hover:text-white max-lg:text-[2vh] max-lg:px-[12vw] ">
