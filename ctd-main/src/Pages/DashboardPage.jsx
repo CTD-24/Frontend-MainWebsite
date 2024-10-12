@@ -8,7 +8,7 @@ import astro from "../assets/astronaut.png";
 import { useSelector, useDispatch } from "react-redux";
 import { IoIosMusicalNote } from "react-icons/io";
 import { faker } from '@faker-js/faker';
-
+import { toast } from "react-toastify";
 const DashboardPage = () => {
   const { isLogin } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -25,8 +25,10 @@ const DashboardPage = () => {
       await onLogout();
       dispatch(unauthenticateUser());
       navigate("/login");
+      toast.success("Logged Out Successfully!");
     } catch (error) {
       // console.log(error.message);
+      toast.error("Error Logging Out!");
     }
   };
 

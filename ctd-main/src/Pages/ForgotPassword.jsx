@@ -5,6 +5,7 @@ import axios from "axios";
 import MainGradient from "../assets/MainBG.png";
 import CircularProgress from "@mui/material/CircularProgress"; 
 import { forgotPassword, resetPassword } from "../api/auth";
+import { toast } from "react-toastify";
 const ForgotPassword = () => {
   const [userData, setUserData] = useState({
     email: "",
