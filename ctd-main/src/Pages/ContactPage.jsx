@@ -4,7 +4,7 @@ import team1 from "./TeamAssets/team1.png";
 import team2 from "./TeamAssets/team2.png";
 import shreyas from "./TeamAssets/Shreyas.jpg";
 import gitesh from "./TeamAssets/gitesh.jpg";
-import anshul from "./TeamAssets/anshul.jpeg";
+import anshul from "./TeamAssets/anshul.jpg";
 import gsap from "gsap";
 import ContactCards from "../components/ContactCards";
 
@@ -16,17 +16,17 @@ const ContactPage = () => {
       role: "Core Team",
       image: shreyas,
       phone: "+91 7666521232",
-      gmail: "gitpats@gmail.com",
-      linkedin: "http://www.linkedin.com/in/giteshapatil",
+      gmail: "shreyas.shirwadkar@gmail.com",
+      linkedin: "https://www.linkedin.com/in/shreyas-shirwadkar/",
     },
     {
       id: 2,
       name: "ANSHUL",
       role: "Core Team",
       image: anshul,
-      phone: "+91 8999813108",
-      gmail: "username.github.com",
-      linkedin: "username.github.com",
+      phone: "+91 9967504025",
+      gmail: "anshul.purandare@gmail.com",
+      linkedin: "https://www.linkedin.com/in/anshulpurandare/",
     },
     {
       id: 3,
@@ -34,8 +34,8 @@ const ContactPage = () => {
       role: "Core Team",
       image: gitesh,
       phone: "+91 8999813108",
-      gmail: "username.github.com",
-      linkedin: "username.github.com",
+      gmail: "gitpats.gmail.com.com",
+      linkedin: "https://www.linkedin.com/in/giteshapatil/",
     },
   ];
 

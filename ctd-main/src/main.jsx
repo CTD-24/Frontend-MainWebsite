@@ -31,6 +31,7 @@ import { store, persistor } from "../src/redux/store.js";
 import ForgotPassword from "./Pages/ForgotPassword.jsx";
 import EventDetail from "./Pages/EventDetail.jsx";
 import { useSelector } from "react-redux";
+import NotFoundPage from "./Pages/NotFoundPage.jsx";
 
 
 
@@ -59,6 +60,8 @@ const router = createBrowserRouter(
       <Route path='/registerform' element={<RegisterForm />} />
       <Route path='/forgotpassword' element={<ForgotPassword/>} />
       <Route path='/eventDesc/:eventName' element={<EventDetail/>} />
+      <Route path='*' element={<NotFoundPage/>} />
+
 
       <Route element={<PrivateRoute/>}>
         <Route path='/dashboard' element={<DashboardPage/>} />
