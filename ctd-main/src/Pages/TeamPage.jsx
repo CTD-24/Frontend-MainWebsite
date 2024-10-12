@@ -13,7 +13,7 @@ import sameer from "./TeamAssets/sameer.jpeg";
 import shrinidhi from "./TeamAssets/shrinidhi.jpeg";
 import atharv from "./TeamAssets/atharv.jpeg";
 import digambar from "./TeamAssets/digmabar.jpg";
-import nik from './TeamAssets/nik.jpg'
+import nik from './TeamAssets/nk.jpg'
 import shounak from './TeamAssets/shounak.jpg'
 
 
