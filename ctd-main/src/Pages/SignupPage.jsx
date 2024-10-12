@@ -91,13 +91,6 @@ function SignupPage() {
         //   severity: "error",
         //   visible: true,
         // });
-        setTimeout(() => {
-          // setAlert({
-          //   message: "",
-          //   severity: "",
-          //   visible: false,
-          // });
-        }, 5000); 
       // } 
 
       // console.error("Registration error:", err);
