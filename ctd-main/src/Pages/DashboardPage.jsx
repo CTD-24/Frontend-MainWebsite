@@ -79,9 +79,9 @@ const DashboardPage = () => {
                 <p className="text-gray-400">{userName}</p>
                 <p className="text-gray-400">User Id : {userId}</p>
               </div>
-              <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
+              {/* <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
                 Edit
-              </button>
+              </button> */}
             </div>
 
             <div className="space-y-2 max-lg:w-full h-auto bg--600">
