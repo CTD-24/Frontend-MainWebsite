@@ -14,6 +14,7 @@ import shrinidhi from "./TeamAssets/shrinidhi.jpeg";
 import atharv from "./TeamAssets/atharv.jpeg";
 import digambar from "./TeamAssets/digmabar.jpg";
 import nik from './TeamAssets/nik.jpg'
+import shounak from './TeamAssets/shounak/jpg'
 
 
 import gsap from "gsap";
@@ -75,7 +76,7 @@ const TeamPage = () => {
             id:6,
             name: "SHOUNAK",
             role:"Frontend Developer",
-            image: team1,
+            image: shounak,
             github:"username.github.com",
             gmail:"username.github.com",
             linkedin:"username.github.com",
