@@ -45,9 +45,9 @@ function SignupPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
     // console.log("Form submitted with values:", values);
-    
+    let loadingToast; // Declare loadingToast outside the try block
     try {
-      let loadingToast = toast.loading("Registering...");
+      loadingToast = toast.loading("Registering...");
       const registrationData = {
         username: values.username,
         first_name: values.first_name,
@@ -95,7 +95,7 @@ function SignupPage() {
       // } 
 
       // console.error("Registration error:", err);
-      setError(err.response?.data?.message || "Registration failed");
+      // setError(err.response?.data?.message || "Registration failed");
       toast.error(err.response?.data?.message || "Registration failed");
     }
   };
