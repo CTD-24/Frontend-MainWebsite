@@ -11,9 +11,19 @@ export default defineConfig(({ mode }) => {
       'import.meta.env': {
         VITE_TEAM_EXIST_URL: JSON.stringify(env.VITE_TEAM_EXIST_URL),
         VITE_REG_URL: JSON.stringify(env.VITE_REG_URL),
-        VITE_UTR_EXIST_URL: JSON.stringify(env.VITE_UTR_EXIST_URL)
-      }
+        VITE_UTR_EXIST_URL: JSON.stringify(env.VITE_UTR_EXIST_URL),
+      },
     },
     plugins: [react()],
+    server: {
+      proxy: {
+        // Proxy /api calls to your backend API
+        '/api': {
+          target: "https://finalbackend.api.ctd.credenz.co.in", 
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''), // Rewrite the path to remove /api prefix
+        },
+      },
+    },
   }
 });

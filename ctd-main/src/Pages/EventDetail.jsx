@@ -589,7 +589,7 @@
       }
   
       try {
-        const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/add_cart`, formData, {
+        const res = await axios.post(`$/api/add_cart`, formData, {
           withCredentials: true,
         });
 
