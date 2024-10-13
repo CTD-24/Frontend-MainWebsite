@@ -17,6 +17,8 @@
     const {eventName} = useParams();
     const navigate = useNavigate();
 
+    const [isNTH, setIsNTH] = useState(eventName === "NTH" ? true : false);
+
   
 
     //   const eventsData = [
@@ -733,6 +735,9 @@
               </div>
             </div>
             {/* {console.log("islogin? " , isLoggedIn)} */}
+            
+            {isNTH ? <button disabled={true}>Registrations will be live soon!</button> : 
+
             <button
               onClick={ () =>  {
                 if(isLoggedIn){
@@ -756,6 +761,7 @@
             >
               REGISTER
             </button>
+            }
           </div>
         </div>
       </div>

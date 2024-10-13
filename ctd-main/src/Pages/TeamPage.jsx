@@ -70,16 +70,15 @@ const TeamPage = () => {
             gmail:"divya.nsk22@gmail.com",
             linkedin:"https://www.linkedin.com/in/divya-pardeshi-521154296",
             
-
         },
         {
             id:6,
             name: "SHOUNAK",
             role:"Frontend Developer",
             image: shounak,
-            github:"username.github.com",
-            gmail:"username.github.com",
-            linkedin:"username.github.com",
+            github:"https://github.com/ShounakM04",
+            gmail:"shounakmulay04@gmail.com",
+            linkedin:"https://www.linkedin.com/in/shounakmulay26/",
 
         },
         {

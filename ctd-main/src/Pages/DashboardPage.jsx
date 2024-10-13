@@ -138,7 +138,7 @@ const DashboardPage = () => {
                     ))}
                   </ul>
                 ) : (
-                  <p>No paid orders found.</p>
+                  <p>No pending orders found.</p>
                 )}
               </div>
 
