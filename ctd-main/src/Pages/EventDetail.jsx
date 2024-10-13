@@ -596,7 +596,7 @@
         dispatch(addItemToCart(eventItem));
         if(res.status == 201){
             toast.success("Event Added to Cart!");
-        // console.log("res", res);
+        console.log("res", res);
         }
       } catch (error) {
         // console.error("error adding to cart", error);
