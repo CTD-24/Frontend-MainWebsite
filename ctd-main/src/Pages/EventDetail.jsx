@@ -451,7 +451,7 @@
         { winners: "3000" },
         { runnerUp: "2000" }
       ]
-      date = "19"
+      date = "26"
       contact = [
         { name: "Samir Wankhede", num: 7770011526 },
         { name: "B Shrinidhi", num: 7506211747 }
