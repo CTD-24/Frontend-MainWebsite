@@ -589,17 +589,17 @@
       }
   
       try {
-        const res = await axios.post(`$/api/add_cart`, formData, {
+        const res = await axios.post(`/api/add_cart`, formData, {
           withCredentials: true,
         });
 
         dispatch(addItemToCart(eventItem));
         if(res.status == 201){
             toast.success("Event Added to Cart!");
-        console.log("res", res);
+            console.log("res", res);
         }
       } catch (error) {
-        // console.error("error adding to cart", error);
+        console.error("error adding to cart", error);
         toast.error(error?.response?.data?.message || "Something went wrong. Please try again.");
 
       }
