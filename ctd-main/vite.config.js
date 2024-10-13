@@ -1,5 +1,5 @@
-import { defineConfig, loadEnv } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig, loadEnv } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
   // Load environment variables based on the current mode
@@ -17,13 +17,12 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     server: {
       proxy: {
-        // Proxy /api calls to your backend API
         '/api': {
-          target: "https://finalbackend.api.ctd.credenz.co.in", 
+          target: 'https://finalbackend.api.ctd.credenz.co.in', // Your actual backend URL
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''), // Rewrite the path to remove /api prefix
+          // No need to rewrite the path since the target already includes /api
         },
       },
     },
-  }
+  };
 });
