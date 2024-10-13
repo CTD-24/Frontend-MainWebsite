@@ -45,8 +45,9 @@ function SignupPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
     // console.log("Form submitted with values:", values);
-    let loadingToast = toast.loading("Registering...");
+    
     try {
+      let loadingToast = toast.loading("Registering...");
       const registrationData = {
         username: values.username,
         first_name: values.first_name,
