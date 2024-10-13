@@ -28,7 +28,7 @@ const DashboardPage = () => {
       toast.success("Logged Out Successfully!");
     } catch (error) {
       // console.log(error.message);
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.message || "Something went Wrong! Please Try Again");
     }
   };
 
@@ -43,7 +43,7 @@ const DashboardPage = () => {
       } catch (error) {
         // console.error("Error fetching user", error);
         toast.dismiss(loadingToast);
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message || "Something went Wrong! Please Try Again");
       }
 
       try {
@@ -53,7 +53,7 @@ const DashboardPage = () => {
       } catch (error) {
         // console.error("Error fetching orders", error);
         toast.dismiss(loadingToast);
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message || "Something went Wrong! Please Try Again");
       }
 
       try {
@@ -62,7 +62,7 @@ const DashboardPage = () => {
       } catch (error) {
         // console.error("Error fetching orders", error);
         toast.dismiss(loadingToast);
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message || "Something went Wrong! Please Try Again");
       }
       finally{
         toast.dismiss(loadingToast);

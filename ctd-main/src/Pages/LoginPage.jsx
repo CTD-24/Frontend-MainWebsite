@@ -62,7 +62,7 @@ function LoginPage() {
       // setError(true);
       // console.log("Error logging in: ", error);
       toast.dismiss(loadingToast);
-      toast.error(error.response.data.message || "Error During Login");
+      toast.error(error?.response?.data?.message || "Error During Login");
       // if (error.response && error.response.status === 403) {
       //   toast.error("Wrong credentials! Please try again.");
       // } 
