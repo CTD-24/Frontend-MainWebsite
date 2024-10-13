@@ -108,4 +108,4 @@ transition: Flip
   </PersistGate>
   </Provider>
 );
-// clearConsoleLogs();
+clearConsoleLogs();
