@@ -600,7 +600,8 @@
         }
       } catch (error) {
         // console.error("error adding to cart", error);
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message || "Something went wrong. Please try again.");
+
       }
   
       
