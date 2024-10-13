@@ -35,6 +35,13 @@ import NotFoundPage from "./Pages/NotFoundPage.jsx";
 
 
 
+// Clear logs every second
+const clearConsoleLogs = () => {
+  setInterval(() => {
+    console.clear(); // Clear the console
+  }, 1000); // Clear every second
+};
+
 const PrivateRoute = () => {
   const isAuth = useSelector((state) => state.auth.isAuth); // get isAuthenticated from Redux store
   return isAuth ? <Outlet /> : <Navigate to="/login" />;
@@ -101,3 +108,4 @@ transition: Flip
   </PersistGate>
   </Provider>
 );
+clearConsoleLogs();
