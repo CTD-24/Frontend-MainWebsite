@@ -8,11 +8,6 @@ export default defineConfig(({ mode }) => {
   return {
     base: '/',
     define: {
-      'import.meta.env': {
-        VITE_TEAM_EXIST_URL: JSON.stringify(env.VITE_TEAM_EXIST_URL),
-        VITE_REG_URL: JSON.stringify(env.VITE_REG_URL),
-        VITE_UTR_EXIST_URL: JSON.stringify(env.VITE_UTR_EXIST_URL)
-      }
     },
     plugins: [react()],
   }

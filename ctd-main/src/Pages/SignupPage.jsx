@@ -45,7 +45,7 @@ function SignupPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
     // console.log("Form submitted with values:", values);
-
+    let loadingToast = toast.loading("Registering...");
     try {
       const registrationData = {
         username: values.username,
@@ -59,7 +59,7 @@ function SignupPage() {
       };
 
       // console.log('reg',registrationData)
-      let loadingToast = toast.loading("Registering...");
+      
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/auth/register`,registrationData,{
           headers: {
