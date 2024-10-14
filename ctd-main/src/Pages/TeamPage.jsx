@@ -116,9 +116,9 @@ const TeamPage = () => {
             name: "NIKUNJ",
             role:"Frontend Developer",
             image: nik,
-            github:"",
-            gmail:"",
-            linkedin:"",
+            github:"https://github.com/nk112233",
+            gmail:"nikunjkadu19@gmail.com",
+            linkedin:"https://www.linkedin.com/in/nikunj-kadu-45a3b7292/",
 
         },
         {
