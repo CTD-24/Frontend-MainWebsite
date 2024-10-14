@@ -285,14 +285,10 @@
         },
         {
           ruleNo: 3,
-          ruleDesc: "For the first correct submission of a question, you will receive the points currently available on that question."
+          ruleDesc: "For correct submission of a question, you will receive the points currently available on that question."
         },
         {
           ruleNo: 4,
-          ruleDesc: "For each wrong submission before the correct submission, 10 points will be deducted. If the question was already solved before, no points will be deducted for that question."
-        },
-        {
-          ruleNo: 5,
           ruleDesc: "Plagiarism checks would be done after the contest."
         }
       ]
