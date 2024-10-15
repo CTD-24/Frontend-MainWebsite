@@ -35,7 +35,7 @@ function SignupPage() {
   });
 
   const handleRadioChange = (e) => {
-    setValues({ ...values, is_junior: e.target.value === "junior" });
+    setValues({ ...values, is_junior: e.target.value === "junior" }); // Correct code
   };
 
   const onChange = (e) => {
@@ -55,7 +55,7 @@ function SignupPage() {
         email: values.email,
         phone_number: values.phone_number,
         enrollment_number: values.enrollment_number,
-        is_junior: values.is_junior === 'junior',
+        is_junior: values.is_junior,
         password: values.password,
       };
 
