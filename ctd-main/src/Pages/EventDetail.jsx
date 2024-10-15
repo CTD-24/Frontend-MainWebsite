@@ -17,7 +17,7 @@
     const {eventName} = useParams();
     const navigate = useNavigate();
 
-    const [isNTH, setIsNTH] = useState(eventName === "NTH" ? true : false);
+    // const [isNTH, setIsNTH] = useState(eventName === "NTH" ? true : false);
 
   
 
@@ -567,6 +567,11 @@
         window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScioEr0sgHapKUqZd2kLnlk0LuqsBw8gKrQtcqV-WTFH1yVEA/viewform';
         return;
       }
+
+      if (eventName === 'NTH') {
+        window.location.href = 'https://nth.credenz.co.in/register';
+        return;
+      }
   
       const eventItem = {
         id: eventName,
@@ -730,9 +735,7 @@
                 
               </div>
             </div>
-            {/* {console.log("islogin? " , isLoggedIn)} */}
-            
-            {isNTH ? <button disabled={true}>Registrations will be live soon!</button> : 
+            {/* {console.log("islogin? " , isLoggedIn)} */} 
 
             <button
               onClick={ () =>  {
@@ -748,6 +751,9 @@
                 if(eventName === "Decode Rush"){
                   window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScioEr0sgHapKUqZd2kLnlk0LuqsBw8gKrQtcqV-WTFH1yVEA/viewform';
                 }
+                else if(eventName === "NTH"){
+                  window.location.href = 'https://nth.credenz.co.in/register'
+                }
                 else{
                   navigate("/login");
                 }
@@ -757,7 +763,6 @@
             >
               REGISTER
             </button>
-            }
           </div>
         </div>
       </div>
