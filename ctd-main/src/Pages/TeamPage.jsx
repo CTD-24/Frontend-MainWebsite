@@ -11,7 +11,10 @@ import aniket from "./TeamAssets/aniket.jpeg";
 import sujal from "./TeamAssets/sujal.jpg";
 import sameer from "./TeamAssets/sameer.jpeg";
 import shrinidhi from "./TeamAssets/shrinidhi.jpeg";
+import jobin from "./TeamAssets/jobin.jpeg";
+import samruddhi from "./TeamAssets/samruddhi.jpeg";
 import atharv from "./TeamAssets/atharv.jpeg";
+import shreya from "./TeamAssets/shreya.jpeg";
 import digambar from "./TeamAssets/digmabar.jpg";
 import nik from './TeamAssets/nik.jpg'
 import shounak from './TeamAssets/shounak.jpg'
@@ -141,6 +144,36 @@ const TeamPage = () => {
             linkedin:"https://www.linkedin.com/in/samir-wankhede/",
 
         },
+        {
+            id:13,
+            name: "JOBIN",
+            role:"Enigma",
+            image: jobin,
+            github:"https://github.com/jobin491",
+            gmail:"jobinjosephh2005gmail.com",
+            linkedin:"https://www.linkedin.com/in/jobinottaveedu/",
+
+        },
+        {
+            id:14,
+            name: "SAMRUDDHI",
+            role:"Enigma",
+            image: samruddhi,
+            github:"https://github.com/sammm337",
+            gmail:"samruddhishinde222@gmail.com",
+            linkedin:"https://www.linkedin.com/in/samruddhi-shinde-236157261/",
+
+        },
+        {
+            id:15,
+            name: "SHREYA",
+            role:"Frontend Developer",
+            image: shreya,
+            github:"https://github.com/shreyapillai819",
+            gmail:"shreyapillai819@gmail.com",
+            linkedin:"https://www.linkedin.com/in/shreya-pillai-08b63a25a",
+
+        },
     ];
     // console.log(teamArr.length);
 
@@ -243,6 +276,27 @@ const TeamPage = () => {
                                     linkedin={team.linkedin}
                                     isSpread={spreadStates[index + 9]}
                                     onButtonClick={() => handleButtonClick(index + 9)}
+                        />
+                                </>
+                            );
+                        })
+                    }
+                </div>
+                <div className="row-5 h-auto w-[100vw] max-lg:flex-col max-lg:gap-[2vh] bg--500 flex justify-around items-center">
+                    {
+                        teamArr.slice(12,15).map((team, index) => {
+                            return(
+                                <>
+                                     <TeamCards
+                                    key={team.id}
+                                    name={team.name}
+                                    role={team.role}
+                                    image={team.image}
+                                    github={team.github}
+                                    gmail={team.gmail}
+                                    linkedin={team.linkedin}
+                                    isSpread={spreadStates[index + 12]}
+                                    onButtonClick={() => handleButtonClick(index + 12)}
                         />
                                 </>
                             );
